@@ -59,3 +59,21 @@
 #menu {
    float:left;
 }   
+
+.accountForm {
+	float:left;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+#signInPane {
+	border-style:solid;
+	border-width:1px;
+	float:left;
+}
+
+#createAccountPane {
+	border-style:solid;
+	border-width:1px;
+	float:left;
+}
