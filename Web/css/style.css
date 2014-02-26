@@ -7,7 +7,7 @@
 	width:100%;
 	border-bottom: 2px solid #ccc;
 	background: #f9f9f9;
-	}
+}
 
 #navbar ul {
 	list-style: none;
@@ -31,4 +31,8 @@
 
 #orderPane {
 	float:right;
+}
+
+#navSpace {
+   padding-top:50px;
 }
