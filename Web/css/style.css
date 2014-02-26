@@ -47,3 +47,8 @@
 #navSpace {
    padding-top:50px;
 }
+
+#accountLink {
+   position: fixed;
+   right: 50px;
+}
