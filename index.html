@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Taco Truck</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- Page navigation menu -->
+	<nav id="navbar">
+		<ul>
+			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
+			<li><a id="logoText">Taco Truck</a></li>
+			<li><a>Order</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="locations.html">Locations</a></li>
+			<li><a href="account.html">Sign In/Create Account</a></li>
+		</ul>
+	</nav>
+
+	<!-- Order Pane -->
+	<div class="orderPane">
+		<h2 id="order">Order </h2>
+		<!-- List of tacos in order -->
+		<ul>
+			<li>Taco 1: $0.00<img id="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
+			<li>Taco 3: $0.00<img id="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
+			<li>Custom Taco 1: $0.00<img id="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
+		</ul>
+		<!-- Tax and total -->
+		<ul>
+			<li id="taxTotal">Tax: $0.00</li>
+			<li id="grandTotal">Grand Total: $0.00</li>
+		</ul>
+		<input type="submit" id="submitOrder"/>
+	</div>
+
+
+	<!-- Table for menu -->
+	<h2 id="menu">Menu</h2>
+	<table>
+		<tr>
+			<td><img src="img/taco_icon.png" alt="Taco 1"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 2"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 3"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 4"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 5"></td>
+		</tr>
+		<tr>
+			<td>Taco 1</td>
+			<td>Taco 2</td>
+			<td>Taco 3</td>
+			<td>Taco 4</td>
+			<td>Taco 5</td>
+		</tr>
+		<tr>
+			<td><img src="img/taco_icon.png" alt="Taco 6"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 7"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 8"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 9"></td>
+			<td><img src="img/taco_icon.png" alt="Taco 10"></td>
+		</tr>
+		<tr>
+			<td>Taco 6</td>
+			<td>Taco 7</td>
+			<td>Taco 8</td>
+			<td>Taco 9</td>
+			<td>Taco 10</td>
+		</tr>
+		<tr>
+			<td><img src="img/plus_icon.png" alt="Custom Taco"></td>
+			<td><img src="img/previous_icon.png" alt="Previous Taco"></td>
+		</tr>
+		<tr>
+			<td>Custom Taco</td>
+			<td>Previous Taco</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
