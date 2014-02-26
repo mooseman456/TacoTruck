@@ -65,19 +65,20 @@
 }   
 
 .accountForm {
-	float:left;
-	margin-left: auto;
-	margin-right:auto;
+	width:90%;
+	margin: 0 auto;
 }
 
 #signInPane {
 	border-style:solid;
 	border-width:1px;
-	float:left;
+	float: left;
+	width:50%;
 }
 
 #createAccountPane {
 	border-style:solid;
 	border-width:1px;
-	float:
+	width:50%;
+	margin-left:50%;
 }	
