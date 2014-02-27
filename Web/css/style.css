@@ -59,6 +59,10 @@ h2 {
 	background-color: #C8C8C8 
 }
 
+#navbar .select:hover {
+	background-color: #C1C98D;
+}
+
 #navbar .select {
    background-color: #C1C98D;
 }
@@ -128,6 +132,10 @@ img#cancelButton {
 
 .tacoRow td:hover {
 	background-color: #C8C8C8 
+}
+
+tr {
+	text-align: center;
 }
 
 
