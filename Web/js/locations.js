@@ -17,18 +17,20 @@ window.addEventListener('load', function() {
 		console.log("it worked!");
 		var trucks = JSON.parse(request.responseText);
 		
-		geocoder.geocode( { 'address': trucks[0].address + ", " + trucks[0].city + ", " + trucks[0].state + " " + trucks[0].zipcode}, function(results, status) {
-		    if (status == google.maps.GeocoderStatus.OK) {
-		        // map.setCenter(results[0].geometry.location);
-		        var marker = new google.maps.Marker({
-		            map: map,
-		            position: results[0].geometry.location,
-		            title: trucks[0].name
-		        });
-		    } else {
-		        alert("Geocode was not successful for the following reason: " + status);
-		    }
-		});
+		for(var i = 0; i<trucks.length; i++) {
+			geocoder.geocode( { 'address': trucks[i].address + ", " + trucks[i].city + ", " + trucks[i].state + " " + trucks[i].zipcode}, function(results, status) {
+			    if (status == google.maps.GeocoderStatus.OK) {
+			        // map.setCenter(results[0].geometry.location);
+			        var marker = new google.maps.Marker({
+			            map: map,
+			            position: results[0].geometry.location,
+			            title: trucks[i].name,
+			        });
+			    } else {
+			        alert("Geocode was not successful for the following reason: " + status);
+			    }
+			});
+		}
 	} else {
 		window.alert("Could not get truck locations.")
 	}
