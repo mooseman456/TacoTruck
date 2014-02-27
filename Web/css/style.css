@@ -1,5 +1,12 @@
-/* Styles for the menu bar */
+html {
+	font-family: 'Swanky and Moo Moo', cursive;
+}
 
+body {
+	background-color: #EEEED1;
+}
+
+/* Styles for the menu bar */
 #navbar {
 	position: fixed;
 	margin-bottom: 10px;
@@ -7,7 +14,7 @@
 	left:0;
 	width:100%;
 	border-bottom: 2px solid #ccc;
-	background: #f9f9f9;
+	background: #8F3C1C;
 }
 
 #navbar ul {
@@ -19,24 +26,34 @@
 #navbar li {
 	float:left;
 	display: block;
-	background: #f9f9f9;
-	border: 1px solid #f9f9f9;
-	padding: .5em;
+	background: #8F3C1C;
+	border: 1px solid #8F3C1C;
 	text-decoration:none;
+	color: white;
 }
 
 /* Height given is the same as the logo image. Is there a better way to do this? */
 #navbar li {
 	font-size: 20px;
 	height: 33px;
+
 }
 
 #navbar li a {
 	text-decoration:none;
+	display:block;
+	width: 100%;
+	height: 100%;
+	padding: 0em 1em;
+	color: white;
 }
 
 #navbar li:hover {
 	background-color: #C8C8C8 
+}
+
+#navbar .select {
+   background-color: #C1C98D;
 }
 
 #logoImg {
@@ -54,9 +71,10 @@
 }
 
 .orderPane {
-   width: 250px;
+   width: 225px;
    margin:0px;
    float: left;
+   padding-right:25px;
 }
 
 #menu {
@@ -96,3 +114,9 @@
 	width:50%;
 	margin-left:50%;
 }
+
+img#cancelButton {
+   float:right;
+}
+
+
