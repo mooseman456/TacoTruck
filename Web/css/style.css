@@ -126,4 +126,8 @@ img#cancelButton {
    float:right;
 }
 
+.tacoRow td:hover {
+	background-color: #C8C8C8 
+}
+
 
