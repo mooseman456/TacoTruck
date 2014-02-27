@@ -16,15 +16,17 @@ window.addEventListener('load', function() {
 	if (request.status === 200) {
 		console.log("it worked!");
 		var trucks = JSON.parse(request.responseText);
+		console.log(trucks[1].name);
 		
+		var tempAddress = "Addison Circle, Addison, TX, 75001";
 		for(var i = 0; i<trucks.length; i++) {
+			console.log("count: " + i);
 			geocoder.geocode( { 'address': trucks[i].address + ", " + trucks[i].city + ", " + trucks[i].state + " " + trucks[i].zipcode}, function(results, status) {
 			    if (status == google.maps.GeocoderStatus.OK) {
-			        // map.setCenter(results[0].geometry.location);
 			        var marker = new google.maps.Marker({
+			            //title: trucks[count].name,
 			            map: map,
-			            position: results[0].geometry.location,
-			            title: trucks[i].name,
+			            position: results[0].geometry.location
 			        });
 			    } else {
 			        alert("Geocode was not successful for the following reason: " + status);
