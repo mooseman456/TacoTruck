@@ -57,9 +57,10 @@
 }
 
 .orderPane {
-   width: 250px;
+   width: 225px;
    margin:0px;
    float: left;
+   padding-right:25px;
 }
 
 #menu {
@@ -98,4 +99,8 @@
 	border-width:1px;
 	width:50%;
 	margin-left:50%;
+}
+
+img#cancelButton {
+   float:right;
 }
