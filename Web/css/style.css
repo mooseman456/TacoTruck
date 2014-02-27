@@ -17,6 +17,13 @@ body {
 	background: #8F3C1C;
 }
 
+td {
+   font-size: 36px;
+}
+
+h2 {
+   font-size: 45px;
+}
 #navbar ul {
 	list-style: none;
 	margin:0;
