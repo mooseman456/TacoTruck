@@ -34,8 +34,8 @@ body {
 
 /* Height given is the same as the logo image. Is there a better way to do this? */
 #navbar li {
-	font-size: 20px;
-	height: 33px;
+	font-size: 30px;
+	height: 40px;
 
 }
 
