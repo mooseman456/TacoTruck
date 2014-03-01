@@ -53,15 +53,87 @@ CREATE TABLE Tacos (
 );
 
 CREATE TABLE TacoOrders (
-	order_id NOT NULL,
-	taco_id NOT NULL,
+	order_id INT(30) NOT NULL,
+	taco_id INT(30) NOT NULL,
+	Foreign Key (order_id) REFERENCES Orders.order_id,
+	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
 	Primary Key (order_id, taco_id)
 );
 
 CREATE TABLE Tortillas (
 	tortilla_id INT(30) NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255),
-	price DECIMAL(10,2)
+	price DECIMAL(10,2),
+	Primary Key (tortilla_id)
 );
+
+CREATE TABLE Rice (
+	rice_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	Primary Key (rice_id)
+);
+
+CREATE TABLE Cheeses (
+	cheese_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	Primary Key (cheese_id)
+);
+
+CREATE TABLE Beans (
+	bean_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	Primary Key (bean_id)
+);
+
+CREATE TABLE Sauces (
+	sauce_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	heatRating INT(5),
+	Primary Key (sauce_id)
+);
+
+CREATE TABLE Fillings (
+	filling_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	Primary Key (filling_id)
+);
+
+CREATE TABLE TacoVegetables (
+	taco_id INT(30) NOT NULL,
+	vegetable_id INT(30) NOT NULL,
+	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
+	Foreign KEY (vegetable_id) REFERENCES Vegetables.vegetable_id,
+	Primary Key (taco_id, vegetable_id)
+);
+
+CREATE TABLE TacoExtras (
+	taco_id INT(30) NOT NULL,
+	extra_id INT(30) NOT NULL,
+	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
+	Foreign Key (extra_id) REFERENCES Extras.extra_id,
+	Primary Key (taco_id, extra_id)
+);
+
+CREATE TABLE Vegetables (
+	vegetable_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	Primary Key (vegetable_id)
+);
+
+CREATE TABLE Extras (
+	extra_id INT(30) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	price DECIMAL(10,2),
+	Primary Key (extra_id)
+);
+
+
+
 
 
