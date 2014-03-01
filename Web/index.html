@@ -4,13 +4,14 @@
 	<meta charset="utf-8">
 	<title>Welcome to Taco Truck!</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<!-- Page navigation menu -->
 	<nav id="navbar">
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
-			<li>Order</li>
+			<li class="select"><a>Order</a></li>
 			<li><a href="about.html">About</a></li>
 			<li><a href="locations.html">Locations</a></li>
 			<li id="accountLink"><a href="account.html">Sign In/Create Account</a></li>
@@ -32,7 +33,7 @@
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder"/>
+		<input type="submit" id="submitOrder" value="Check Out"/>
 	</div>
 
 
@@ -40,37 +41,33 @@
 	<div id="menu">
 	   <h2>Menu</h2>
 	   <table>
-		   <tr>
+		   <tr class="tacoRow">
 			   <td><img src="img/taco_icon.png" alt="Taco 1"></td>
 			   <td><img src="img/taco_icon.png" alt="Taco 2"></td>
 			   <td><img src="img/taco_icon.png" alt="Taco 3"></td>
 			   <td><img src="img/taco_icon.png" alt="Taco 4"></td>
-			   <td><img src="img/taco_icon.png" alt="Taco 5"></td>
 		   </tr>
 		   <tr>
 			   <td>Taco 1</td>
 			   <td>Taco 2</td>
 			   <td>Taco 3</td>
 			   <td>Taco 4</td>
-			   <td>Taco 5</td>
 		   </tr>
-		   <tr>
+		   <tr class="tacoRow">
+			   <td><img src="img/taco_icon.png" alt="Taco 5"></td>
 			   <td><img src="img/taco_icon.png" alt="Taco 6"></td>
 			   <td><img src="img/taco_icon.png" alt="Taco 7"></td>
 			   <td><img src="img/taco_icon.png" alt="Taco 8"></td>
-			   <td><img src="img/taco_icon.png" alt="Taco 9"></td>
-			   <td><img src="img/taco_icon.png" alt="Taco 10"></td>
 		   </tr>
 		   <tr>
+			   <td>Taco 5</td>
 			   <td>Taco 6</td>
 			   <td>Taco 7</td>
 			   <td>Taco 8</td>
-			   <td>Taco 9</td>
-			   <td>Taco 10</td>
 		   </tr>
 	   </table>
 	   <table>
-		   <tr>
+		   <tr class="tacoRow">
 			   <td id="customTaco"><img src="img/plus_icon.png" alt="Custom Taco"></td>
 			   <td id="customTaco"><img src="img/previous_icon.png" alt="Previous Taco"></td>
 		   </tr>
