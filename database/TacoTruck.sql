@@ -9,10 +9,10 @@ DROP TABLE IF EXISTS TacoTruck.Tacos;
 DROP TABLE IF EXISTS TacoTruck.TacoOrders;
 DROP TABLE IF EXISTS TacoTruck.Tortillas;
 DROP TABLE IF EXISTS TacoTruck.Rice;
-DROP TABLE IF EXISTS TacoTruck.Cheeses;
+DROP TABLE IF EXISTS TacoTruck.Cheese;
 DROP TABLE IF EXISTS TacoTruck.Beans;
 DROP TABLE IF EXISTS TacoTruck.Sauces;
-DROP TABLE IF EXISTS TacoTruck.Fillings;
+DROP TABLE IF EXISTS TacoTruck.Type;
 DROP TABLE IF EXISTS TacoTruck.TacoVegetables;
 DROP TABLE IF EXISTS TacoTruck.TacoExtras;
 DROP TABLE IF EXISTS TacoTruck.Vegetables;
@@ -41,20 +41,21 @@ CREATE TABLE Orders (
 
 CREATE TABLE Tacos (
 	taco_id INT(30) NOT NULL AUTO_INCREMENT,
-	filling_id INT(30) NOT NULL,
+	type_id INT(30) NOT NULL,
 	tortilla_id INT(30) NOT NULL,
 	rice_id INT(30),
 	cheese_id INT(30),
 	bean_id INT(30),
 	sauce_id INT(30),
 	Primary Key (taco_id),
-	Foreign Key (filling_id) REFERENCES Fillings.filling_id,
+	Foreign Key (type_id) REFERENCES Fillings.type_id,
 	Foreign Key (tortilla_id) REFERENCES Tortillas.tortilla_id
 );
 
 CREATE TABLE TacoOrders (
 	order_id INT(30) NOT NULL,
 	taco_id INT(30) NOT NULL,
+	quantity INT(5) NOT NULL,
 	Foreign Key (order_id) REFERENCES Orders.order_id,
 	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
 	Primary Key (order_id, taco_id)
@@ -74,7 +75,7 @@ CREATE TABLE Rice (
 	Primary Key (rice_id)
 );
 
-CREATE TABLE Cheeses (
+CREATE TABLE Cheese (
 	cheese_id INT(30) NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255),
 	price DECIMAL(10,2),
@@ -96,11 +97,11 @@ CREATE TABLE Sauces (
 	Primary Key (sauce_id)
 );
 
-CREATE TABLE Fillings (
-	filling_id INT(30) NOT NULL AUTO_INCREMENT,
+CREATE TABLE Type (
+	type_id INT(30) NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255),
 	price DECIMAL(10,2),
-	Primary Key (filling_id)
+	Primary Key (type_id)
 );
 
 CREATE TABLE TacoVegetables (
