@@ -124,7 +124,7 @@ tr {
 }
 
 #menuTable {
-	display:inline;
+	width:10%;
 }
 
 #orderPane {
@@ -137,7 +137,7 @@ tr {
 
 #menuPane {
 	float:left;
-	width:52%%;
+	width:52%;
 	padding-right:2%;
 }
 
@@ -146,5 +146,3 @@ tr {
 	width:20%;
 	padding-right: 2%;
 }
-
-
