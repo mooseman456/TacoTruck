@@ -6,9 +6,24 @@ body {
 	background-color: #EEEED1;
 }
 
+/* About styling */
+article {
+	margin: 15%;
+	margin-top: 0px;
+}
+
+article h1 {
+	font-size: 4em;
+	text-align: center;
+}
+
+
 /* Styles for the navigation bar */
 #navbar {
-	position: fixed;
+	position: relative;
+	clear: left;
+	display: block;
+	position:fixed;
 	margin-bottom: 10px;
 	top:0;
 	left:0;
