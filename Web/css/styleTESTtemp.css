@@ -84,13 +84,25 @@ h2 {
 #logoImg {
 	width: 75px;
 	height: 33px;
+	margin-right: 10px;
+	display:inline-block;
+}
+
+#logoImg span{
+	display:inline-block;
+	color:red;
 }
 
 #accountLink {
-	position: fixed;
+	position:absolute;
+	float:right;
 	right: 50px;
 }
 
+#accountLink a{
+	margin-top: 5px;
+	font-size: 20px;
+}
 .orderPane {
 	width: 225px;
 	margin:0px;
