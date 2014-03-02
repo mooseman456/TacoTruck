@@ -135,8 +135,9 @@ tr {
 	text-align: center;
 }
 
-#ingredientsList {
-	float:left;
+#ingredientLists {
+	float:right;
+	width:250px;
 }
 
 
