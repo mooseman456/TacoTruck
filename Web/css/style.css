@@ -1,3 +1,4 @@
+
 html {
 	font-family: 'Swanky and Moo Moo', cursive;
 }
@@ -80,6 +81,7 @@ h2 {
 
 #menu {
 	float:left;
+	width:30%;
 }
 
 #customTaco{
@@ -131,6 +133,10 @@ img.cancelButton:hover {
 
 tr {
 	text-align: center;
+}
+
+#ingredientsList {
+	float:left;
 }
 
 
