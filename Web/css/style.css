@@ -115,6 +115,7 @@ img.cancelButton:hover {
 
 #menuTable {
 	display:inline;
+	width:10%;
 }
 
 .tacoRow td:hover {
@@ -143,8 +144,6 @@ td {
 	width:20%;
 	padding-right: 2%;
 }
-
-
 
 
 
@@ -191,5 +190,4 @@ td {
 	width:50%;
 	margin-left:50%;
 }
-
 
