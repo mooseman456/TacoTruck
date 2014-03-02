@@ -72,18 +72,6 @@ h2 {
 	right: 50px;
 }
 
-.orderPane {
-	width: 225px;
-	margin:0px;
-	float: left;
-	padding-right:25px;
-}
-
-#menu {
-	float:left;
-	width:30%;
-}
-
 #customTaco{
 	padding:0px 125px;
 }   
@@ -136,9 +124,23 @@ tr {
 	width:25%;
 }
 
-#ingredientsList {
+#orderPane {
+	width: 225px;
+	margin:0px;
+	float: left;
+	padding-right:25px;
+	padding-left:2%;
+}
+
+#menuPane {
+	float:left;
+	width:30%;
+}
+
+#ingredientsPane {
 	float:right;
-	width:250px;
+	width:20%;
+	padding-right: 2%;
 }
 
 

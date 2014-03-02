@@ -6,9 +6,6 @@
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
 #accordion {
-	padding: 10px;
-    width: 350px;
-    height: 220px;
     float:right;
 }
 
