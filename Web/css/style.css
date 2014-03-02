@@ -121,24 +121,28 @@ img.cancelButton:hover {
 
 tr {
 	text-align: center;
-	width:25%;
+}
+
+#menuTable {
+	display:inline;
 }
 
 #orderPane {
-	width: 225px;
+	width: 20%;
 	margin:0px;
 	float: left;
-	padding-right:25px;
 	padding-left:2%;
+	padding-right: 2%;
 }
 
 #menuPane {
 	float:left;
-	width:30%;
+	width:52%%;
+	padding-right:2%;
 }
 
 #ingredientsPane {
-	float:right;
+	float:left;
 	width:20%;
 	padding-right: 2%;
 }
