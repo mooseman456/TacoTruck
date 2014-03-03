@@ -6,6 +6,56 @@ if($db->connect_errno > 0){
 	die('Unable to connect to database [' . $db->connect_error . ']');
 }
 
+//Get menu data
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Type'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoTypes = $tacoTypes . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Tortillas'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoTortillas = $tacoTortillas . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Rice'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoRice = $tacoRice . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Cheese'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoCheese = $tacoCheese . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Beans'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoBeans = $tacoBeans . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Sauces'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoSauces = $tacoSauces . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Vegetables'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoVeggies = $tacoVeggies . "$row[0]<br />";
+}
+
+$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Extras'";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+while($row = $result->fetch_row()) {
+  	$tacoExtras = $tacoExtras . "$row[0]<br />";
+}
+
+
 
 ?>
 
@@ -26,7 +76,7 @@ if($db->connect_errno > 0){
   $(function() {
     $( "#accordion" ).accordion({
       event: "click hoverintent"
-    });
+    })
   });
 
   $(function() {
@@ -111,50 +161,52 @@ if($db->connect_errno > 0){
 		<h2>Ingredients</h2>
 
 		<div id="accordion">
-			<h3>Section 1</h3>
+			<h3>Types</h3>
 			<div>
 				<p>
-					Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-					ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-					amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-					odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+					<?php echo $tacoTypes; ?>
 				</p>
 			</div>
-			<h3>Section 2</h3>
+			<h3>Tortillas</h3>
 			<div>
 				<p>
-					Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-					purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-					velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-					suscipit faucibus urna.
+					<?php echo $tacoTortillas; ?>
 				</p>
 			</div>
-			<h3>Section 3</h3>
+			<h3>Rice</h3>
 			<div>
 				<p>
-					Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-					Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-					ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-					lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+					<?php echo $tacoRice; ?>
 				</p>
-				<ul>
-					<li>List item one</li>
-					<li>List item two</li>
-					<li>List item three</li>
-				</ul>
 			</div>
-			<h3>Section 4</h3>
+			<h3>Cheese</h3>
 			<div>
 				<p>
-					Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-					et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-					faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-					mauris vel est.
+					<?php echo $tacoCheese; ?>
 				</p>
+			</div>
+			<h3>Beans</h3>
+			<div>
 				<p>
-					Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-					Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-					inceptos himenaeos.
+					<?php echo $tacoBeans; ?>
+				</p>
+			</div>
+			<h3>Sauces</h3>
+			<div>
+				<p>
+					<?php echo $tacoSauces; ?>
+				</p>
+			</div>
+			<h3>Vegetables</h3>
+			<div>
+				<p>
+					<?php echo $tacoVeggies; ?>
+				</p>
+			</div>
+			<h3>Extras</h3>
+			<div>
+				<p>
+					<?php echo $tacoExtras; ?>
 				</p>
 			</div>
 		</div>
