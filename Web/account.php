@@ -1,3 +1,48 @@
+<?php
+
+require_once '../database/login.php';
+$db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+if($db->connect_errno > 0){
+	die('Unable to connect to database [' . $db->connect_error . ']');
+}
+
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
+
+		//cleanse the POST array
+		$email = mysql_real_escape_string($_POST['email']);
+		$password = mysql_real_escape_string($_POST['password']);
+
+		$submittedEmail = $email;
+		$submittedPassword = $password;
+
+		$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
+
+		// die($query);
+
+		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+		$row = $result->fetch_assoc();
+
+		if(empty($row)) {
+			header('Location: account.php');
+		} else {
+			session_start();
+
+			$_SESSION['user_id'] = $row['user_id'];
+			$_SESSION['givenName'] = $row['givenName'];
+			$_SESSION['surname'] = $row['surname'];
+			$_SESSION['email'] = $row['email'];
+			$_SESSION['phoneNumber'] = $row['phoneNumber'];
+			$_SESSION['CC_Provider'] = $row['CC_Provider'];
+			$_SESSION['CC_Number'] = $row['CC_Number'];
+
+			header('Location: index.php');
+		}
+	}as
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +69,7 @@
 
 	<div class="accountForm">
 		<div id="signInPane">
-			<form class="userForm">
+			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="email" placeholder="Email"><br>
 				<input class="userInput" type="password" name="password" placeholder="Password"><br>
 				<input class="userInput" type="submit" value="Sign In">
@@ -32,7 +77,7 @@
 		</div>
 
 		<div id="createAccountPane">
-			<form class="userForm">
+			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
 				<input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
 				<input class="userInput" type="email" name="email" placeholder="Email"><br>
