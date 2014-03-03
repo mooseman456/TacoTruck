@@ -53,8 +53,8 @@ if (($handle = fopen("taco_truck_menu.json", "r")) !== FALSE) {
 	}
 }
 
+//Populate TacoFixings
 $json = file_get_contents("taco_truck_menu.json");
-
 
 $jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($json, TRUE)),
@@ -75,12 +75,67 @@ foreach ($jsonIterator as $key => $val) {
     		$price = $val;
     		echo $out;
     		$query = "INSERT INTO TacoFixings (itemType, name, price, heatRating) VALUES ('$itemType', '$name', '$price', '$heatRating')";
-    		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+    		//$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
     		$name=NULL;$price=NULL;$heatRating=NULL;
     	}
         
     }
 }
+
+//Orders data
+if (($handle = fopen("Orders.csv", "r")) !== FALSE) {
+	//First line contains titles of following lines
+	$data = fgetcsv($handle, 1000, ",");
+
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    	//Insert all the User data into the database
+        $num = count($data);
+        $data[3] = ltrim($data[3], '$');
+        $query = "INSERT INTO Orders (user_id, price, timePlaced) 
+        		  VALUES ('$data[1]','$data[3]','$data[2]')";
+        echo "$query";
+        //$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+    }
+    fclose($handle);
+}
+
+echo "<hr />";
+
+//TacoOrders data
+if (($handle = fopen("OrderItem.csv", "r")) !== FALSE) {
+	//First line contains titles of following lines
+	$data = fgetcsv($handle, 1000, ",");
+
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    	//Insert all the User data into the database
+        $num = count($data);
+        $query = "INSERT INTO TacoOrders (order_id, quantity) 
+        		  VALUES ('$data[1]', '$data[2]')";
+        echo "$query";
+        //$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+    }
+    fclose($handle);
+}
+
+echo "<hr />";
+
+//TacoDetails data
+if (($handle = fopen("OrderItemDetails.csv", "r")) !== FALSE) {
+	//First line contains titles of following lines
+	$data = fgetcsv($handle, 1000, ",");
+
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    	//Insert all the User data into the database
+        $num = count($data);
+        $query = "INSERT INTO TacoDetails (tacoorders_id, tacofixing_id) 
+        		  VALUES ('$data[1]','$data[2]')";
+        echo "$query";
+        $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+    }
+    fclose($handle);
+}
+
+echo "<hr />";
 
 
 ?>

@@ -5,7 +5,7 @@ use TacoTruck;
 
 DROP TABLE IF EXISTS TacoTruck.Users;
 DROP TABLE IF EXISTS TacoTruck.Orders;
-DROP TABLE IF EXISTS TacoTruck.Tacos;
+DROP TABLE IF EXISTS TacoTruck.TacoDetails;
 DROP TABLE IF EXISTS TacoTruck.TacoOrders;
 DROP TABLE IF EXISTS TacoTruck.Tortillas;
 DROP TABLE IF EXISTS TacoTruck.Rice;
@@ -34,106 +34,101 @@ CREATE TABLE Users (
 CREATE TABLE Orders (
 	order_id INT(30) NOT NULL AUTO_INCREMENT,
 	user_id INT(30) NOT NULL,
-	price INT(30),
+	price DECIMAL(10,2),
 	timePlaced DATETIME,
 	Primary Key (order_id),
 	Foreign Key (user_id) REFERENCES Users.user_id
 );
 
-CREATE TABLE Tacos (
-	taco_id INT(30) NOT NULL AUTO_INCREMENT,
-	type_id INT(30) NOT NULL,
-	tortilla_id INT(30) NOT NULL,
-	rice_id INT(30),
-	cheese_id INT(30),
-	bean_id INT(30),
-	sauce_id INT(30),
-	Primary Key (taco_id),
-	Foreign Key (type_id) REFERENCES Fillings.type_id,
-	Foreign Key (tortilla_id) REFERENCES Tortillas.tortilla_id
+CREATE TABLE TacoDetails (
+	tacodetails_id INT(30) NOT NULL AUTO_INCREMENT,
+	tacoorders_id INT(30) NOT NULL,
+	tacofixing_id INT(30) NOT NULL,
+	Foreign Key (tacoorders_id) REFERENCES TacoOrders.tacoorders_id,
+	Foreign Key (tacofixing_id) REFERENCES TacoFixings.tacofixing_id,
+	Primary Key (tacodetails_id)
 );
 
 CREATE TABLE TacoOrders (
+	tacoorder_id INT(30) NOT NULL AUTO_INCREMENT,
 	order_id INT(30) NOT NULL,
-	taco_id INT(30) NOT NULL,
 	quantity INT(5) NOT NULL,
 	Foreign Key (order_id) REFERENCES Orders.order_id,
-	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
-	Primary Key (order_id, taco_id)
+	Primary Key (tacoorder_id)
 );
 
-CREATE TABLE Tortillas (
-	tortilla_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (tortilla_id)
-);
+-- CREATE TABLE Tortillas (
+-- 	tortilla_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (tortilla_id)
+-- );
 
-CREATE TABLE Rice (
-	rice_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (rice_id)
-);
+-- CREATE TABLE Rice (
+-- 	rice_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (rice_id)
+-- );
 
-CREATE TABLE Cheese (
-	cheese_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (cheese_id)
-);
+-- CREATE TABLE Cheese (
+-- 	cheese_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (cheese_id)
+-- );
 
-CREATE TABLE Beans (
-	bean_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (bean_id)
-);
+-- CREATE TABLE Beans (
+-- 	bean_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (bean_id)
+-- );
 
-CREATE TABLE Sauces (
-	sauce_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	heatRating INT(5),
-	Primary Key (sauce_id)
-);
+-- CREATE TABLE Sauces (
+-- 	sauce_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	heatRating INT(5),
+-- 	Primary Key (sauce_id)
+-- );
 
-CREATE TABLE Type (
-	type_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (type_id)
-);
+-- CREATE TABLE Type (
+-- 	type_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (type_id)
+-- );
 
-CREATE TABLE TacoVegetables (
-	taco_id INT(30) NOT NULL,
-	vegetable_id INT(30) NOT NULL,
-	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
-	Foreign KEY (vegetable_id) REFERENCES Vegetables.vegetable_id,
-	Primary Key (taco_id, vegetable_id)
-);
+-- CREATE TABLE TacoVegetables (
+-- 	taco_id INT(30) NOT NULL,
+-- 	vegetable_id INT(30) NOT NULL,
+-- 	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
+-- 	Foreign KEY (vegetable_id) REFERENCES Vegetables.vegetable_id,
+-- 	Primary Key (taco_id, vegetable_id)
+-- );
 
-CREATE TABLE TacoExtras (
-	taco_id INT(30) NOT NULL,
-	extra_id INT(30) NOT NULL,
-	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
-	Foreign Key (extra_id) REFERENCES Extras.extra_id,
-	Primary Key (taco_id, extra_id)
-);
+-- CREATE TABLE TacoExtras (
+-- 	taco_id INT(30) NOT NULL,
+-- 	extra_id INT(30) NOT NULL,
+-- 	Foreign Key (taco_id) REFERENCES Tacos.taco_id,
+-- 	Foreign Key (extra_id) REFERENCES Extras.extra_id,
+-- 	Primary Key (taco_id, extra_id)
+-- );
 
-CREATE TABLE Vegetables (
-	vegetable_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (vegetable_id)
-);
+-- CREATE TABLE Vegetables (
+-- 	vegetable_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (vegetable_id)
+-- );
 
-CREATE TABLE Extras (
-	extra_id INT(30) NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255),
-	price DECIMAL(10,2),
-	Primary Key (extra_id)
-);
+-- CREATE TABLE Extras (
+-- 	extra_id INT(30) NOT NULL AUTO_INCREMENT,
+-- 	name VARCHAR(255),
+-- 	price DECIMAL(10,2),
+-- 	Primary Key (extra_id)
+-- );
 
 CREATE TABLE TacoFixings (
 tacoFixingId int(11) NOT NULL AUTO_INCREMENT,
