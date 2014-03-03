@@ -42,11 +42,11 @@ if (($handle = fopen("taco_truck_menu.json", "r")) !== FALSE) {
 				$heatRating = $item['heatRating'];
 				echo "$name (heat: $heatRating) - $price<br />";
 				$query = "INSERT INTO $table (name, price, heatRating) VALUES ('$name', '$price', '$heatRating')";
-				$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+				//$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
 			} else {
 				echo "$name - $$price<br />";
 				$query = "INSERT INTO $table (name, price) VALUES ('$name', '$price')";
-				$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+				//$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
 			}
 		}
 		echo "<br /><hr /><br />";
