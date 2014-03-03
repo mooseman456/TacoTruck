@@ -40,25 +40,36 @@ CREATE TABLE Orders (
 	price DECIMAL(10,2),
 	timePlaced DATETIME,
 	Primary Key (order_id),
-	Foreign Key (user_id) REFERENCES Users.user_id
-) ENGINE=InnoDB;
-
-CREATE TABLE TacoDetails (
-	tacodetails_id INT(30) NOT NULL AUTO_INCREMENT,
-	tacoorder_id INT(30) NOT NULL,
-	tacofixing_id INT(30) NOT NULL,
-	Foreign Key (tacoorder_id) REFERENCES TacoOrders.tacoorder_id,
-	Foreign Key (tacofixing_id) REFERENCES TacoFixings.tacofixing_id,
-	Primary Key (tacodetails_id)
+	Foreign Key (user_id) REFERENCES Users(user_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE TacoOrders (
 	tacoorder_id INT(30) NOT NULL AUTO_INCREMENT,
 	order_id INT(30) NOT NULL,
 	quantity INT(5) NOT NULL,
-	Foreign Key (order_id) REFERENCES Orders.order_id,
+	Foreign Key (order_id) REFERENCES Orders(order_id),
 	Primary Key (tacoorder_id)
 ) ENGINE=InnoDB;
+
+CREATE TABLE TacoFixings (
+	tacofixing_id int(11) NOT NULL AUTO_INCREMENT,
+	itemType varchar(255) NOT NULL,
+	name varchar(255) NOT NULL,
+	price DECIMAL(10,2) NOT NULL,
+	heatRating varchar(11) DEFAULT '0',
+	PRIMARY KEY (tacofixing_id)
+) ENGINE=InnoDB;
+
+CREATE TABLE TacoDetails (
+	tacodetails_id INT(30) NOT NULL AUTO_INCREMENT,
+	tacoorder_id INT(30) NOT NULL,
+	tacofixing_id INT(30) NOT NULL,
+	Foreign Key (tacoorder_id) REFERENCES TacoOrders(tacoorder_id),
+	Foreign Key (tacofixing_id) REFERENCES TacoFixings(tacofixing_id),
+	Primary Key (tacodetails_id)
+) ENGINE=InnoDB;
+
+
 
 -- CREATE TABLE Tortillas (
 -- 	tortilla_id INT(30) NOT NULL AUTO_INCREMENT,
@@ -132,15 +143,6 @@ CREATE TABLE TacoOrders (
 -- 	price DECIMAL(10,2),
 -- 	Primary Key (extra_id)
 -- );
-
-CREATE TABLE TacoFixings (
-	tacofixing_id int(11) NOT NULL AUTO_INCREMENT,
-	itemType varchar(255) NOT NULL,
-	name varchar(255) NOT NULL,
-	price DECIMAL(10,2) NOT NULL,
-	heatRating varchar(11) DEFAULT '0',
-	PRIMARY KEY (tacofixing_id)
-) ENGINE=InnoDB;
 
 
 
