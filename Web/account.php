@@ -20,6 +20,8 @@
 	<div id="navSpace"></div>
 	<div id="navSpace"></div>
 
+	<div id="tempDiv"></div>
+
 	<div class="accountForm">
 		<div id="signInPane">
 			<form class="userForm">
