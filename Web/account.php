@@ -8,36 +8,38 @@ if($db->connect_errno > 0){
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
-		//cleanse the POST array
-		$email = mysql_real_escape_string($_POST['email']);
-		$password = mysql_real_escape_string($_POST['password']);
+	//cleanse the POST array
+	$email = mysql_real_escape_string($_POST['email']);
+	$password = mysql_real_escape_string($_POST['password']);
 
-		$submittedEmail = $email;
-		$submittedPassword = $password;
+	$submittedEmail = $email;
+	$submittedPassword = $password;
 
-		$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
+	$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
 
-		// die($query);
+	// die($query);
 
-		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-		$row = $result->fetch_assoc();
+	$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+	$row = $result->fetch_assoc();
 
-		if(empty($row)) {
-			header('Location: account.php');
-		} else {
-			session_start();
+	if(empty($row)) {
+		$loginStatus = "Login Failed";
+	} else {
+		session_start();
 
-			$_SESSION['user_id'] = $row['user_id'];
-			$_SESSION['givenName'] = $row['givenName'];
-			$_SESSION['surname'] = $row['surname'];
-			$_SESSION['email'] = $row['email'];
-			$_SESSION['phoneNumber'] = $row['phoneNumber'];
-			$_SESSION['CC_Provider'] = $row['CC_Provider'];
-			$_SESSION['CC_Number'] = $row['CC_Number'];
+		$_SESSION['user_id'] = $row['user_id'];
+		$_SESSION['givenName'] = $row['givenName'];
+		$_SESSION['surname'] = $row['surname'];
+		$_SESSION['email'] = $row['email'];
+		$_SESSION['phoneNumber'] = $row['phoneNumber'];
+		$_SESSION['CC_Provider'] = $row['CC_Provider'];
+		$_SESSION['CC_Number'] = $row['CC_Number'];
 
-			header('Location: index.php');
-		}
+		header('Location: index.php');
 	}
+} else {
+	$loginStatus = "";
+}
 
 
 ?>
@@ -74,6 +76,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				<input class="userInput" type="password" name="password" placeholder="Password"><br>
 				<input class="userInput" type="submit" value="Sign In">
 			</form>
+			<div>
+				<?php echo $loginStatus; ?>
+			</div>
 		</div>
 
 		<div id="createAccountPane">
