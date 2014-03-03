@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS TacoTruck.TacoDetails;
 DROP TABLE IF EXISTS TacoTruck.TacoOrders;
 DROP TABLE IF EXISTS TacoTruck.Tortillas;
 DROP TABLE IF EXISTS TacoTruck.Rice;
-DROP TABLE IF EXISTS TacoTruck.Cheese;
+DROP TABLE IF EXISTS TacoTruck.Cheeses;
 DROP TABLE IF EXISTS TacoTruck.Beans;
 DROP TABLE IF EXISTS TacoTruck.Sauces;
 DROP TABLE IF EXISTS TacoTruck.Type;
@@ -18,6 +18,9 @@ DROP TABLE IF EXISTS TacoTruck.TacoExtras;
 DROP TABLE IF EXISTS TacoTruck.Vegetables;
 DROP TABLE IF EXISTS TacoTruck.Extras;
 DROP TABLE IF EXISTS TacoTruck.TacoFixings;
+DROP TABLE IF EXISTS TacoTruck.Tacos;
+DROP TABLE IF EXISTS TacoTruck.Fillings;
+
 
 CREATE TABLE Users (
 	user_id INT(30) NOT NULL AUTO_INCREMENT,
@@ -42,9 +45,9 @@ CREATE TABLE Orders (
 
 CREATE TABLE TacoDetails (
 	tacodetails_id INT(30) NOT NULL AUTO_INCREMENT,
-	tacoorders_id INT(30) NOT NULL,
+	tacoorder_id INT(30) NOT NULL,
 	tacofixing_id INT(30) NOT NULL,
-	Foreign Key (tacoorders_id) REFERENCES TacoOrders.tacoorders_id,
+	Foreign Key (tacoorder_id) REFERENCES TacoOrders.tacoorder_id,
 	Foreign Key (tacofixing_id) REFERENCES TacoFixings.tacofixing_id,
 	Primary Key (tacodetails_id)
 );
@@ -131,13 +134,13 @@ CREATE TABLE TacoOrders (
 -- );
 
 CREATE TABLE TacoFixings (
-tacoFixingId int(11) NOT NULL AUTO_INCREMENT,
+tacofixing_id int(11) NOT NULL AUTO_INCREMENT,
 itemType varchar(255) NOT NULL,
 name varchar(255) NOT NULL,
 price DECIMAL(10,2) NOT NULL,
 heatRating varchar(11) DEFAULT '0',
-PRIMARY KEY (tacoFixingId)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1
+PRIMARY KEY (tacofixing_id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 
 
