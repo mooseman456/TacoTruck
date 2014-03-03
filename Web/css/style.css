@@ -68,6 +68,7 @@ h2 {
 #logoImg {
 	width: 75px;
 	height: 33px;
+	float:left;
 }
 
 #accountLink {
