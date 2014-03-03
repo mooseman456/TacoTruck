@@ -18,7 +18,7 @@ if (($handle = fopen("Users.csv", "r")) !== FALSE) {
         $num = count($data);
         $query = "INSERT INTO Users (user_id, givenName, surname, email, password, phoneNumber, CC_Provider, CC_Number) 
         		  VALUES ('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]')";
-        //$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+        $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
     }
     fclose($handle);
 }
@@ -75,7 +75,7 @@ foreach ($jsonIterator as $key => $val) {
     		$price = $val;
     		echo $out;
     		$query = "INSERT INTO TacoFixings (itemType, name, price, heatRating) VALUES ('$itemType', '$name', '$price', '$heatRating')";
-    		//$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+    		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
     		$name=NULL;$price=NULL;$heatRating=NULL;
     	}
         
@@ -94,7 +94,7 @@ if (($handle = fopen("Orders.csv", "r")) !== FALSE) {
         $query = "INSERT INTO Orders (user_id, price, timePlaced) 
         		  VALUES ('$data[1]','$data[3]','$data[2]')";
         echo "$query";
-        //$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+        $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
     }
     fclose($handle);
 }
@@ -112,7 +112,7 @@ if (($handle = fopen("OrderItem.csv", "r")) !== FALSE) {
         $query = "INSERT INTO TacoOrders (order_id, quantity) 
         		  VALUES ('$data[1]', '$data[2]')";
         echo "$query";
-        //$result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+        $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
     }
     fclose($handle);
 }
@@ -127,7 +127,7 @@ if (($handle = fopen("OrderItemDetails.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
     	//Insert all the User data into the database
         $num = count($data);
-        $query = "INSERT INTO TacoDetails (tacoorders_id, tacofixing_id) 
+        $query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) 
         		  VALUES ('$data[1]','$data[2]')";
         echo "$query";
         $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
