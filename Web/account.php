@@ -11,9 +11,9 @@
 	<nav id="navbar">
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
-			<li><a href="index.html">Order</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="locations.html">Locations</a></li>
+			<li><a href="index.php">Order</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="locations.php">Locations</a></li>
 			<li id="accountLink" class="select"><a>Sign In/Create Account</a></li>
 		</ul>
 	</nav>

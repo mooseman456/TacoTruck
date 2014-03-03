@@ -55,8 +55,6 @@ while($row = $result->fetch_row()) {
   	$tacoExtras = $tacoExtras . "$row[0]<br />";
 }
 
-
-
 ?>
 
 <!doctype html>
@@ -91,9 +89,9 @@ while($row = $result->fetch_row()) {
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
 			<li class="select"><a>Order</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="locations.html">Locations</a></li>
-			<li id="accountLink"><a href="account.html">Sign In/Create Account</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="locations.php">Locations</a></li>
+			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
 		</ul>
 	</nav>
 	<div id="navSpace"></div>

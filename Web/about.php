@@ -11,10 +11,10 @@
 	<nav id="navbar">
 		<ul>
 			
-			<li><a href="index.html"><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo">Order</a></li>
+			<li><a href="index.php"><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo">Order</a></li>
 			<li class="select"><a>About</a></li>
-			<li><a href="locations.html">Locations</a></li>
-			<li id="accountLink"><a href="account.html">Sign In/Create Account</a></li>
+			<li><a href="locations.php">Locations</a></li>
+			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
 		</ul>
 	</nav>
 	<article>

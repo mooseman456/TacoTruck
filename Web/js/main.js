@@ -1,5 +1,5 @@
 document.getElementById("logoImg").onclick = function() {
-    window.location = "index.html";
+    window.location = "index.php";
 }
 
 var cancelButton = document.getElementsByClassName('cancelButton');
