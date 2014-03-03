@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS TacoTruck.TacoVegetables;
 DROP TABLE IF EXISTS TacoTruck.TacoExtras;
 DROP TABLE IF EXISTS TacoTruck.Vegetables;
 DROP TABLE IF EXISTS TacoTruck.Extras;
+DROP TABLE IF EXISTS TacoTruck.TacoFixings;
 
 CREATE TABLE Users (
 	user_id INT(30) NOT NULL AUTO_INCREMENT,
@@ -133,6 +134,15 @@ CREATE TABLE Extras (
 	price DECIMAL(10,2),
 	Primary Key (extra_id)
 );
+
+CREATE TABLE TacoFixings (
+tacoFixingId int(11) NOT NULL AUTO_INCREMENT,
+itemType varchar(255) NOT NULL,
+name varchar(255) NOT NULL,
+price DECIMAL(10,2) NOT NULL,
+heatRating varchar(11) DEFAULT '0',
+PRIMARY KEY (tacoFixingId)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1
 
 
 
