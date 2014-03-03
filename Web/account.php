@@ -8,35 +8,64 @@ if($db->connect_errno > 0){
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
-	//cleanse the POST array
-	$email = mysql_real_escape_string($_POST['email']);
-	$password = mysql_real_escape_string($_POST['password']);
+	//Someone is Logging in
+	if ($_POST['ccprovider'] == NULL) {
+		//cleanse the POST array
+		$email = mysql_real_escape_string($_POST['email']);
+		$password = mysql_real_escape_string($_POST['password']);
 
-	$submittedEmail = $email;
-	$submittedPassword = $password;
+		$submittedEmail = $email;
+		$submittedPassword = $password;
 
-	$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
+		$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
 
-	// die($query);
+		// die($query);
 
-	$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-	$row = $result->fetch_assoc();
+		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+		$row = $result->fetch_assoc();
 
-	if(empty($row)) {
-		$loginStatus = "Login Failed";
-	} else {
+		if(empty($row)) {
+			$loginStatus = "Login Failed";
+		} else {
+			session_start();
+
+			$_SESSION['user_id'] = $row['user_id'];
+			$_SESSION['givenName'] = $row['givenName'];
+			$_SESSION['surname'] = $row['surname'];
+			$_SESSION['email'] = $row['email'];
+			$_SESSION['phoneNumber'] = $row['phoneNumber'];
+			$_SESSION['CC_Provider'] = $row['CC_Provider'];
+			$_SESSION['CC_Number'] = $row['CC_Number'];
+
+			header('Location: index.php');
+		}
+	} else { //Someone is creating a new account
+		$givenName = mysql_real_escape_string($_POST['firstname']);
+		$surname = mysql_real_escape_string($_POST['lastname']);
+		$email = mysql_real_escape_string($_POST['email']);
+		$password = mysql_real_escape_string($_POST['password']);
+		$phoneNumber = mysql_real_escape_string($_POST['phonenumber']);
+		$CC_Provider = mysql_real_escape_string($_POST['ccprovider']);
+		$CC_Number = mysql_real_escape_string($_POST['ccnumber']);
+
+		$query = "INSERT INTO Users (givenName, surname, email, password, phoneNumber, CC_Provider, CC_Number) 
+							VALUES ('$givenName', '$surname', '$email', '$password', '$phoneNumber', '$CC_Provider', '$CC_Number')";
+		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+
 		session_start();
 
-		$_SESSION['user_id'] = $row['user_id'];
-		$_SESSION['givenName'] = $row['givenName'];
-		$_SESSION['surname'] = $row['surname'];
-		$_SESSION['email'] = $row['email'];
-		$_SESSION['phoneNumber'] = $row['phoneNumber'];
-		$_SESSION['CC_Provider'] = $row['CC_Provider'];
-		$_SESSION['CC_Number'] = $row['CC_Number'];
+		$_SESSION['user_id'] = $db->insert_id;
+		$_SESSION['givenName'] = $givenName;
+		$_SESSION['surname'] = $surname;
+		$_SESSION['email'] = $email;
+		$_SESSION['phoneNumber'] = $phoneNumber;
+		$_SESSION['CC_Provider'] = $CC_Provider;
+		$_SESSION['CC_Number'] = $CC_Number;
 
 		header('Location: index.php');
+
 	}
+
 } else {
 	$loginStatus = "";
 }
@@ -88,10 +117,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				<input class="userInput" type="email" name="email" placeholder="Email"><br>
 				<input class="userInput" type="password" name="password" placeholder="Password"><br>
 				<input class="userInput" type="password" name="password" placeholder="Confirm Password"><br>
+				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
 				<select class="userInput" name = "ccprovider">
-					<option value="mastercard">Master Card</option>
-					<option value="amx">American Express</option>
-					<option value="visa">Visa</option>
+					<option value="Mastercard">Master Card</option>
+					<option value="American Express">American Express</option>
+					<option value="Visa">Visa</option>
 				</select><br>
 				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
 				<input class="userInput" type="submit" value="Sign In">
