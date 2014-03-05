@@ -4,8 +4,17 @@
 	<meta charset="utf-8">
 	<title>Welcome to Taco Truck!</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/accordion.css">
 	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script>
+	$(function() {
+		$( document ).tooltip();
+	});
+	</script>
 </head>
 <body>
 	<!-- Page navigation menu -->
@@ -42,12 +51,6 @@
 	<div class="menuPane">
 		<h2>Menu</h2>
 		<table id="menuTable">
-			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 1"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 2"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 3"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 4"></td>
-			</tr>
 			<tr>
 				<td>Taco 1</td>
 				<td>Taco 2</td>
@@ -55,16 +58,22 @@
 				<td>Taco 4</td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 5"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 6"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 7"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 8"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 1" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus elementum lobortis. Duis in pulvinar sem."></td>
+				<td><img src="img/taco_icon.png" alt="Taco 2"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 3"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 4"></td>
 			</tr>
 			<tr>
 				<td>Taco 5</td>
 				<td>Taco 6</td>
 				<td>Taco 7</td>
 				<td>Taco 8</td>
+			</tr>
+			<tr class="tacoRow">
+				<td><img src="img/taco_icon.png" alt="Taco 5"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 6"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 7"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 8"></td>
 			</tr>
 		</table>
 		<table>
