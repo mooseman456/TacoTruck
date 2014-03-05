@@ -319,3 +319,14 @@ td {
 	margin: 0% 4%;
 	border:solid;
 }
+
+/********************/
+/*  CHECKOUT  PANE  */
+/********************/
+
+.checkoutPane {
+	float:left;
+	width:25%;
+	margin: 0% 4%;
+	border:solid;
+}

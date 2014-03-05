@@ -43,7 +43,7 @@
 		<input type="submit" id="editOrder" value="Edit Order"/>
 	</div>
 
-	<div>
+	<div class="checkoutPane">
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
 				<input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
