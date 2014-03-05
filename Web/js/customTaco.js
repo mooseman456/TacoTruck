@@ -92,19 +92,25 @@ function beanSelect(event) {
 
 function sauceSelect(event) {
    var prevSelected = document.getElementsByClassName("sauce selected");
+   
    for (var i=0; i<prevSelected.length; i++){
       prevSelected[i].classList.toggle("selected", false);
+      prevSelected[i+1].classList.toggle("selected", false);
    }
+
    event.target.classList.toggle("selected", true);
    document.getElementById("currentSauce").innerHTML = event.target.innerHTML;
 }
 
 function vegSelect(event) {
    if (event.target.classList.contains("clear")) {
-      
+   
       var prevSelected = document.getElementsByClassName("vegetables selected");
-      for (var i=0; i<prevSelected.length; i++){
-         prevSelected[i].classList.toggle("selected", false);
+      for (var i=0; i<100; i++){ 
+         for (var i=0; i<prevSelected.length; i++){
+            prevSelected[i].classList.toggle("selected");
+            prevSelected[i+1].classList.toggle("selected", false);
+         }
       }
       event.target.classList.toggle("selected", true);
    } 
