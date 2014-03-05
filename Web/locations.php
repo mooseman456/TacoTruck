@@ -24,13 +24,10 @@
 	<div id="navSpace"></div>
 
 	<article id="locations">
-		<ul>
-			<li><h1>Location1</h1></li>
-			<li>location2</li>
-			<li>location3</li>
-			<li>location4</li>
-			<li>location5</li>
-		</ul>
+		<section class="location">
+			<h1>Nothing there</h1>
+			<p>The address</p>
+		</section>
 	</article>
 	<div id="map-canvas"></div>
 

@@ -224,6 +224,10 @@ td {
 #locations {
 	width:40%;
 }
+
+#locations ul {
+	list-style: none;
+}
 /***********************/
 /* ACCOUNT PAGE CONTENT*/
 /***********************/
