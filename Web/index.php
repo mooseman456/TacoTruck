@@ -1,86 +1,10 @@
-<?php
-
-require_once '../database/login.php';
-$db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
-if($db->connect_errno > 0){
-	die('Unable to connect to database [' . $db->connect_error . ']');
-}
-
-//Get menu data
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Type'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoTypes = $tacoTypes . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Tortillas'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoTortillas = $tacoTortillas . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Rice'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoRice = $tacoRice . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Cheese'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoCheese = $tacoCheese . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Beans'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoBeans = $tacoBeans . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Sauces'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoSauces = $tacoSauces . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Vegetables'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoVeggies = $tacoVeggies . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Extras'";
-$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-while($row = $result->fetch_row()) {
-  	$tacoExtras = $tacoExtras . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to Taco Truck!</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/accordion.css">
 	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
-
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<script src="js/jquery.js"></script>
-
-	<script>
-  $(function() {
-    $( "#accordion" ).accordion({
-      event: "click hoverintent"
-    })
-  });
-
-  $(function() {
-    $( document ).tooltip();
-  });
-  </script>
 
 </head>
 <body>
@@ -154,47 +78,6 @@ while($row = $result->fetch_row()) {
 			</tr>
 		</table>
 	</div>
-	
-	<div id="ingredientsPane">
-		<h2>Ingredients</h2>
-
-		<div id="accordion">
-			<h3>Types</h3>
-			<div>
-					<?php echo $tacoTypes; ?>
-			</div>
-			<h3>Tortillas</h3>
-			<div>
-					<?php echo $tacoTortillas; ?>
-			</div>
-			<h3>Rice</h3>
-			<div>
-					<?php echo $tacoRice; ?>
-			</div>
-			<h3>Cheese</h3>
-			<div>
-					<?php echo $tacoCheese; ?>
-			</div>
-			<h3>Beans</h3>
-			<div>
-					<?php echo $tacoBeans; ?>
-			</div>
-			<h3>Sauces</h3>
-			<div>
-					<?php echo $tacoSauces; ?>
-			</div>
-			<h3>Vegetables</h3>
-			<div>
-					<?php echo $tacoVeggies; ?>
-			</div>
-			<h3>Extras</h3>
-			<div>
-					<?php echo $tacoExtras; ?>
-			</div>
-		</div>
-
-	</div>
-
 
 	<script src="js/main.js"></script>
 </body>
