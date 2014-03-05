@@ -25,8 +25,12 @@
 
 	<article id="locations">
 		<section class="location">
-			<h1>Nothing there</h1>
-			<p>The address</p>
+			<h1>Klyde Warren Park</h1>
+			<p>2012 Woodall Rogers Fwy<br>Dallas, TX 75201</p>
+		</section>
+		<section class="location">
+			<h1>Southern Methodist University</h1>
+			<p>3140 Dyer Street<br>Dallas, TX 75205</p>
 		</section>
 	</article>
 	<div id="map-canvas"></div>
