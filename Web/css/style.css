@@ -35,7 +35,7 @@ article.about {
 	display:block;
 	margin: 5% 15%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(255,255,255,0.4);
 	box-shadow: 10px 10px 8px #bbb;
 	padding: 2em 3em;
 	border-radius: 50px;
@@ -160,7 +160,10 @@ article.about p{
 	width: 20%;
 	margin:0% 4%;
 	float: left;
-	border:solid;
+	padding-bottom: 1%;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
 }
 
 img.cancelButton {
@@ -180,6 +183,10 @@ img.cancelButton:hover {
 	float:left;
 	width:52%;
 	padding-right:2%;
+	padding-bottom: 1%;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
 }
 
 #menuTable {
@@ -251,7 +258,7 @@ td {
 	width: auto;
 	margin: 1em 11% 1em 9%;
 	padding: 1em;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(255,255,255,0.4);
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #aaa;
 }
@@ -344,7 +351,7 @@ td {
 	width:25%;
 	margin: 0% 4%;
     padding-bottom: 1%;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(255,255,255,0.4);
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #aaa;
 }
