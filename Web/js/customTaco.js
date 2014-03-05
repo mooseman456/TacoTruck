@@ -34,14 +34,14 @@ function addEvents(){
       sauce[i].addEventListener("click", sauceSelect, false);
    
    //Veggetables selection
-   var vegs = document.getElementsByClassName("vegetables");
-   for (var i=0; i<vegs.length; i++)
-      vegs[i].addEventListener("click", vegSelect, false);
+   //var vegs = document.getElementsByClassName("vegetables");
+   //for (var i=0; i<vegs.length; i++)
+   //   vegs[i].addEventListener("click", vegSelect, false);
    
    //Extra selection
-   var extra = document.getElementsByClassName("extras");
-   for (var i=0; i<extra.length; i++)
-      extra[i].addEventListener("click", extraSelect, false);
+   //var extra = document.getElementsByClassName("extras");
+   //for (var i=0; i<extra.length; i++)
+   //   extra[i].addEventListener("click", extraSelect, false);
 }
 
 function fillSelect(event) {
@@ -95,22 +95,70 @@ function sauceSelect(event) {
    
    for (var i=0; i<prevSelected.length; i++){
       prevSelected[i].classList.toggle("selected", false);
-      prevSelected[i+1].classList.toggle("selected", false);
+      i--;
    }
 
    event.target.classList.toggle("selected", true);
    document.getElementById("currentSauce").innerHTML = event.target.innerHTML;
 }
 
+$(document).ready(function() {
+   
+   $('.vegetables').click(function(e) {
+      if (!$(this).hasClass('selected') && !$(this).hasClass('clear')) {
+         $('.vegetables.clear').removeClass('selected');
+         $(this).addClass('selected');
+      }
+      else if($(this).hasClass('clear')) {
+         $('.vegetables').removeClass('selected');
+         $(this).addClass('selected');
+      }
+      else {
+         $(this).removeClass('selected');
+      }
+      
+      if(!$('.vegetables').hasClass('selected')) {
+         $('.vegetables.clear').addClass('selected');
+      }
+      var selectedElements = document.getElementsByClassName("vegetables selected");
+      var returnString="";
+      for (var i=0; i<selectedElements.length; i++)
+         returnString += selectedElements[i].innerHTML + " ";
+      document.getElementById("currentVeg").innerHTML = returnString;
+   });
+   
+   $('.extras').click(function(e) {
+      if (!$(this).hasClass('selected') && !$(this).hasClass('clear')) {
+         $('.extras.clear').removeClass('selected');
+         $(this).addClass('selected');
+      }
+      else if($(this).hasClass('clear')) {
+         $('.extras').removeClass('selected');
+         $(this).addClass('selected');
+      }
+      else {
+         $(this).removeClass('selected');
+      }
+      
+      if(!$('.extras').hasClass('selected')) {
+         $('.extras.clear').addClass('selected');
+      }
+      var selectedElements = document.getElementsByClassName("extras selected");
+      var returnString="";
+      for (var i=0; i<selectedElements.length; i++)
+         returnString += selectedElements[i].innerHTML + "</br>";
+      document.getElementById("currentExtras").innerHTML = returnString;
+      
+   });
+});
+
 function vegSelect(event) {
    if (event.target.classList.contains("clear")) {
    
       var prevSelected = document.getElementsByClassName("vegetables selected");
       for (var i=0; i<prevSelected.length; i++){
-         prevSelected[i].classList.toggle("selected");
-         console.log(prevSelected[i].classList);
-
-      }
+         prevSelected[i].classList.remove("selected");
+      }  
       event.target.classList.toggle("selected");
    } 
    else if (document.getElementsByClassName("vegetables clear")[0].classList.contains("selected")){

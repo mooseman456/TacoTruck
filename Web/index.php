@@ -1,5 +1,6 @@
 <?php
 
+
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){
@@ -30,7 +31,7 @@ foreach($PreMadeTacos as $key => $val) {
 	$PreMadeTacos[$key]['ingredients'] = rtrim($PreMadeTacos[$key]['ingredients'],', ');
 }
 
-?>
+?> 
 
 
 <!doctype html>
