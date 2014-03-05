@@ -163,18 +163,22 @@ while($row = $result->fetch_row()) {
 			   <h3>Tortillas</h3>
 			   <div>
 					   <?php echo $tacoTortillas; ?>
+					   
 			   </div>
 			   <h3>Rice</h3>
 			   <div>
 					   <?php echo $tacoRice; ?>
+					   <div class="rice menuItem clear">None</div>
 			   </div>
 			   <h3>Cheese</h3>
 			   <div>
 					   <?php echo $tacoCheese; ?>
+					   <div class="cheese menuItem clear">None</div>
 			   </div>
 			   <h3>Beans</h3>
 			   <div>
 					   <?php echo $tacoBeans; ?>
+					   <div class="beans menuItem clear">None</div>
 			   </div>
 			   <h3>Sauces</h3>
 			   <div>
@@ -183,10 +187,12 @@ while($row = $result->fetch_row()) {
 			   <h3>Vegetables</h3>
 			   <div>
 					   <?php echo $tacoVeggies; ?>
+					   <div class="vegetables menuItem clear">None</div>
 			   </div>
 			   <h3>Extras</h3>
 			   <div>
 					   <?php echo $tacoExtras; ?>
+					   <div class="extras menuItem clear">None</div>
 			   </div>
 		   </div>
 
