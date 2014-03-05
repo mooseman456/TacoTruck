@@ -72,6 +72,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+	font-family: 'gafata';
 }
 .ui-accordion .ui-accordion-header {
 	display: block;
@@ -80,6 +81,9 @@
 	margin-top: 2px;
 	padding: .5em .5em .5em .7em;
 	min-height: 0; /* support: IE7 */
+	font-family: 'gafata';
+	font-weight: bold;
+	font-size: 1.2em;
 }
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
@@ -209,7 +213,7 @@ input.ui-button {
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-	font-family: Verdana,Arial,sans-serif;
+	font-family: 'gafata';
 	font-size: 1.1em;
 }
 .ui-widget .ui-widget {
@@ -219,9 +223,14 @@ input.ui-button {
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-	font-family: Verdana,Arial,sans-serif;
+	font-family: 'gafata';
 	font-size: 1em;
 }
+
+.ui-widget div {
+	font-family: 'gafata';
+}
+
 .ui-widget-content {
 	border: 1px solid #aaaaaa;
 	background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
