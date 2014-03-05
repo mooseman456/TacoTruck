@@ -96,13 +96,14 @@ article p{
 	font-size: 20px;
 }
 
-#accountLink a{
+#accountLink a {
 	margin-top: 5px;
 	font-size: 20px;
 }
 
-tr:hover, tr:hover + tr {
-background:#eee; }
+td:hover {
+	background:#eee;
+}
 
 
 
