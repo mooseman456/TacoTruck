@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	background-color: #EEEED1;
+	
 }
 
 
@@ -35,8 +35,8 @@ article.about {
 	display:block;
 	margin: 5% 15%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.1);
-	box-shadow: 10px 10px 8px #bbb;
+	background-color: rgba(0,0,0,0.3);
+	box-shadow: 10px 10px 8px #888;
 	padding: 2em 3em;
 	border-radius: 50px;
 }
@@ -71,6 +71,7 @@ article.about p{
 	width:100%;
 	/*border-bottom: 2px solid #ccc;*/
 	background: #8F3C1C;
+	/* background-color: rgba(217, 94, 50, 1); */
 	z-index: 1;
 }
 
@@ -85,6 +86,7 @@ article.about p{
 	float:left;
 	display: block;
 	background: #8F3C1C;
+	/* background-color: rgba(217, 94, 50, 1); */
 }
 
 #navbar li {
