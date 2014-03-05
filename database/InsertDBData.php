@@ -137,20 +137,39 @@ if (($handle = fopen("OrderItemDetails.csv", "r")) !== FALSE) {
 
 echo "<hr />";
 
-//Fill in premadeTaco data
-if (($handle = fopen("premade_tacos.csv", "r")) !== FALSE) {
-    $counter = 1;
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        //Insert all the User data into the database
-        $num = count($data);
-        $query = "INSERT INTO PreMadeTacos (tacoorder_id, name, description) 
-                  VALUES ($counter, '$data[0]','$data[1]')";
-        echo "$query";
-        $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
-        $counter++;
-    }
-    fclose($handle);
-}
+// //Fill in premadeTaco data for tacoOrders
+// //Start at Tacoorder_id 20 because it is past the default/provided data
+// $fixings = array(
+//                 21 => array(1, 5, 12, 39),       //Basic Taco
+//                 22 => array(1, 5)                //Fire Dragon
+//            );
+// foreach($fixings as $key => $val) {
+//     foreach($val as $v) {
+//         $query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) 
+//                   VALUES ('$key', '$v')";
+//         echo "$query<br />";
+//         $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+//     }
+// }
+
+echo "<hr />";
+
+// //Fill in premadeTaco data
+// //Basic Taco: 21
+// //Fire Dragon: 22
+// if (($handle = fopen("premade_tacos.csv", "r")) !== FALSE) {
+//     $counter = 21;
+//     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+//         //Insert all the User data into the database
+//         $num = count($data);
+//         $query = "INSERT INTO PreMadeTacos (tacoorder_id, name, description) 
+//                   VALUES ($counter, '$data[0]','$data[1]')";
+//         echo "$query";
+//         $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+//         $counter++;
+//     }
+//     fclose($handle);
+// }
 
 echo "<hr />";
 
