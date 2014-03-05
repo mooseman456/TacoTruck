@@ -6,6 +6,11 @@ document.getElementById("submitOrder").onclick = function() {
     window.location = "checkout.php";
 }
 
+document.getElementById("customTaco").onclick = function() {
+    window.location = "customtaco.php";
+    console.log('test');
+}
+
 document.getElementById("editOrder").onclick = function() {
     window.location = "index.php";
     console.log('test');

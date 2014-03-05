@@ -22,7 +22,7 @@ h2 {
 }
 
 p {
-	font-family: 'gafaga';
+	font-family: 'gafata';
 }
 
 
@@ -30,17 +30,31 @@ p {
 /****************/
 /*	About Page 	*/
 /****************/
+article.about {
+	display:block;
+	margin: 5% 15%;
+	height: 100%;
+	background-color: rgba(150,150,150,0.2);
+	box-shadow: 10px 10px 8px #bbb;
+	padding: 2em 3em;
+	border-radius: 50px;
+}
+
 article.about h1 {
 	font-size: 4em;
 	text-align: center;
+	margin-top: 0;
+	margin-bottom: 10px;
 }
 
 article.about img {
 	float: left;
 	margin-right: 10px;
 }
+
 article.about p{
-	
+	margin: 0;
+	padding: 0;
 }
 
 
@@ -188,10 +202,6 @@ td {
 }   
 
 
-
-
-
-
 /**************************************/
 /*    SIGN IN/CREATE ACCOUNT PAGE     */
 /**************************************/
@@ -231,12 +241,13 @@ td {
 
 #locations ul {
 	list-style: none;
+	font-family: 'gafata';
 }
 
 #locations section {
 	width: 85%;
 	margin: 1em 5%;
-	padding: 0.5em 0 0.5em 1em;
+	padding: 1em;
 	background-color: rgba(0,0,0,0.1);
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #aaa;
@@ -321,7 +332,10 @@ td {
 	float:left;
 	width:25%;
 	margin: 0% 4%;
-	border:solid;
+
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
 }
 
 
