@@ -73,6 +73,7 @@ while($row = $result->fetch_row()) {
 	   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	   <script src="js/jquery.js"></script>
 	   <script src="js/customTaco.js"></script>
+	   <script src="js/main.js"></script>
 
 	   <script>
      $(function() {
@@ -144,6 +145,7 @@ while($row = $result->fetch_row()) {
 	      <p id="currentExtras" class="currentList">
 	         No Extras
 	      </p>
+	      <input type="submit" id="addTaco" value="Add Taco"/>
 	   </div>
 	   
 	   <!-- Ingredients Pane -->
