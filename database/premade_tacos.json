@@ -1,0 +1,11 @@
+{
+	"PreMadeTacos": [
+		{ "name": "Basic Taco", "description": "Classic beef, lettuce, and cheese.", 
+		  "type": "Steak", "tortilla": "Flour", "rice": "No Rice", "cheese": "Cheddar/Jack Mix", 
+		  "beans": "No Beans", "sauces": "No Sauces", "vegetables": "Lettuce", "extras": "No Extras" },
+
+		{ "name": "Fire Dragon", "description": "OUCH! That burns like hell!", 
+		  "type": "Carnitas", "tortilla": "Flour", "rice": "Spanish Rice", "cheese": "Cheddar/Jack Mix", 
+		  "beans": "No Beans", "sauces": "Death", "vegetables": "Lettuce", "extras": "Queso" }
+	]
+}

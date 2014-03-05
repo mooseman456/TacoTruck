@@ -1,0 +1,3 @@
+
+This Will Return all ingredients for all Tacos:
+	SELECT Orders.order_id, TacoOrders.tacoorder_id, TacoFixings.name, TacoFixings.price FROM TacoDetails JOIN TacoFixings ON TacoDetails.tacofixing_id=TacoFixings.tacofixing_id JOIN TacoOrders ON TacoDetails.tacoorder_id=TacoOrders.tacoorder_id JOIN Orders ON Orders.order_id=TacoOrders.order_id;
