@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 	<title>Locations</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTESTtemp.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 	
 	<style type="text/css">
