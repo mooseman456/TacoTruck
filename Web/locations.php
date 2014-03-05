@@ -6,10 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 	
-	<style type="text/css">
-     	html { height: 100% }
-     	body { height: 100%; margin: 0; padding: 0 }
-    </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;sensor=false"></script>
     <script type="text/javascript" src="js/locations.js"></script>
  

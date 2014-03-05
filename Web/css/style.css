@@ -20,16 +20,21 @@ h2 {
 	font-size: 2.5em;
 }
 
-article h1 {
+
+
+/****************/
+/*	About Page 	*/
+/****************/
+article.about h1 {
 	font-size: 4em;
 	text-align: center;
 }
 
-article img {
+article.about img {
 	float: left;
 	margin-right: 10px;
 }
-article p{
+article.about p{
 	
 }
 
@@ -46,6 +51,7 @@ article p{
 	width:100%;
 	/*border-bottom: 2px solid #ccc;*/
 	background: #8F3C1C;
+	z-index: 1;
 }
 
 #navbar ul {
@@ -214,8 +220,9 @@ td {
 	position: absolute;
 	top: 40px;
 	left: 40%;
-	height: 95%;
+	height: 90%;
 	width: 60%;
+	z-index:-1;
 }
 
 #locations {
