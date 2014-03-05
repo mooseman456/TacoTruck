@@ -8,7 +8,7 @@
 
 
 html {
-	font-family: 'Condiment', cursive;
+	font-family: 'Condiment', arial;
 }
 
 body {
@@ -19,6 +19,10 @@ body {
 h2 {
 	font-size: 2.5em;
 	text-align:center;
+}
+
+p {
+	font-family: 'gafaga';
 }
 
 
