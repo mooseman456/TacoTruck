@@ -95,8 +95,8 @@ foreach($PreMadeTacos as $key => $val) {
 			<tr class="tacoRow">
 				<td><img src="img/taco_icon.png" alt="Taco 1" title=<?php echo "\"".$PreMadeTacos[0]['description'].$PreMadeTacos[0]['ingredients']."\""; ?>></td>
 				<td><img src="img/taco_icon.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description'].$PreMadeTacos[1]['ingredients']."\""; ?>></td>
-				<td><img src="img/taco_icon.png" alt="Taco 3"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 4"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description'].$PreMadeTacos[2]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description'].$PreMadeTacos[3]['ingredients']."\""; ?>></td>
 			</tr>
 			<tr>
 				<td>Taco 5</td>
@@ -105,10 +105,10 @@ foreach($PreMadeTacos as $key => $val) {
 				<td>Taco 8</td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 5"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 6"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 7"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 8"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 5" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 6" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 7" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 8" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>></td>
 			</tr>
 		</table>
 		<table>
