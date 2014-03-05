@@ -73,6 +73,22 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 ?>
 
+<script>
+function passwordEquals() {
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    var ok = true;
+    if (pass1 != pass2) {
+        //alert("Passwords Do not match");
+        document.getElementById("pass1").style.borderColor = "#E34234";
+        document.getElementById("pass2").style.borderColor = "#E34234";
+        ok = false;
+    }
+    
+    return ok;
+}
+</script>
+
 
 <!doctype html>
 <html lang="en">
@@ -99,11 +115,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	<div id="tempDiv"></div>
 
 	<div class="accountForm">
-		<div id="signInPane">
+		<div id="signInPane" class="shadowBox">
 			<h1>Sign In</h1>
 			<form class="userForm" method="POST">
-				<input class="userInput" type="text" name="email" placeholder="Email"><br>
-				<input class="userInput" type="password" name="password" placeholder="Password"><br>
+				<input class="userInput" type="text" name="email" placeholder="Email" required><br>
+				<input class="userInput" type="password" name="password" placeholder="Password" required><br>
 				<input class="userInput" type="submit" value="Sign In">
 			</form>
 			<div>
@@ -111,22 +127,22 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			</div>
 		</div>
 
-		<div id="createAccountPane">
+		<div id="createAccountPane" class="shadowBox">
 			<h1>Create an Account</h1>
-			<form class="userForm" method="POST">
-				<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
-				<input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
-				<input class="userInput" type="email" name="email" placeholder="Email"><br>
-				<input class="userInput" type="password" name="password" placeholder="Password"><br>
-				<input class="userInput" type="password" name="password" placeholder="Confirm Password"><br>
-				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
+			<form class="userForm" method="POST" onsubmit="return passwordEquals()">
+				<input class="userInput" type="text" name="firstname" placeholder="First Name" required><br>
+				<input class="userInput" type="text" name="lastname" placeholder="Last Name" required><br>
+				<input class="userInput" type="email" name="email" placeholder="Email" required><br>
+				<input class="userInput" type="password" id="pass1" name="password" placeholder="Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
+				<input class="userInput" type="password" id="pass2" name="password" placeholder="Confirm Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
+				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number" pattern=".{10,10}" title="Valid 10-digit Phone Number" required><br>
 				<select class="userInput" name = "ccprovider">
 					<option value="Mastercard">Master Card</option>
 					<option value="American Express">American Express</option>
 					<option value="Visa">Visa</option>
 				</select><br>
 				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
-				<input class="userInput" type="submit" value="Sign In">
+				<input class="userInput" type="submit" value="Register">
 			</form>
 		</div>
 	</div>

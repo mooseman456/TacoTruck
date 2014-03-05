@@ -217,7 +217,7 @@ td {
 /**************************************/
 
 .userForm {
-	width:200px;
+	width:85%;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -228,9 +228,6 @@ td {
 	margin: 0 auto;
 }
 
-.userInput {
-	width:200px;
-}
 
 /********************/
 /*		Location	*/
@@ -298,52 +295,45 @@ td {
 	width: 100%;
 }
 
-input:not([type=submit]){
-	background-color: rgba(143, 60, 28, 0.2);
-	border-radius:10px;
+input:not([type=submit]), select.userInput{
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius:5px;
+	border-style: black;
+	border-width: 1px;
+	/*border-style:solid;*/
 
 }
 input[type=submit]{
 	border-radius: 10px;
-	
-	background: #E4E2D6 url('../img/bg.jpg') no-repeat top left;
-	/*background-color: rgba(143, 60, 28, 0.2);*/
+	background-color: #C1C98D;
 }
+
 
 /***********************/
 /*     SIGN IN PANE    */
 /***********************/
 
 #signInPane {
-	/*border-style:solid;
-	border-width:1px;*/
-	background-color: rgba(255,255,255,0.3);
-	box-shadow: 10px 10px 8px #888;
-	border-radius: 20px;
-	float: left;
-	width:30%;
-	margin: 0% 0% 10% 10%;
+	margin: 0% 0% 0% 15%;
 }
 
 /***********************/
 /* CREATE ACCOUNT PANE */
 /***********************/
-
-
-#createAccountPane {
-	/*border-style:solid;
-	border-width:1px;*/
-	background-color: rgba(255,255,255,0.3);
-	box-shadow: 10px 10px 8px #888;
+ .accountForm div{
 	border-radius: 20px;
 	float:left;
-	width: 30%;
-	margin: 0% 0% 10% 10%;
-	/*border-left:1px solid black;*/
+	width: 25%;
+	padding: 2% 2% 2% 2%;
+}
+
+#createAccountPane {
+	margin: 0% 10% 0% 10%;
+	
 }
 #createAccountPane  h1, #signInPane h1{
 	text-align: center;
-	font-size: 40px;
+	font-size: 36px;
 	margin:0px;
 }
 
