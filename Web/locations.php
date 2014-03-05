@@ -26,6 +26,7 @@ foreach ($var as $location) {
 	<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 	
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;sensor=false"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/locations.js"></script>
  
 </head>
