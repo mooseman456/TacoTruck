@@ -1,3 +1,21 @@
+<?php
+
+$json_data = file_get_contents('resources/taco_truck_locations.json');
+$var = json_decode($json_data, true);
+
+$sections = "";
+
+foreach ($var as $location) {
+	$sections = $sections . "<section class=\"location\">
+					<h1>".$location['name']."</h1>
+					<p>".$location['address']."<br/>".$location['city'].", ".$location['state']." ".$location['zipcode']."</p>
+				  </section>";
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,14 +43,7 @@
 	<div id="navSpace"></div>
 
 	<article id="locations">
-		<section class="location">
-			<h1>Klyde Warren Park</h1>
-			<p>2012 Woodall Rogers Fwy<br>Dallas, TX 75201</p>
-		</section>
-		<section class="location">
-			<h1>Southern Methodist University</h1>
-			<p>3140 Dyer Street<br>Dallas, TX 75205</p>
-		</section>
+		<?php echo $sections; ?>
 	</article>
 	<div id="map-canvas"></div>
 

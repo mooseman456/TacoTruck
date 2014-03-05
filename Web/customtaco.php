@@ -54,7 +54,6 @@ $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
   	$tacoExtras = $tacoExtras . "<div id=\"$row[1]\" class=\"extras menuItem\">$row[0]</div>";
 }
-//Banana
 ?>
 
 <!doctype HTML>
@@ -65,6 +64,7 @@ while($row = $result->fetch_row()) {
 	   <link rel="stylesheet" type="text/css" href="css/style.css">
 	   <link rel="stylesheet" type="text/css" href="css/accordion.css">
 	   <link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+	   <link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 
 	   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
