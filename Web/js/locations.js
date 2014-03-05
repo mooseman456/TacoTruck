@@ -1,8 +1,6 @@
 window.addEventListener('load', function() {
 	
 	// Initialize Google Map
-	var truck1LatLng = new google.maps.LatLng(32.73, -96.8);
-	var truck2LatLng = new google.maps.LatLng(32.8, -97);
 	var mapOptions = {center: new google.maps.LatLng(32.73, -96.8),zoom: 11 };
 	var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
 	//google.maps.event.addDomListener(window, 'load', initialize);
@@ -12,8 +10,6 @@ window.addEventListener('load', function() {
 	var request = new XMLHttpRequest();
 	request.open("GET", "resources/taco_truck_locations.json", false);
 	request.send();
-
-	var marker;
 
 	if (request.status === 200) {
 		var trucks = JSON.parse(request.responseText); //Holds the information about the truck pins
@@ -30,14 +26,13 @@ window.addEventListener('load', function() {
 			        alert("Geocode was not successful for the following reason: " + status);
 			    }
 			});
-		}
-
-		for (var i = 0; i<5; i++) {
-			console.log(marker[1]);
-		}
+		}	
 	} else {
 		window.alert("Could not get truck locations.")
 	}
+
+	// List locations
+	document.getElementById("locations")
 
 }, false);
 

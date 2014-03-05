@@ -25,11 +25,11 @@
 
 	<article id="locations">
 		<ul>
-			<li><h1>Location1</h1></li>
-			<li>location2</li>
-			<li>location3</li>
-			<li>location4</li>
-			<li>location5</li>
+			<li><h1>location 1</h1></li>
+			<li><h1>location 2</h1></li>
+			<li><h1>location 3</h1></li>
+			<li><h1>location 4</h1></li>
+			<li><h1>location 5</h1></li>
 		</ul>
 	</article>
 	<div id="map-canvas"></div>
