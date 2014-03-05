@@ -372,8 +372,81 @@ input[type=submit]{
 .currentList {
    font-size:2em;
    margin: 3% 0%;
+   padding-left: .2em;
 }
 
+
+#currentVeg {
+   border-left: 3px solid forestgreen;
+   color: gray;  
+}
+
+#currentVeg .added {
+   color: black;
+}
+
+#currentFill {
+   border-left: 3px solid blue;
+   color: gray;
+}
+
+#currentFill .added {
+   color: black;
+}
+
+#currentTortilla {
+   border-left: 3px solid red;
+   color: gray;
+}
+
+#currentTortilla .added {
+   color: black;
+}
+
+#currentRice {
+   border-left: 3px solid darkgoldenrod;
+   color: gray;
+}
+
+#currentRice .added {
+   color: black;
+}
+
+#currentCheese {
+   border-left: 3px solid yellow;
+   color: gray;
+}
+
+#currentCheese .added {
+   color: black;
+}
+
+#currentBean {
+   border-left: 3px solid Brown;
+   color: gray;
+}
+
+#currentBean .added {
+   color: black;
+}
+
+#currentSauce {
+   border-left: 3px solid hotpink;
+   color: gray;
+}
+
+#currentSauce .added {
+   color: black;
+}
+
+#currentExtras {
+   border-left: 3px solid powderblue;
+   color: gray;
+}
+
+#currentExtras .added {
+   color: black;
+}
 /***********************/
 /*  INGREDIENTS  PANE  */
 /***********************/
@@ -387,7 +460,6 @@ input[type=submit]{
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #aaa;
 }
-
 
 .selected {
    color:blue;

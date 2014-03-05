@@ -1,106 +1,53 @@
-window.addEventListener("load", addEvents, false);
-
-function addEvents(){
-   //Filling selection
-   var fill = document.getElementsByClassName("fill");
-   for (var i=0; i<fill.length; i++)
-      fill[i].addEventListener("click", fillSelect, false);
-   
-   
-   //Tortilla selection
-   var tortilla = document.getElementsByClassName("tortilla");
-   
-   for (var i=0; i<tortilla.length; i++)
-      tortilla[i].addEventListener("click", tortillaSelect, false);
-   
-   //Rice selection
-   var rice = document.getElementsByClassName("rice");
-   for (var i=0; i<rice.length; i++)
-      rice[i].addEventListener("click", riceSelect, false);
-   
-   //Cheese selection
-   var cheese = document.getElementsByClassName("cheese");
-   for (var i=0; i<cheese.length; i++)
-      cheese[i].addEventListener("click", cheeseSelect, false);
-   
-   //Beans selection
-   var beans = document.getElementsByClassName("beans");
-   for (var i=0; i<beans.length; i++)
-      beans[i].addEventListener("click", beanSelect, false);
-   
-   //Sauce selection
-   var sauce = document.getElementsByClassName("sauce");
-   for (var i=0; i<sauce.length; i++)
-      sauce[i].addEventListener("click", sauceSelect, false);
-   
-   //Veggetables selection
-   //var vegs = document.getElementsByClassName("vegetables");
-   //for (var i=0; i<vegs.length; i++)
-   //   vegs[i].addEventListener("click", vegSelect, false);
-   
-   //Extra selection
-   //var extra = document.getElementsByClassName("extras");
-   //for (var i=0; i<extra.length; i++)
-   //   extra[i].addEventListener("click", extraSelect, false);
-}
-
-function fillSelect(event) {
-   var prevSelected = document.getElementsByClassName("fill selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentFill").innerHTML = event.target.innerHTML;
-   
-}
-
-function tortillaSelect(event) {
-   var prevSelected = document.getElementsByClassName("tortilla selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentTortilla").innerHTML = event.target.innerHTML;
-}
-
-function riceSelect(event) {
-   var prevSelected = document.getElementsByClassName("rice selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentRice").innerHTML = event.target.innerHTML;
-}
-
-function cheeseSelect(event) {
-   var prevSelected = document.getElementsByClassName("cheese selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentCheese").innerHTML = event.target.innerHTML;
-}
-
-function beanSelect(event) {
-   var prevSelected = document.getElementsByClassName("beans selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentBean").innerHTML = event.target.innerHTML;
-}
-
-function sauceSelect(event) {
-   var prevSelected = document.getElementsByClassName("sauce selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentSauce").innerHTML = event.target.innerHTML;
-}
-
 $(document).ready(function() {
+
+   $('.fill').click(function(e) {
+      $('.fill.selected').removeClass('selected');
+      $(this).addClass('selected');
+      document.getElementById('currentFill').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+   });
    
+   $('.tortilla').click(function(e) {
+      $('.tortilla.selected').removeClass('selected');
+      $(this).addClass('selected');
+      document.getElementById('currentTortilla').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+   });
+   
+   $('.rice').click(function(e) {
+      $('.rice.selected').removeClass('selected');
+      $(this).addClass('selected');
+      if ($(this).hasClass('clear'))
+         document.getElementById('currentRice').innerHTML = $(this).html();
+      else
+         document.getElementById('currentRice').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+   });
+   
+   $('.cheese').click(function(e) {
+      $('.cheese.selected').removeClass('selected');
+      $(this).addClass('selected');
+      if ($(this).hasClass('clear'))
+         document.getElementById('currentCheese').innerHTML = $(this).html();
+      else
+         document.getElementById('currentCheese').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+   });
+   
+   $('.beans').click(function(e) {
+      $('.beans.selected').removeClass('selected');
+      $(this).addClass('selected');
+      if ($(this).hasClass('clear'))
+         document.getElementById('currentBeans').innerHTML = $(this).html();
+      else
+         document.getElementById('currentBeans').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+   });
+   
+   $('.sauce').click(function(e) {
+      $('.sauce.selected').removeClass('selected');
+      $(this).addClass('selected');
+      if ($(this).hasClass('clear'))
+         document.getElementById('currentSauce').innerHTML = $(this).html();
+      else
+         document.getElementById('currentSauce').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+   });
+      
    $('.vegetables').click(function(e) {
       if (!$(this).hasClass('selected') && !$(this).hasClass('clear')) {
          $('.vegetables.clear').removeClass('selected');
@@ -119,9 +66,16 @@ $(document).ready(function() {
       }
       var selectedElements = document.getElementsByClassName("vegetables selected");
       var returnString="";
-      for (var i=0; i<selectedElements.length; i++)
-         returnString += selectedElements[i].innerHTML + " ";
+      for (var i=0; i<selectedElements.length; i++) {
+         
+         if($('.vegetables.clear').hasClass('selected'))
+            returnString =  selectedElements[i].innerHTML + "</br>";
+         
+         else
+            returnString += "<span class='added'>" + selectedElements[i].innerHTML + "</span></br>";        
+      }   
       document.getElementById("currentVeg").innerHTML = returnString;
+      
    });
    
    $('.extras').click(function(e) {
@@ -142,8 +96,14 @@ $(document).ready(function() {
       }
       var selectedElements = document.getElementsByClassName("extras selected");
       var returnString="";
-      for (var i=0; i<selectedElements.length; i++)
-         returnString += selectedElements[i].innerHTML + "</br>";
+      for (var i=0; i<selectedElements.length; i++) {
+         
+         if($('.extras.clear').hasClass('selected'))
+            returnString =  selectedElements[i].innerHTML + "</br>";
+         
+         else
+            returnString += "<span class='added'>" + selectedElements[i].innerHTML + "</span></br>";        
+      }   
       document.getElementById("currentExtras").innerHTML = returnString;
       
    });

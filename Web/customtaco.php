@@ -120,30 +120,30 @@ while($row = $result->fetch_row()) {
 	   <!-- Current Taco Pane -->
 	   <div id="currentTacoPane">
 	      <h2 id="currentTaco">Current Taco</h2>
-	      <div id="currentFill" class="currentList">
+	      <p id="currentFill" class="currentList">
 	         Please select a filling
-	      </div>
-	      <div id="currentTortilla" class="currentList">
+	      </p>
+	      <p id="currentTortilla" class="currentList">
 	         Please select a tortilla
-	      </div>
-	      <div id="currentRice" class="currentList">
+	      </p>
+	      <p id="currentRice" class="currentList">
 	         No Rice
-	      </div>
-	      <div id="currentCheese" class="currentList">
+	      </p>
+	      <p id="currentCheese" class="currentList">
 	         No Cheese
-	      </div>
-	      <div id="currentBean" class="currentList">
+	      </p>
+	      <p id="currentBean" class="currentList">
 	         No Beans
-	      </div>
-	      <div id="currentSauce" class="currentList">
+	      </p>
+	      <p id="currentSauce" class="currentList">
 	         No Sauce
-	      </div>
-	      <div id="currentVeg" class="currentList">
+	      </p>
+	      <p id="currentVeg" class="currentList">
 	         No Vegetables
-	      </div>
-	      <div id="currentExtras" class="currentList">
+	      </p>
+	      <p id="currentExtras" class="currentList">
 	         No Extras
-	      </div>
+	      </p>
 	   </div>
 	   
 	   <!-- Ingredients Pane -->
@@ -158,7 +158,6 @@ while($row = $result->fetch_row()) {
 			   <h3>Tortillas</h3>
 			   <div>
 					   <?php echo $tacoTortillas; ?>
-					   
 			   </div>
 			   <h3>Rice</h3>
 			   <div>
