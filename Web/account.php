@@ -99,7 +99,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	<div id="tempDiv"></div>
 
 	<div class="accountForm">
-		<div id="signInPane">
+		<div id="signInPane" class="shadowBox">
 			<h1>Sign In</h1>
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="email" placeholder="Email"><br>
@@ -111,7 +111,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			</div>
 		</div>
 
-		<div id="createAccountPane">
+		<div id="createAccountPane" class="shadowBox">
 			<h1>Create an Account</h1>
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
@@ -126,7 +126,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 					<option value="Visa">Visa</option>
 				</select><br>
 				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
-				<input class="userInput" type="submit" value="Sign In">
+				<input class="userInput" type="submit" value="Register">
 			</form>
 		</div>
 	</div>
