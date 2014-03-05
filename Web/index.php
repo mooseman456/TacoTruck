@@ -110,7 +110,7 @@ while($row = $result->fetch_row()) {
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder" href="checkout.php" value="Check Out"/>
+		<input type="submit" id="submitOrder" value="Check Out"/>
 	</div>
 
 
