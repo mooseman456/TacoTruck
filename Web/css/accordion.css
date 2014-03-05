@@ -6,7 +6,8 @@
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
 #accordion {
-    float:right;
+    width:85%;
+    margin:auto;
 }
 
 /* Layout helpers
@@ -99,6 +100,7 @@
 	padding: 1em 2.2em;
 	border-top: 0;
 	overflow: auto;
+	height:32%;
 }
 .ui-autocomplete {
 	position: absolute;

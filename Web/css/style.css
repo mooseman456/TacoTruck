@@ -138,10 +138,9 @@ article.about p{
 
 .orderPane {
 	width: 20%;
-	margin:0px;
+	margin:0% 4%;
 	float: left;
-	padding-left:2%;
-	padding-right: 2%;
+	border:solid;
 }
 
 img.cancelButton {
@@ -282,8 +281,7 @@ td {
 #currentTacoPane {
 	float:left;
 	width:25%;
-	padding-right:2%;
-	margin: 0% 5%;
+	margin: 0% 4%;
 	border:solid;
 }
 
@@ -294,7 +292,6 @@ td {
 #ingredientsPane {
 	float:left;
 	width:25%;
-	margin: 0% 5%;
+	margin: 0% 4%;
 	border:solid;
-	padding-right: 2%;
 }
