@@ -70,11 +70,11 @@
 		<table>
 			<tr class="tacoRow">
 				<td id="customTaco"><img src="img/plus_icon.png" alt="Custom Taco"></td>
-				<td id="customTaco"><img src="img/previous_icon.png" alt="Previous Taco"></td>
+				<td id="previousTaco"><img src="img/previous_icon.png" alt="Previous Taco"></td>
 			</tr>
 			<tr>
-				<td id="customTaco">Custom Taco</td>
-				<td id="customTaco">Previous Taco</td>
+				<td>Custom Taco</td>
+				<td>Previous Taco</td>
 			</tr>
 		</table>
 	</div>

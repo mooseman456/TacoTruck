@@ -321,7 +321,10 @@ td {
 	float:left;
 	width:25%;
 	margin: 0% 4%;
-	border:solid;
+
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
 }
 
 
