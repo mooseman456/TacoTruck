@@ -13,6 +13,7 @@ html {
 
 body {
 	background-image: url('../img/bg.jpg');
+	margin: 0;
 }
 
 
@@ -35,8 +36,8 @@ article.about {
 	display:block;
 	margin: 5% 15%;
 	height: 100%;
-	background-color: rgba(255,255,255,0.4);
-	box-shadow: 10px 10px 8px #bbb;
+	background-color: rgba(255,255,255,0.3);
+	box-shadow: 10px 10px 8px #888;
 	padding: 2em 3em;
 	border-radius: 50px;
 }
@@ -258,11 +259,12 @@ td {
 
 #locations section {
 	width: auto;
-	margin: 1em 11% 1em 9%;
+	margin: 1em 0;
+	margin-left: 0;
 	padding: 1em;
 	background-color: rgba(255,255,255,0.4);
-	border-radius: 20px;
-	box-shadow: 5px 5px 5px #aaa;
+	border-radius: 0 10em 10em 0;
+	box-shadow: 5px 5px 5px #888;
 }
 
 #locations section h1 {
@@ -274,7 +276,7 @@ td {
 
 #locations section p {
 	padding: 0;
-	margin: 0 0.1em;
+	margin: 0 0.3em;
 }
 
 
