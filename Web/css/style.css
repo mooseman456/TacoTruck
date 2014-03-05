@@ -156,7 +156,7 @@ img.cancelButton:hover {
 /*    MENU  PANE       */
 /***********************/
 
-#menuPane {
+.menuPane {
 	float:left;
 	width:52%;
 	padding-right:2%;

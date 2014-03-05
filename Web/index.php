@@ -39,7 +39,7 @@
 
 
 	<!-- Table for menu -->
-	<div id="menuPane">
+	<div class="menuPane">
 		<h2>Menu</h2>
 		<table id="menuTable">
 			<tr class="tacoRow">
