@@ -137,5 +137,22 @@ if (($handle = fopen("OrderItemDetails.csv", "r")) !== FALSE) {
 
 echo "<hr />";
 
+//Fill in premadeTaco data
+if (($handle = fopen("premade_tacos.csv", "r")) !== FALSE) {
+    $counter = 1;
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        //Insert all the User data into the database
+        $num = count($data);
+        $query = "INSERT INTO PreMadeTacos (tacoorder_id, name, description) 
+                  VALUES ($counter, '$data[0]','$data[1]')";
+        echo "$query";
+        $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
+        $counter++;
+    }
+    fclose($handle);
+}
+
+echo "<hr />";
+
 
 ?>

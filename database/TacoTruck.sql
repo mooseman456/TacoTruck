@@ -1,25 +1,27 @@
 # Create the TacoTruck database
 
+DROP DATABASE IF EXISTS TacoTruck;
+
 CREATE DATABASE TacoTruck;
 use TacoTruck;
 
-DROP TABLE IF EXISTS TacoTruck.Users;
-DROP TABLE IF EXISTS TacoTruck.Orders;
-DROP TABLE IF EXISTS TacoTruck.TacoDetails;
-DROP TABLE IF EXISTS TacoTruck.TacoOrders;
-DROP TABLE IF EXISTS TacoTruck.Tortillas;
-DROP TABLE IF EXISTS TacoTruck.Rice;
-DROP TABLE IF EXISTS TacoTruck.Cheeses;
-DROP TABLE IF EXISTS TacoTruck.Beans;
-DROP TABLE IF EXISTS TacoTruck.Sauces;
-DROP TABLE IF EXISTS TacoTruck.Type;
-DROP TABLE IF EXISTS TacoTruck.TacoVegetables;
-DROP TABLE IF EXISTS TacoTruck.TacoExtras;
-DROP TABLE IF EXISTS TacoTruck.Vegetables;
-DROP TABLE IF EXISTS TacoTruck.Extras;
-DROP TABLE IF EXISTS TacoTruck.TacoFixings;
-DROP TABLE IF EXISTS TacoTruck.Tacos;
-DROP TABLE IF EXISTS TacoTruck.Fillings;
+-- DROP TABLE IF EXISTS TacoTruck.Users;
+-- DROP TABLE IF EXISTS TacoTruck.Orders;
+-- DROP TABLE IF EXISTS TacoTruck.TacoDetails;
+-- DROP TABLE IF EXISTS TacoTruck.TacoOrders;
+-- DROP TABLE IF EXISTS TacoTruck.Tortillas;
+-- DROP TABLE IF EXISTS TacoTruck.Rice;
+-- DROP TABLE IF EXISTS TacoTruck.Cheeses;
+-- DROP TABLE IF EXISTS TacoTruck.Beans;
+-- DROP TABLE IF EXISTS TacoTruck.Sauces;
+-- DROP TABLE IF EXISTS TacoTruck.Type;
+-- DROP TABLE IF EXISTS TacoTruck.TacoVegetables;
+-- DROP TABLE IF EXISTS TacoTruck.TacoExtras;
+-- DROP TABLE IF EXISTS TacoTruck.Vegetables;
+-- DROP TABLE IF EXISTS TacoTruck.Extras;
+-- DROP TABLE IF EXISTS TacoTruck.TacoFixings;
+-- DROP TABLE IF EXISTS TacoTruck.Tacos;
+-- DROP TABLE IF EXISTS TacoTruck.Fillings;
 
 
 CREATE TABLE Users (
@@ -70,6 +72,12 @@ CREATE TABLE TacoDetails (
 ) ENGINE=InnoDB;
 
 CREATE TABLE PreMadeTacos (
+	premadetaco_id INT(30) NOT NULL AUTO_INCREMENT,
+	tacoorder_id INT(30) NOT NULL,
+	name VARCHAR(255),
+	description VARCHAR(255),
+	Foreign Key (tacoorder_id) REFERENCES TacoOrders(tacoorder_id),
+	Primary Key (premadetaco_id)
 ) ENGINE=InnoDB;
 
 
