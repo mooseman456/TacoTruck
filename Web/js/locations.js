@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-	// Event listener for hovering on locations
+	// Hover over locations event listener
 	var locations = $(".location");
 	$.each(locations, function(index, value) {
 		$(value).addClass("shadowBox");
@@ -11,18 +11,6 @@ window.addEventListener('load', function() {
 			$(value).removeClass("hover");
 		})
 	});
-
-
-	/*
-	var locations = document.getElementsByClassName("location");
-	for (var i=0; i < locations.length; i++) {
-		console.log("working");
-		locations[i].addEventListener("mouseover", function() {
-			event.target.style.backgroundColor="blue";
-		}, false);
-		locations[i].addEventListener(mouse)
-	}
-	*/
 	
 
 	// Initialize Google Map
