@@ -80,7 +80,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	<meta charset="utf-8">
 	<title>Account</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<!-- Page navigation menu -->

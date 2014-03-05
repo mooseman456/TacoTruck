@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Welcome to Taco Truck!</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -39,7 +39,7 @@
 
 
 	<!-- Table for menu -->
-	<div id="menuPane">
+	<div class="menuPane">
 		<h2>Menu</h2>
 		<table id="menuTable">
 			<tr class="tacoRow">

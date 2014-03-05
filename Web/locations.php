@@ -4,7 +4,7 @@
 	<meta charset="utf-8" name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 	<title>Locations</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
 	
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;sensor=false"></script>
     <script type="text/javascript" src="js/locations.js"></script>
@@ -25,8 +25,12 @@
 
 	<article id="locations">
 		<section class="location">
-			<h1>Nothing there</h1>
-			<p>The address</p>
+			<h1>Klyde Warren Park</h1>
+			<p>2012 Woodall Rogers Fwy<br>Dallas, TX 75201</p>
+		</section>
+		<section class="location">
+			<h1>Southern Methodist University</h1>
+			<p>3140 Dyer Street<br>Dallas, TX 75205</p>
 		</section>
 	</article>
 	<div id="map-canvas"></div>

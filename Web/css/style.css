@@ -8,7 +8,7 @@
 
 
 html {
-	font-family: 'Swanky and Moo Moo', cursive;
+	font-family: 'Condiment', cursive;
 }
 
 body {
@@ -156,7 +156,7 @@ img.cancelButton:hover {
 /*    MENU  PANE       */
 /***********************/
 
-#menuPane {
+.menuPane {
 	float:left;
 	width:52%;
 	padding-right:2%;
@@ -227,6 +227,26 @@ td {
 
 #locations ul {
 	list-style: none;
+}
+
+#locations section {
+	width: 85%;
+	margin: 1em 5%;
+	padding: 0.5em 0 0.5em 1em;
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
+}
+
+#locations section h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+}
+
+#locations section p {
+	margin-top: 5px;
+	padding: 0;
 }
 /***********************/
 /* ACCOUNT PAGE CONTENT*/
@@ -300,6 +320,17 @@ td {
 	border:solid;
 }
 
+
 .selected {
    color:blue;
+}
+/********************/
+/*  CHECKOUT  PANE  */
+/********************/
+
+.checkoutPane {
+	float:left;
+	width:25%;
+	margin: 0% 4%;
+	border:solid;
 }

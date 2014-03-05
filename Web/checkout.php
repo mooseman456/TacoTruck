@@ -43,6 +43,24 @@
 		<input type="submit" id="editOrder" value="Edit Order"/>
 	</div>
 
+	<div class="checkoutPane">
+			<form class="userForm" method="POST">
+				<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
+				<input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
+				<input class="userInput" type="email" name="email" placeholder="Email"><br>
+				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
+				<select class="userInput" name = "ccprovider">
+					<option value="Mastercard">Master Card</option>
+					<option value="American Express">American Express</option>
+					<option value="Visa">Visa</option>
+				</select><br>
+				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
+				<input class="userInput" type="submit" value="Order">
+			</form>
+		</div>
+
+
+
 	<script>document.getElementById("editOrder").onclick = function() {
     window.location = "index.php";
     console.log('test');
