@@ -54,7 +54,7 @@ $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
   	$tacoExtras = $tacoExtras . "<div id=\"$row[1]\" class=\"extras menuItem\">$row[0]</div>";
 }
-
+//Banana
 ?>
 
 <!doctype HTML>
