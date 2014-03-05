@@ -104,6 +104,10 @@ article p{
 tr:hover, tr:hover + tr {
 background:#eee; }
 
+#menuItem:hover {
+	background: #eee;
+}
+
 
 
 /**************************************/
