@@ -101,7 +101,7 @@ article p{
 	font-size: 20px;
 }
 
-td:hover {
+.tacoRow td:hover {
 	background:#eee;
 }
 
@@ -119,7 +119,7 @@ td:hover {
 /*    ORDER PANE       */
 /***********************/
 
-#orderPane {
+.orderPane {
 	width: 20%;
 	margin:0px;
 	float: left;

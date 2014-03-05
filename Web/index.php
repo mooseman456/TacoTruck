@@ -97,7 +97,7 @@ while($row = $result->fetch_row()) {
 	<div id="navSpace"></div>
 
 	<!-- Order Pane -->
-	<div id="orderPane">
+	<div class="orderPane">
 		<h2 id="order">Order </h2>
 		<!-- List of tacos in order -->
 		<ul>
@@ -110,7 +110,7 @@ while($row = $result->fetch_row()) {
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder" value="Check Out"/>
+		<input type="submit" id="submitOrder" href="checkout.php" value="Check Out"/>
 	</div>
 
 
