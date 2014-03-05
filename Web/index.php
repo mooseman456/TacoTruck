@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Welcome to Taco Truck!</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
