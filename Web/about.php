@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>About the Taco Truck</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTESTtemp.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -11,10 +11,11 @@
 	<nav id="navbar">
 		<ul>
 			
-			<li><a href="index.html"><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo">Order</a></li>
+			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
+			<li><a href="index.php">Order</a></li>
 			<li class="select"><a>About</a></li>
-			<li><a href="locations.html">Locations</a></li>
-			<li id="accountLink"><a href="account.html">Sign In/Create Account</a></li>
+			<li><a href="locations.php">Locations</a></li>
+			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
 		</ul>
 	</nav>
 	<article class="about">
