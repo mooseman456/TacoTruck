@@ -69,6 +69,9 @@ CREATE TABLE TacoDetails (
 	Primary Key (tacodetails_id)
 ) ENGINE=InnoDB;
 
+CREATE TABLE PreMadeTacos (
+) ENGINE=InnoDB;
+
 
 
 -- CREATE TABLE Tortillas (
