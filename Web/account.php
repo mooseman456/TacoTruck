@@ -25,7 +25,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$row = $result->fetch_assoc();
 
 		if(empty($row)) {
-			$loginStatus = "Login Failed";
+			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		} else {
 			session_start();
 
