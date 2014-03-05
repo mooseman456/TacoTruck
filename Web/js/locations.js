@@ -30,10 +30,13 @@ window.addEventListener('load', function() {
 	} else {
 		window.alert("Could not get truck locations.")
 	}
-
+/*
 	// List locations
-	document.getElementById("locations")
-
+	var locations = document.getElementsByClassName("location");
+	for(var i=0; i<locations.length; i++) {
+		locations[i].innerHTML = trucks[i].name;
+	}
+*/
 }, false);
 
 function addTruckPin(result, status, id) {
