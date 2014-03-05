@@ -104,13 +104,14 @@ function vegSelect(event) {
       
       var prevSelected = document.getElementsByClassName("vegetables selected");
       for (var i=0; i<prevSelected.length; i++){
-         prevSelected[i].classList.toggle("selected", false);
+         prevSelected[i].classList.toggle("selected");
+         console.log(prevSelected[i].classList);
       }
-      event.target.classList.toggle("selected", true);
+      event.target.classList.toggle("selected");
    } 
    else if (document.getElementsByClassName("vegetables clear")[0].classList.contains("selected")){
-      document.getElementsByClassName("vegetables clear")[0].classList.toggle("selected", false);
-      event.target.classList.toggle("selected", true);
+      document.getElementsByClassName("vegetables clear")[0].classList.toggle("selected");
+      event.target.classList.toggle("selected");
    } 
    else {
       event.target.classList.toggle("selected");

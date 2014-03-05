@@ -8,13 +8,12 @@
 
 
 html {
-	font-family: 'Condiment', arial;
+	font-family: "Condiment", arial;
 }
 
 body {
-	background-image: url('../img/bg.jpg');
+	background-image: url("../img/bg.jpg");
 }
-
 
 h2 {
 	font-size: 2.5em;
