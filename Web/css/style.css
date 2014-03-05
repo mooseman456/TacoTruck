@@ -97,6 +97,7 @@ article.about p{
 	display:block;
 	padding: 0em 1em;
 	color: white;
+	padding-top:0.15em;
 }
 
 #navbar li:hover {
@@ -114,6 +115,7 @@ article.about p{
 	width: 75px;
 	height: 33px;
 	float:left;
+	padding-top: 0.15em;
 }
 
 #accountLink {

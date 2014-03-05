@@ -20,7 +20,7 @@
 	<!-- Page navigation menu -->
 	<nav id="navbar">
 		<ul>
-			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
+			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo"></li>
 			<li class="select"><a>Order</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="locations.php">Locations</a></li>
