@@ -100,6 +100,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	<div class="accountForm">
 		<div id="signInPane">
+			<h1>Sign In</h1>
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="email" placeholder="Email"><br>
 				<input class="userInput" type="password" name="password" placeholder="Password"><br>
@@ -111,6 +112,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		</div>
 
 		<div id="createAccountPane">
+			<h1>Create an Account</h1>
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
 				<input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
