@@ -18,6 +18,7 @@ body {
 
 h2 {
 	font-size: 2.5em;
+	text-align:center;
 }
 
 
@@ -180,15 +181,7 @@ td {
 }   
 
 
-/***********************/
-/*  INGREDIENTS  PANE  */
-/***********************/
 
-#ingredientsPane {
-	float:left;
-	width:20%;
-	padding-right: 2%;
-}
 
 
 
@@ -261,7 +254,28 @@ td {
 
 
 /********************************/
-/*		Custom Taco Styling       */
+/*		CUSTOM TACO PAGE          */
 /********************************/
 
+/***********************/
+/*  CURRENT TACO PANE  */
+/***********************/
+#currentTacoPane {
+	float:left;
+	width:25%;
+	padding-right:2%;
+	margin: 0% 5%;
+	border:solid;
+}
 
+/***********************/
+/*  INGREDIENTS  PANE  */
+/***********************/
+
+#ingredientsPane {
+	float:left;
+	width:25%;
+	margin: 0% 5%;
+	border:solid;
+	padding-right: 2%;
+}

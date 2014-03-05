@@ -117,20 +117,36 @@ while($row = $result->fetch_row()) {
 	   <div id="currentTacoPane">
 	      <h2 id="currentTaco">Current Taco</h2>
 	      <div id="currentFill">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentTortilla">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentRice">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentCheese">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentBean">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentSauce">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentVeg">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	      <div id="currentExtras">
+	         <h3>Filling</h3>
+	         <p>Steak</p>
 	      </div>
 	   </div>
 	   
