@@ -129,9 +129,8 @@ while($row = $result->fetch_row()) {
 	      <div id="currentCheese" class="currentList">
 	         No Cheese
 	      </div>
-	      <div>
-	         
-	         <h3 id="currentBean" class="currentList">No Beans</h3>
+	      <div id="currentBean" class="currentList">
+	         No Beans
 	      </div>
 	      <div id="currentSauce" class="currentList">
 	         No Sauce

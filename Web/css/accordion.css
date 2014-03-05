@@ -229,6 +229,8 @@ input.ui-button {
 .ui-widget div {
 	font-family: 'gafata';
 	padding-left: 2px;
+	margin-top:2%;
+	margin-bottom:2%;
 }
 
 .ui-widget-content {
