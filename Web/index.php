@@ -1,5 +1,6 @@
 <?php
 
+
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){
@@ -24,7 +25,6 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 		$counter++;
 	}
 }
-
 // //Get Premade Tacos
 // $query = "SELECT PreMadeTacos.tacoorder_id, PreMadeTacos.name, PreMadeTacos.description FROM PreMadeTacos";
 // $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
@@ -91,8 +91,9 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 			<li>Taco 1: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
 			<li>Taco 3: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
 			<li>Custom Taco 1: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
+			<li id="ticket"></li>
 		</ul>
-		<!-- Tax and total -->
+		<!-- Tax and total --> 
 		<ul>
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
@@ -124,10 +125,10 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 				<td>Taco 8</td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 5"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 6"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 7"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 8"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>></td>
 			</tr>
 		</table>
 		<table>
@@ -143,5 +144,6 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	</div>
 
 	<script src="js/main.js"></script>
+	<script src="js/menu.js"></script>
 </body>
 </html>
