@@ -6,10 +6,10 @@ $app = new Slim();
 
 $app->get('/menutacos', 'getTacos');
 $app->get('/users', 'getAllUsers');
-$app->get('/menu’, 'getMenu');
-$app->get('/menu/:itemType’, 'getMenuItemType');
-$app->get('/orders/:userID’, 'getOrdersForUser');
-$app->get('/ordersDetails/:orderID’, 'getOrderDetails');
+$app->get('/menu', 'getMenu');
+$app->get('/menu/:itemType', 'getMenuItemType');
+$app->get('/orders/:userID', 'getOrdersForUser');
+$app->get('/ordersDetails/:orderID', 'getOrderDetails');
 
 /*
 $app->get('/wines/:id',	'getWine');
