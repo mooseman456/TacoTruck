@@ -101,7 +101,6 @@ function sauceSelect(event) {
 
 function vegSelect(event) {
    if (event.target.classList.contains("clear")) {
-      
       var prevSelected = document.getElementsByClassName("vegetables selected");
       for (var i=0; i<prevSelected.length; i++){
          prevSelected[i].classList.toggle("selected", false);
@@ -120,7 +119,7 @@ function vegSelect(event) {
    for (var i=0; i<selectedElements.length; i++)
       returnString += selectedElements[i].innerHTML + " ";
    document.getElementById("currentVeg").innerHTML = returnString;
-      
+
 }
 
 function extraSelect(event) {

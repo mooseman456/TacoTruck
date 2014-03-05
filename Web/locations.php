@@ -46,7 +46,7 @@ foreach ($var as $location) {
 	<article id="locations">
 		<?php echo $sections; ?>
 	</article>
-	<div id="map-canvas"></div>
+	<div id="map-canvas" class="boxShadow"></div>
 
 	<script src="js/main.js"></script>
 </body>
