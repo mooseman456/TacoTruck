@@ -299,3 +299,7 @@ td {
 	margin: 0% 4%;
 	border:solid;
 }
+
+.selected {
+   color:blue;
+}

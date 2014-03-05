@@ -69,6 +69,7 @@ while($row = $result->fetch_row()) {
 	   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	   <script src="js/jquery.js"></script>
+	   <script src="js/customTaco.js"></script>
 
 	   <script>
      $(function() {
