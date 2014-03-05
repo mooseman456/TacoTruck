@@ -105,8 +105,14 @@ article p{
 	background:#eee;
 }
 
-#menuItem:hover {
-	background: #eee;
+.menuItem {
+	text-align: center;
+	margin: 5%;
+	padding: 5%;
+}
+.menuItem:hover {
+	background: #8A8A8A;
+	cursor: pointer;
 }
 
 

@@ -7,52 +7,52 @@ if($db->connect_errno > 0){
 }
 
 //Get menu data
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Type'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Type'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoTypes = $tacoTypes . "<div id=\"menuItem\">$row[0]</div>";
+  	$tacoTypes = $tacoTypes . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Tortillas'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Tortillas'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoTortillas = $tacoTortillas . "<p>$row[0]</p>";
+  	$tacoTortillas = $tacoTortillas . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Rice'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Rice'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoRice = $tacoRice . "<p>$row[0]</p>";
+  	$tacoRice = $tacoRice . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Cheese'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Cheese'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoCheese = $tacoCheese . "<p>$row[0]</p>";
+  	$tacoCheese = $tacoCheese . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Beans'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Beans'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoBeans = $tacoBeans . "<p>$row[0]</p>";
+  	$tacoBeans = $tacoBeans . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Sauces'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Sauces'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoSauces = $tacoSauces . "<p>$row[0]</p>";
+  	$tacoSauces = $tacoSauces . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Vegetables'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Vegetables'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoVeggies = $tacoVeggies . "<p>$row[0]</p>";
+  	$tacoVeggies = $tacoVeggies . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
-$query = "SELECT TacoFixings.name FROM TacoFixings WHERE TacoFixings.itemType='Extras'";
+$query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Extras'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 while($row = $result->fetch_row()) {
-  	$tacoExtras = $tacoExtras . "<p>$row[0]</p>";
+  	$tacoExtras = $tacoExtras . "<div id=\"$row[1]\" class=\"menuItem\">$row[0]</div>";
 }
 
 ?>
