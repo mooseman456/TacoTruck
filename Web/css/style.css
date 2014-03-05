@@ -22,7 +22,7 @@ h2 {
 }
 
 p {
-	font-family: 'gafaga';
+	font-family: 'gafata';
 }
 
 
@@ -202,10 +202,6 @@ td {
 }   
 
 
-
-
-
-
 /**************************************/
 /*    SIGN IN/CREATE ACCOUNT PAGE     */
 /**************************************/
@@ -245,12 +241,13 @@ td {
 
 #locations ul {
 	list-style: none;
+	font-family: 'gafata';
 }
 
 #locations section {
 	width: 85%;
 	margin: 1em 5%;
-	padding: 0.5em 0 0.5em 1em;
+	padding: 1em;
 	background-color: rgba(0,0,0,0.1);
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #aaa;
