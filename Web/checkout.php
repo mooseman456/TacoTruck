@@ -40,8 +40,13 @@
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder" value="Check Out"/>
+		<input type="submit" id="editOrder" value="Edit Order"/>
 	</div>
+
+	<script>document.getElementById("editOrder").onclick = function() {
+    window.location = "index.php";
+    console.log('test');
+}</script>
 
 </body>
 </html>
