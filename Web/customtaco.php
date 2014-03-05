@@ -118,20 +118,29 @@ while($row = $result->fetch_row()) {
 	   <div id="currentTacoPane">
 	      <h2 id="currentTaco">Current Taco</h2>
 	      <div id="currentFill" class="currentList">
+	         Please select a filling
 	      </div>
 	      <div id="currentTortilla" class="currentList">
+	         Please select a tortilla
 	      </div>
 	      <div id="currentRice" class="currentList">
+	         No Rice
 	      </div>
 	      <div id="currentCheese" class="currentList">
+	         No Cheese
 	      </div>
-	      <div id="currentBean" class="currentList">
+	      <div>
+	         
+	         <h3 id="currentBean" class="currentList">No Beans</h3>
 	      </div>
 	      <div id="currentSauce" class="currentList">
+	         No Sauce
 	      </div>
 	      <div id="currentVeg" class="currentList">
+	         No Vegetables
 	      </div>
 	      <div id="currentExtras" class="currentList">
+	         No Extras
 	      </div>
 	   </div>
 	   
@@ -152,17 +161,17 @@ while($row = $result->fetch_row()) {
 			   <h3>Rice</h3>
 			   <div>
 					   <?php echo $tacoRice; ?>
-					   <div class="rice menuItem selected clear">None</div>
+					   <div class="rice menuItem selected clear">No Rice</div>
 			   </div>
 			   <h3>Cheese</h3>
 			   <div>
 					   <?php echo $tacoCheese; ?>
-					   <div class="cheese menuItem selected clear">None</div>
+					   <div class="cheese menuItem selected clear">No Cheese</div>
 			   </div>
 			   <h3>Beans</h3>
 			   <div>
 					   <?php echo $tacoBeans; ?>
-					   <div class="beans menuItem selected clear">None</div>
+					   <div class="beans menuItem selected clear">No Beans</div>
 			   </div>
 			   <h3>Sauces</h3>
 			   <div>
@@ -171,12 +180,12 @@ while($row = $result->fetch_row()) {
 			   <h3>Vegetables</h3>
 			   <div>
 					   <?php echo $tacoVeggies; ?>
-					   <div class="vegetables menuItem selected clear">None</div>
+					   <div class="vegetables menuItem selected clear">No Vegetables</div>
 			   </div>
 			   <h3>Extras</h3>
 			   <div>
 					   <?php echo $tacoExtras; ?>
-					   <div class="extras menuItem selected clear">None</div>
+					   <div class="extras menuItem selected clear">No Extras</div>
 			   </div>
 		   </div>
 
