@@ -9,6 +9,7 @@ function addEvents(){
    
    //Tortilla selection
    var tortilla = document.getElementsByClassName("tortilla");
+   
    for (var i=0; i<tortilla.length; i++)
       tortilla[i].addEventListener("click", tortillaSelect, false);
    
@@ -91,20 +92,41 @@ function beanSelect(event) {
 
 function sauceSelect(event) {
    var prevSelected = document.getElementsByClassName("sauce selected");
+   
    for (var i=0; i<prevSelected.length; i++){
       prevSelected[i].classList.toggle("selected", false);
+      prevSelected[i+1].classList.toggle("selected", false);
    }
+
    event.target.classList.toggle("selected", true);
    document.getElementById("currentSauce").innerHTML = event.target.innerHTML;
 }
 
 function vegSelect(event) {
-   var prevSelected = document.getElementsByClassName("vegetables selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
+   if (event.target.classList.contains("clear")) {
+   
+      var prevSelected = document.getElementsByClassName("vegetables selected");
+      for (var i=0; i<100; i++){ 
+         for (var i=0; i<prevSelected.length; i++){
+            prevSelected[i].classList.toggle("selected");
+            prevSelected[i+1].classList.toggle("selected", false);
+         }
+      }
+      event.target.classList.toggle("selected", true);
+   } 
+   else if (document.getElementsByClassName("vegetables clear")[0].classList.contains("selected")){
+      document.getElementsByClassName("vegetables clear")[0].classList.toggle("selected", false);
+      event.target.classList.toggle("selected", true);
+   } 
+   else {
+      event.target.classList.toggle("selected");
    }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentVeg").innerHTML = event.target.innerHTML;
+   var selectedElements = document.getElementsByClassName("vegetables selected");
+   var returnString="";
+   for (var i=0; i<selectedElements.length; i++)
+      returnString += selectedElements[i].innerHTML + " ";
+   document.getElementById("currentVeg").innerHTML = returnString;
+      
 }
 
 function extraSelect(event) {
