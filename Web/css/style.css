@@ -122,6 +122,10 @@ article.about p{
 	cursor: pointer;
 }
 
+#navSpace {
+	height: 40px;
+}
+
 
 
 /**************************************/
@@ -213,7 +217,7 @@ td {
 	position: absolute;
 	top: 40px;
 	left: 40%;
-	height: 90%;
+	height: 95%;
 	width: 60%;
 	z-index:-1;
 }
@@ -221,15 +225,29 @@ td {
 #locations {
 	width:40%;
 }
+/***********************/
+/* ACCOUNT PAGE CONTENT*/
+/***********************/
 
+.userInput{
+	padding: 1px; 
+	line-height: 28px;
+	font-size: 20px;
+	width: 100%;
+}
+
+.formTitle{
+	text-align: center;
+	font-size: 40px;
+}
 
 /***********************/
 /*     SIGN IN PANE    */
 /***********************/
 
 #signInPane {
-	border-style:solid;
-	border-width:1px;
+	/*border-style:solid;
+	border-width:1px;*/
 	float: left;
 	width:50%;
 }
@@ -240,16 +258,17 @@ td {
 
 
 #createAccountPane {
-	border-style:solid;
-	border-width:1px;
+	/*border-style:solid;
+	border-width:1px;*/
+	padding-bottom: 10%;
+	border-left:1px solid black;
 	width:50%;
+	height:300px;
 	margin-left:50%;
 }
 
-
-
 #tempDiv {
-	height:100px;
+	height:50px;
 }
 
 

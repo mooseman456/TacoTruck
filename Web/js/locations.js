@@ -13,18 +13,16 @@ window.addEventListener('load', function() {
 	request.open("GET", "resources/taco_truck_locations.json", false);
 	request.send();
 
+	var marker;
+
 	if (request.status === 200) {
-		console.log("it worked!");
-		var trucks = JSON.parse(request.responseText);
-		console.log(trucks[1].name);
-		
-		var tempAddress = "Addison Circle, Addison, TX, 75001";
+		var trucks = JSON.parse(request.responseText); //Holds the information about the truck pins
+
 		for(var i = 0; i<trucks.length; i++) {
 			console.log("count: " + i);
 			geocoder.geocode( { 'address': trucks[i].address + ", " + trucks[i].city + ", " + trucks[i].state + " " + trucks[i].zipcode}, function(results, status) {
 			    if (status == google.maps.GeocoderStatus.OK) {
-			        var marker = new google.maps.Marker({
-			            //title: trucks[count].name,
+			        marker = new google.maps.Marker({
 			            map: map,
 			            position: results[0].geometry.location
 			        });
@@ -33,8 +31,31 @@ window.addEventListener('load', function() {
 			    }
 			});
 		}
+
+		for (var i = 0; i<5; i++) {
+			console.log(marker[1]);
+		}
 	} else {
 		window.alert("Could not get truck locations.")
 	}
 
 }, false);
+
+function addTruckPin(result, status, id) {
+	if (status == google.maps.GeocoderStatus.OK) {
+        var marker = new google.maps.Marker({
+            //title: trucks[count].name,
+            map: map,
+            position: results[0].geometry.location
+        });
+    } else {
+        alert("Geocode was not successful for the following reason: " + status);
+    }
+}
+
+
+
+
+
+
+
