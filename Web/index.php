@@ -1,3 +1,38 @@
+<?php
+
+require_once '../database/login.php';
+$db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+if($db->connect_errno > 0){
+	die('Unable to connect to database [' . $db->connect_error . ']');
+}
+
+//Get Premade Tacos
+$query = "SELECT PreMadeTacos.tacoorder_id, PreMadeTacos.name, PreMadeTacos.description FROM PreMadeTacos";
+$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+$i = 0;
+while($data = $result->fetch_assoc()) {
+	$PreMadeTacos[$i] = $data;
+	$i += 1;
+}
+
+foreach($PreMadeTacos as $key => $val) {
+	//Get Fillings
+	$query = "SELECT TacoFixings.name, TacoFixings.price FROM TacoDetails JOIN TacoFixings 
+			  ON TacoDetails.tacofixing_id=TacoFixings.tacofixing_id JOIN TacoOrders 
+			  ON TacoDetails.tacoorder_id=TacoOrders.tacoorder_id 
+			  WHERE TacoOrders.tacoorder_id='".$PreMadeTacos[$key]['tacoorder_id']."'";
+	$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
+	$PreMadeTacos[$key]['ingredients'] = "\nIngredients: ";
+	while($data = $result->fetch_assoc()) {
+		$PreMadeTacos[$key]['ingredients'] = $PreMadeTacos[$key]['ingredients'] .  $data['name'] . ", ";
+	}
+	//Remove trailing space and comma
+	$PreMadeTacos[$key]['ingredients'] = rtrim($PreMadeTacos[$key]['ingredients'],', ');
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -52,14 +87,14 @@
 		<h2>Menu</h2>
 		<table id="menuTable">
 			<tr>
-				<td>Taco 1</td>
-				<td>Taco 2</td>
+				<td><?php echo $PreMadeTacos[0]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[1]['name']; ?></td>
 				<td>Taco 3</td>
 				<td>Taco 4</td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 1" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus elementum lobortis. Duis in pulvinar sem."></td>
-				<td><img src="img/taco_icon.png" alt="Taco 2"></td>
+				<td><img src="img/taco_icon.png" alt="Taco 1" title=<?php echo "\"".$PreMadeTacos[0]['description'].$PreMadeTacos[0]['ingredients']."\""; ?>></td>
+				<td><img src="img/taco_icon.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description'].$PreMadeTacos[1]['ingredients']."\""; ?>></td>
 				<td><img src="img/taco_icon.png" alt="Taco 3"></td>
 				<td><img src="img/taco_icon.png" alt="Taco 4"></td>
 			</tr>
