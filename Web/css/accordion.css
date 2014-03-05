@@ -78,11 +78,11 @@
 	cursor: pointer;
 	position: relative;
 	margin-top: 2px;
-	padding: .5em .5em .5em .7em;
+	padding: .5em;
 	min-height: 0; /* support: IE7 */
 }
 .ui-accordion .ui-accordion-icons {
-	padding-left: 2.2em;
+	padding-left: .2em;
 }
 .ui-accordion .ui-accordion-noicons {
 	padding-left: .7em;
@@ -97,10 +97,9 @@
 	margin-top: -8px;
 }
 .ui-accordion .ui-accordion-content {
-	padding: 1em 2.2em;
 	border-top: 0;
 	overflow: auto;
-	height:32%;
+	height:40%;
 }
 .ui-autocomplete {
 	position: absolute;

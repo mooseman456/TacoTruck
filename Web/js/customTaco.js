@@ -49,6 +49,8 @@ function fillSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentFill").innerHTML = event.target.innerHTML;
+   
 }
 
 function tortillaSelect(event) {
@@ -57,6 +59,7 @@ function tortillaSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentTortilla").innerHTML = event.target.innerHTML;
 }
 
 function riceSelect(event) {
@@ -65,6 +68,7 @@ function riceSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentRice").innerHTML = event.target.innerHTML;
 }
 
 function cheeseSelect(event) {
@@ -73,6 +77,7 @@ function cheeseSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentCheese").innerHTML = event.target.innerHTML;
 }
 
 function beanSelect(event) {
@@ -81,6 +86,7 @@ function beanSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentBean").innerHTML = event.target.innerHTML;
 }
 
 function sauceSelect(event) {
@@ -89,6 +95,7 @@ function sauceSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentSauce").innerHTML = event.target.innerHTML;
 }
 
 function vegSelect(event) {
@@ -97,6 +104,7 @@ function vegSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
+   document.getElementById("currentVeg").innerHTML = event.target.innerHTML;
 }
 
 function extraSelect(event) {
@@ -105,21 +113,5 @@ function extraSelect(event) {
       prevSelected[i].classList.toggle("selected", false);
    }
    event.target.classList.toggle("selected", true);
-}
-
-function buttonFunction(event) {
-   event.preventDefault();
-   
-   var degrees = document.getElementById("degreeValue");
-   var selectedWeather = document.getElementsByClassName("selected");
-   
-   var metric = document.getElementsByTagName("select");
-   
-   
-   document.getElementById("tempDescription").innerHTML = selectedWeather[0].alt;
-   document.getElementsByClassName("weatherIcon")[0].src = selectedWeather[0].src;
-   
-   document.getElementById("tempDegree").innerHTML = degrees.value;
-   document.getElementById("tempUnit").innerHTML = metric[0].value;
-   
+   document.getElementById("currentExtras").innerHTML = event.target.innerHTML;
 }

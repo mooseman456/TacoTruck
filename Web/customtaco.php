@@ -117,37 +117,21 @@ while($row = $result->fetch_row()) {
 	   <!-- Current Taco Pane -->
 	   <div id="currentTacoPane">
 	      <h2 id="currentTaco">Current Taco</h2>
-	      <div id="currentFill">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentFill" class="currentList">
 	      </div>
-	      <div id="currentTortilla">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentTortilla" class="currentList">
 	      </div>
-	      <div id="currentRice">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentRice" class="currentList">
 	      </div>
-	      <div id="currentCheese">
-	         <h3>Filling</h3>
-	         <p></t>Steak</p>
+	      <div id="currentCheese" class="currentList">
 	      </div>
-	      <div id="currentBean">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentBean" class="currentList">
 	      </div>
-	      <div id="currentSauce">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentSauce" class="currentList">
 	      </div>
-	      <div id="currentVeg">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentVeg" class="currentList">
 	      </div>
-	      <div id="currentExtras">
-	         <h3>Filling</h3>
-	         <p>Steak</p>
+	      <div id="currentExtras" class="currentList">
 	      </div>
 	   </div>
 	   
@@ -168,17 +152,17 @@ while($row = $result->fetch_row()) {
 			   <h3>Rice</h3>
 			   <div>
 					   <?php echo $tacoRice; ?>
-					   <div class="rice menuItem clear">None</div>
+					   <div class="rice menuItem selected clear">None</div>
 			   </div>
 			   <h3>Cheese</h3>
 			   <div>
 					   <?php echo $tacoCheese; ?>
-					   <div class="cheese menuItem clear">None</div>
+					   <div class="cheese menuItem selected clear">None</div>
 			   </div>
 			   <h3>Beans</h3>
 			   <div>
 					   <?php echo $tacoBeans; ?>
-					   <div class="beans menuItem clear">None</div>
+					   <div class="beans menuItem selected clear">None</div>
 			   </div>
 			   <h3>Sauces</h3>
 			   <div>
@@ -187,12 +171,12 @@ while($row = $result->fetch_row()) {
 			   <h3>Vegetables</h3>
 			   <div>
 					   <?php echo $tacoVeggies; ?>
-					   <div class="vegetables menuItem clear">None</div>
+					   <div class="vegetables menuItem selected clear">None</div>
 			   </div>
 			   <h3>Extras</h3>
 			   <div>
 					   <?php echo $tacoExtras; ?>
-					   <div class="extras menuItem clear">None</div>
+					   <div class="extras menuItem selected clear">None</div>
 			   </div>
 		   </div>
 
