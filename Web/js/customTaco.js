@@ -92,12 +92,9 @@ function beanSelect(event) {
 
 function sauceSelect(event) {
    var prevSelected = document.getElementsByClassName("sauce selected");
-   
    for (var i=0; i<prevSelected.length; i++){
       prevSelected[i].classList.toggle("selected", false);
-      i--;
    }
-
    event.target.classList.toggle("selected", true);
    document.getElementById("currentSauce").innerHTML = event.target.innerHTML;
 }
@@ -151,36 +148,3 @@ $(document).ready(function() {
       
    });
 });
-
-function vegSelect(event) {
-   if (event.target.classList.contains("clear")) {
-   
-      var prevSelected = document.getElementsByClassName("vegetables selected");
-      for (var i=0; i<prevSelected.length; i++){
-         prevSelected[i].classList.remove("selected");
-      }  
-      event.target.classList.toggle("selected");
-   } 
-   else if (document.getElementsByClassName("vegetables clear")[0].classList.contains("selected")){
-      document.getElementsByClassName("vegetables clear")[0].classList.toggle("selected");
-      event.target.classList.toggle("selected");
-   } 
-   else {
-      event.target.classList.toggle("selected");
-   }
-   var selectedElements = document.getElementsByClassName("vegetables selected");
-   var returnString="";
-   for (var i=0; i<selectedElements.length; i++)
-      returnString += selectedElements[i].innerHTML + " ";
-   document.getElementById("currentVeg").innerHTML = returnString;
-      
-}
-
-function extraSelect(event) {
-   var prevSelected = document.getElementsByClassName("extras selected");
-   for (var i=0; i<prevSelected.length; i++){
-      prevSelected[i].classList.toggle("selected", false);
-   }
-   event.target.classList.toggle("selected", true);
-   document.getElementById("currentExtras").innerHTML = event.target.innerHTML;
-}

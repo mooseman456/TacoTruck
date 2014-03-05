@@ -1,9 +1,21 @@
 window.addEventListener('load', function() {
+	// Hover over locations event listener
+	var locations = $(".location");
+	$.each(locations, function(index, value) {
+		$(value).addClass("shadowBox");
+		$(value).hover( function() {
+			console.log("on");
+			$(value).addClass("hover");	
+		}, function() {
+			console.log("off");
+			$(value).removeClass("hover");
+		})
+	});
 	
+
 	// Initialize Google Map
-	var mapOptions = {center: new google.maps.LatLng(32.73, -96.8),zoom: 11 };
+	var mapOptions = {center: new google.maps.LatLng(32.68, -96.8),zoom: 11 };
 	var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-	//google.maps.event.addDomListener(window, 'load', initialize);
 
 	// Trucks from json
 	geocoder = new google.maps.Geocoder();
@@ -30,26 +42,16 @@ window.addEventListener('load', function() {
 	} else {
 		window.alert("Could not get truck locations.")
 	}
-/*
-	// List locations
-	var locations = document.getElementsByClassName("location");
-	for(var i=0; i<locations.length; i++) {
-		locations[i].innerHTML = trucks[i].name;
-	}
-*/
 }, false);
 
-function addTruckPin(result, status, id) {
-	if (status == google.maps.GeocoderStatus.OK) {
-        var marker = new google.maps.Marker({
-            //title: trucks[count].name,
-            map: map,
-            position: results[0].geometry.location
-        });
-    } else {
-        alert("Geocode was not successful for the following reason: " + status);
-    }
+
+function initialize() {
+	console.log("poop");
 }
+
+
+
+
 
 
 
