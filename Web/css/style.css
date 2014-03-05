@@ -233,18 +233,19 @@ td {
 	width:200px;
 }
 
-/********************************/
-/*		Location Styling		*/
-/********************************/
+/********************/
+/*		Location	*/
+/********************/
 #map-canvas {
 	display:block;
 	position: absolute;
 	top: 40px;
 	left: 40%;
 	height: 90%;
-	width: 60%;
+	width: 56%;
 	z-index:2;
-	margin: 2em;
+	margin: 1em;
+	box-shadow: 5px 5px 5px #888;
 }
 
 #locations {
