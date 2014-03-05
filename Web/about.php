@@ -18,7 +18,7 @@
 			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
 		</ul>
 	</nav>
-	<article>
+	<article class="about">
 		<h1>A Heart-Warming Story</h1>
 		<img src="img/aboutImg.jpg" alt="Delectable Taco">
 		<p>

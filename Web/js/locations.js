@@ -37,19 +37,4 @@ window.addEventListener('load', function() {
 		window.alert("Could not get truck locations.")
 	}
 
-	// Dummy Trucks
-/*
-	var truck1 = new google.maps.Marker( {
-		position: truck1LatLng,
-		map: map,
-		title: 'One Truck!'
-	});
-
-	var truck2 = new google.maps.Marker( {
-		position: truck2LatLng,
-		map: map,
-		title: 'Two Truck!'
-	});
-*/
-
 }, false);
