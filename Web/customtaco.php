@@ -133,7 +133,7 @@ while($row = $result->fetch_row()) {
 	      <p id="currentCheese" class="currentList">
 	         No Cheese
 	      </p>
-	      <p id="currentBean" class="currentList">
+	      <p id="currentBeans" class="currentList">
 	         No Beans
 	      </p>
 	      <p id="currentSauce" class="currentList">

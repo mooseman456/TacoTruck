@@ -411,12 +411,12 @@ input[type=submit]{
    color: black;
 }
 
-#currentBean {
+#currentBeans {
    border-left: 3px solid Brown;
    color: gray;
 }
 
-#currentBean .added {
+#currentBeans .added {
    color: black;
 }
 
