@@ -43,13 +43,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$givenName = mysql_real_escape_string($_POST['firstname']);
 		$surname = mysql_real_escape_string($_POST['lastname']);
 		$email = mysql_real_escape_string($_POST['email']);
-		$password = mysql_real_escape_string($_POST['password']);
+		$password = password_hash(mysql_real_escape_string($_POST['password']), PASSWORD_DEFAULT);
 		$phoneNumber = mysql_real_escape_string($_POST['phonenumber']);
 		$CC_Provider = mysql_real_escape_string($_POST['ccprovider']);
 		$CC_Number = mysql_real_escape_string($_POST['ccnumber']);
 
 		$query = "INSERT INTO Users (givenName, surname, email, password, phoneNumber, CC_Provider, CC_Number) 
-							VALUES ('$givenName', '$surname', '$email', '$password', '$phoneNumber', '$CC_Provider', '$CC_Number')";
+		VALUES ('$givenName', '$surname', '$email', '$password', '$phoneNumber', '$CC_Provider', '$CC_Number')";
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 
 		session_start();
@@ -75,10 +75,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 <script>
 function passwordEquals() {
-    var pass1 = document.getElementById("pass1").value;
-    var pass2 = document.getElementById("pass2").value;
-    var ok = true;
-    if (pass1 != pass2) {
+	var pass1 = document.getElementById("pass1").value;
+	var pass2 = document.getElementById("pass2").value;
+	var ok = true;
+	if (pass1 != pass2) {
         //alert("Passwords Do not match");
         document.getElementById("pass1").style.borderColor = "#E34234";
         document.getElementById("pass2").style.borderColor = "#E34234";
@@ -100,7 +100,7 @@ function passwordEquals() {
 	<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-   <script src="js/main.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
 	<!-- Page navigation menu -->
