@@ -124,7 +124,7 @@ function passwordEquals() {
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="email" placeholder="Email" required><br>
 				<input class="userInput" type="password" name="password" placeholder="Password" required><br>
-				<input class="userInput" type="submit" value="Sign In">
+				<input class="userInput button" type="submit" value="Sign In">
 			</form>
 			<div>
 				<?php echo $loginStatus; ?>
@@ -146,7 +146,7 @@ function passwordEquals() {
 					<option value="Visa">Visa</option>
 				</select><br>
 				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
-				<input class="userInput" type="submit" value="Register">
+				<input class="userInput button" type="submit" value="Register">
 			</form>
 		</div>
 	</div>

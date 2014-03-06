@@ -106,7 +106,7 @@ include('include/header.php'); ?>
 	<div id="navSpace"></div>
 
 	<!-- Order Pane -->
-	<div class="orderPane shadowBoxHeavy">
+	<div class="orderPane shadowBoxLight">
 		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul>
@@ -120,7 +120,7 @@ include('include/header.php'); ?>
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder" value="Check Out"/>
+		<input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
 	</div>
 
 
@@ -141,10 +141,10 @@ include('include/header.php'); ?>
 				<td><img src="img/Taco4.png" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
 			</tr>
 			<tr>
-				<td>Taco 5</td>
-				<td>Taco 6</td>
-				<td>Taco 7</td>
-				<td>Taco 8</td>
+				<td><?php echo $PreMadeTacos[4]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[5]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[6]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[7]['name']; ?></td>
 			</tr>
 			<tr class="tacoRow">
 				<td><img src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
