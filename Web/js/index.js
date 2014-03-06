@@ -1,41 +1,74 @@
 $(document).ready(function() {
    
+   var numItems=0;
+   var orderTacos = new Array();
+   orderTacos.push(new taco("taco1"));
+   orderTacos.push(new taco("taco2"));
+   orderTacos.push(new taco("taco3"));
+   orderTacos.push(new taco("taco4"));
+   orderTacos.push(new taco("taco5"));
+   orderTacos.push(new taco("taco6"));
+   orderTacos.push(new taco("taco7"));
+   orderTacos.push(new taco("taco8"));
+   
    $("#taco1").click(function(e) {
-      var append = "<li>" + document.getElementById("taco1").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[0].quantity += 1;
+      updateOrder();
    });
    
    $("#taco2").click(function(e) {
-      var append = "<li>" + document.getElementById("taco2").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[1].quantity += 1;
+      updateOrder();
    });
+   
    $("#taco3").click(function(e) {
-      var append = "<li>" + document.getElementById("taco3").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[2].quantity += 1;
+      updateOrder();
    });
    
    $("#taco4").click(function(e) {
-      var append = "<li>" + document.getElementById("taco4").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[3].quantity += 1;
+      updateOrder();
    });
    
    $("#taco5").click(function(e) {
-      var append = "<li>" + document.getElementById("taco5").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[4].quantity += 1;
+      updateOrder();
    });
    
    $("#taco6").click(function(e) {
-      var append = "<li>" + document.getElementById("taco6").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[5].quantity += 1;
+      updateOrder();
    });
    
    $("#taco7").click(function(e) {
-      var append = "<li>" + document.getElementById("taco7").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[6].quantity += 1;
+      updateOrder();
    });
    
    $("#taco8").click(function(e) {
-      var append = "<li>" + document.getElementById("taco8").alt + "</li><img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\">";
-      $("#orderList").append(append);
+      orderTacos[7].quantity += 1;
+      updateOrder();
    });
+   
+   function taco(name) {
+      this.quantity = 0;
+      this.id = name;
+      this.returnString = function() {
+         return "<li>" + document.getElementById(this.id).alt + " x" + this.quantity + "<img class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\"></li>";
+      };
+   };
+   
+   var updateOrder = function() {
+      var append ="";
+      for (var i=0; i<orderTacos.length; i++) {
+         if(orderTacos[i].quantity !== 0)
+            append += orderTacos[i].returnString();
+      }
+      document.getElementById("orderList").innerHTML = append;
+      $('.cancelButton').click(function(e) {
+         alert("You pressed the cancel");
+      });
+   };
+   
 });
