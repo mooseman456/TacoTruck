@@ -1,6 +1,5 @@
 <?php
 
-
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){
@@ -70,8 +69,12 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 
 ?>
 
+<?php
+echo "this";
+$pageTitle = 'Welcome to the Taco Truck!';
+include('include/header.php'); ?>
 
-<!doctype html>
+<!--
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -90,7 +93,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	</script>
 </head>
 <body>
-	<!-- Page navigation menu -->
+	<!>> Page navigation menu
 	<nav id="navbar">
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo"></li>
