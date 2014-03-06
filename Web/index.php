@@ -110,6 +110,9 @@ include('include/header.php'); ?-->
 		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul id="orderList">
+			<li>Poop<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
+			<li>And<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
+			<li>More<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">
