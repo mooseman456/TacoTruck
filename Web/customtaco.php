@@ -107,7 +107,6 @@ while($row = $result->fetch_row()) {
 		   <h2 id="order">Order </h2>
 		   <!-- List of tacos in order -->
 		   <ul>
-			   
 		   </ul>
 		   <!-- Tax and total -->
 		   <ul>
