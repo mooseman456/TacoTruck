@@ -111,13 +111,17 @@ function accountCreationVerification() {
 	<title>Account</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   <script src="js/main.js"></script>
 </head>
 <body>
 	<!-- Page navigation menu -->
 	<nav id="navbar">
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
-			<li><a href="index.php">Order</a></li>
+			<li><a href="index.php">Menu</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="locations.php">Locations</a></li>
 			<li id="accountLink" class="select"><a>Sign In/Create Account</a></li>
@@ -134,7 +138,7 @@ function accountCreationVerification() {
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="email" placeholder="Email" required><br>
 				<input class="userInput" type="password" name="password" placeholder="Password" required><br>
-				<input class="userInput" type="submit" value="Sign In">
+				<input class="userInput button" type="submit" value="Sign In">
 			</form>
 			<div>
 				<?php echo $loginStatus; ?>
