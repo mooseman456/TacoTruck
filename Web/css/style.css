@@ -71,7 +71,7 @@ article.about p{
 	/*border-bottom: 2px solid #ccc;*/
 	background: #8F3C1C;
 	/* background-color: rgba(217, 94, 50, 1); */
-	z-index: 1;
+	z-index: 2;
 }
 
 #navbar ul {
@@ -237,9 +237,9 @@ td {
 	position: absolute;
 	top: 40px;
 	left: 40%;
-	height: 90%;
+	height: 600px;
 	width: 56%;
-	z-index:2;
+	z-index: 1;
 	margin: 1em;
 	box-shadow: 8px 8px 8px #888;
 }
@@ -275,7 +275,7 @@ td {
 #locations section.hover {
 	background-color: rgba(143,60,28,0.1);
 	box-shadow: 7px 7px 7px #777;
-	margin-right: 8%;
+	margin-right: 9%;
 }
 
 .shadowBox {
