@@ -113,7 +113,7 @@ $(document).ready(function() {
    });
    
    $('#cancelTaco').click(function(e) {
-      var r=confirm("Are you sure you want to cancel this taco?");
+      var r=confirm("Are you sure you want to delete this taco?");
       if (r==true)
          window.location = "index.php";
    });

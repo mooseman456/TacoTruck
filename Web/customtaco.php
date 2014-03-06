@@ -43,8 +43,9 @@ while($row = $result->fetch_row()) {
    if ($row[1] != 23)
   	   $tacoSauces = $tacoSauces . "<div id=\"$row[1]\" class=\"sauce menuItem\">$row[0]</div>";
   	else
-  	   $tacoSauces = $tacoSauces . "<div id=\"$row[1]\" class=\"sauce menuItem selected clear\">$row[0]</div>";
+  	   $noSauce = "<div id=\"$row[1]\" class=\"sauce menuItem selected clear\">$row[0]</div>";
 }
+$tacoSauces = $tacoSauces . $noSauce;
 
 $query = "SELECT TacoFixings.name, TacoFixings.tacofixing_id FROM TacoFixings WHERE TacoFixings.itemType='Vegetables'";
 $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
