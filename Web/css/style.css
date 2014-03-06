@@ -437,6 +437,18 @@ input[type=submit]{
 #currentExtras .added {
    color: black;
 }
+
+#addTaco {
+   margin-left:7%;
+   width:85%;
+   height:3em;
+}
+
+#cancelTaco {
+   margin:2% 0% 0% 7%;
+   width:85%;
+   height:2em;
+}
 /***********************/
 /*  INGREDIENTS  PANE  */
 /***********************/

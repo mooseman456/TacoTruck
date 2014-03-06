@@ -146,6 +146,7 @@ while($row = $result->fetch_row()) {
 	         No Extras
 	      </p>
 	      <input type="submit" id="addTaco" value="Add Taco"/>
+	      <input type="submit" id="cancelTaco" value="Cancel Taco"/>
 	   </div>
 	   
 	   <!-- Ingredients Pane -->

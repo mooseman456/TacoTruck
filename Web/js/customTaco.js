@@ -9,7 +9,7 @@ $(document).ready(function() {
    $('.tortilla').click(function(e) {
       $('.tortilla.selected').removeClass('selected');
       $(this).addClass('selected');
-      document.getElementById('currentTortilla').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+      document.getElementById('currentTortilla').innerHTML = "<span class='added'>" + $(this).html() + " Tortilla</span>";
    });
    
    $('.rice').click(function(e) {
@@ -106,5 +106,15 @@ $(document).ready(function() {
       }   
       document.getElementById("currentExtras").innerHTML = returnString;
       
+   });
+   
+   $('#addTaco').click(function(e) {
+      alert("Taco is added");
+   });
+   
+   $('#cancelTaco').click(function(e) {
+      var r=confirm("Are you sure you want to cancel this taco?");
+      if (r==true)
+         window.location = "index.php";
    });
 });
