@@ -1,0 +1,472 @@
+/**************************************/
+/*             GENERAL CSS            */
+/**************************************/
+
+/*******************/
+/* HTML AND BODY   */
+/*******************/
+
+
+html {
+	font-family: "Condiment", arial;
+}
+
+body {
+	background-image: url("../img/bg.jpg");
+	margin: 0;
+}
+
+h2 {
+	font-size: 2.5em;
+	text-align:center;
+	margin:3%;
+}
+
+p {
+	font-family: 'gafata';
+}
+
+
+
+/****************/
+/*	About Page 	*/
+/****************/
+article.about {
+	display:block;
+	margin: 5% 15%;
+	height: 100%;
+	border-radius: 6em;
+	padding: 2em 4em;
+	box-shadow: 10px 10px 8px #888;
+}
+
+article.about h1 {
+	font-size: 4em;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+article.about img {
+	float: left;
+	margin-right: 10px;
+}
+
+article.about p{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/*******************/
+/* NAVIGATION BAR  */
+/*******************/
+#navbar {
+	position: fixed;
+	/*margin-bottom: 10px;*/
+	top:0;
+	left:0;
+	width:100%;
+	/*border-bottom: 2px solid #ccc;*/
+	background: #8F3C1C;
+	/* background-color: rgba(217, 94, 50, 1); */
+	z-index: 2;
+}
+
+#navbar ul {
+	list-style: none;
+	margin:0;
+	padding-left: 0.3em;
+	margin-left: -0.3em;
+}
+
+#navbar li {
+	float:left;
+	display: block;
+	background: #8F3C1C;
+	/* background-color: rgba(217, 94, 50, 1); */
+}
+
+#navbar li {
+	font-size: 30px;
+	height: 40px;
+}
+
+#navbar li a {
+	text-decoration:none;
+	display:block;
+	padding: 0em 1em;
+	color: white;
+	padding-top:0.15em;
+}
+
+#navbar li:hover {
+	background-color: #C8C8C8 
+}
+#navbar li:first-child:hover{
+	background: #8F3C1C;
+}
+
+#navbar .select:hover, #navbar .select {
+	background-color: #C1C98D;
+}
+
+#logoImg {
+	width: 75px;
+	height: 33px;
+	float:left;
+	padding-top: 0.15em;
+}
+
+#accountLink {
+	position: fixed;
+	right: 50px;
+	font-size: 20px;
+}
+
+#accountLink a {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+.tacoRow td:hover {
+	background:#eee;
+}
+
+.menuItem {
+	text-align: left;
+	margin:5% 0% 5% 7%;
+}
+.menuItem:hover {
+	background: #F0F0F0;
+	cursor: pointer;
+}
+
+#navSpace {
+	height: 40px;
+}
+
+
+
+/**************************************/
+/*             ORDER PAGE             */
+/**************************************/
+
+/***********************/
+/*    ORDER PANE       */
+/***********************/
+
+.orderPane {
+	width: 20%;
+	margin:0% 4%;
+	float: left;
+	padding: 1em;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
+}
+
+.orderPane input {
+	width: 100%;
+	font-size: 1.4em;
+}
+
+img.cancelButton {
+	float:right;
+	border-radius:50%;
+}
+
+img.cancelButton:hover {
+	box-shadow: 1px 2px 2px #888888;
+}
+
+/***********************/
+/*    MENU  PANE       */
+/***********************/
+
+.menuPane {
+	float:left;
+	width:52%;
+	padding-right:2%;
+	padding-bottom: 1%;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
+}
+
+#menuTable {
+	display:inline;
+	width:10%;
+}
+
+.tacoRow td:hover {
+	background-color: #C8C8C8 
+}
+
+tr {
+	text-align: center;
+}
+
+td {
+	font-size: 2em;
+}
+
+#customTaco{
+	padding:0px 125px;
+}   
+
+
+/**************************************/
+/*    SIGN IN/CREATE ACCOUNT PAGE     */
+/**************************************/
+
+.userForm {
+	width:85%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.accountForm {
+	width:90%;
+	margin: 0 auto;
+}
+
+
+/********************/
+/*		Location	*/
+/********************/
+#map-canvas {
+	display:block;
+	position: absolute;
+	top: 40px;
+	left: 30%;
+	height: 90%;
+	width: 66%;
+	z-index: 1;
+	margin: 1em 2%;
+	box-shadow: 10px 10px 8px #888;
+}
+
+#locations {
+	width:30%;
+}
+
+#locations ul {
+	list-style: none;
+	font-family: 'gafata';
+}
+
+#locations section {
+	width: auto;
+	margin-top: 1em;
+	margin-right: 5%;
+	padding: 1em;
+	border-radius: 0em 10em 10em 0;
+}
+
+#locations section h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+}
+
+#locations section p {
+	padding: 0;
+	margin: 0 0.3em;
+}
+
+#locations section.hover {
+	background-color: rgba(143,60,28,0.2);
+	box-shadow: 7px 7px 7px #777;
+	margin-right: 3%;
+}
+
+.shadowBox {
+	background-color: rgba(250,250,250,0.3);
+	box-shadow: 5px 5px 5px #888;
+}
+
+
+/***********************/
+/* ACCOUNT PAGE CONTENT*/
+/***********************/
+
+.userInput{
+	padding: 1px; 
+	line-height: 28px;
+	font-size: 20px;
+	width: 100%;
+}
+
+input:not([type=submit]), select.userInput{
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius:5px;
+	border-style: black;
+	border-width: 1px;
+	/*border-style:solid;*/
+
+}
+input[type=submit]{
+	border-radius: 10px;
+	background-color: #C1C98D;
+}
+
+
+/***********************/
+/*     SIGN IN PANE    */
+/***********************/
+
+#signInPane {
+	margin: 0% 0% 0% 15%;
+}
+
+/***********************/
+/* CREATE ACCOUNT PANE */
+/***********************/
+ .accountForm div{
+	border-radius: 20px;
+	float:left;
+	width: 25%;
+	padding: 2% 2% 2% 2%;
+}
+
+#createAccountPane {
+	margin: 0% 10% 0% 10%;
+
+}
+#createAccountPane  h1, #signInPane h1{
+	text-align: center;
+	font-size: 36px;
+	margin:0px;
+}
+
+#tempDiv {
+	height:50px;
+}
+
+
+/********************************/
+/*		CUSTOM TACO PAGE          */
+/********************************/
+
+/***********************/
+/*  CURRENT TACO PANE  */
+/***********************/
+#currentTacoPane {
+	float:left;
+	width:25%;
+	margin: 0% 4%;
+	padding-bottom: 1%;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
+}
+
+.currentList {
+   font-size:2em;
+   margin: 3% 0%;
+   padding-left: .2em;
+}
+
+
+#currentVeg {
+   border-left: 3px solid forestgreen;
+   color: gray;  
+}
+
+#currentVeg .added {
+   color: black;
+}
+
+#currentFill {
+   border-left: 3px solid blue;
+   color: gray;
+}
+
+#currentFill .added {
+   color: black;
+}
+
+#currentTortilla {
+   border-left: 3px solid red;
+   color: gray;
+}
+
+#currentTortilla .added {
+   color: black;
+}
+
+#currentRice {
+   border-left: 3px solid darkgoldenrod;
+   color: gray;
+}
+
+#currentRice .added {
+   color: black;
+}
+
+#currentCheese {
+   border-left: 3px solid yellow;
+   color: gray;
+}
+
+#currentCheese .added {
+   color: black;
+}
+
+#currentBeans {
+   border-left: 3px solid Brown;
+   color: gray;
+}
+
+#currentBeans .added {
+   color: black;
+}
+
+#currentSauce {
+   border-left: 3px solid hotpink;
+   color: gray;
+}
+
+#currentSauce .added {
+   color: black;
+}
+
+#currentExtras {
+   border-left: 3px solid powderblue;
+   color: gray;
+}
+
+#currentExtras .added {
+   color: black;
+}
+/***********************/
+/*  INGREDIENTS  PANE  */
+/***********************/
+
+#ingredientsPane {
+	float:left;
+	width:25%;
+	margin: 0% 4%;
+    padding-bottom: 1%;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #aaa;
+}
+
+.selected {
+   color:blue;
+   border-left: 2px solid #ccc;
+}
+/********************/
+/*  CHECKOUT  PANE  */
+/********************/
+
+.checkoutPane {
+	float:left;
+	width:25%;
+	margin: 0% 4%;
+	border:solid;
+}
