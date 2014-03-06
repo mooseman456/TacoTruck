@@ -241,16 +241,17 @@ td img {
 	display:block;
 	position: absolute;
 	top: 40px;
-	left: 40%;
+	left: 30%;
 	height: 90%;
-	width: 56%;
+	width: 66%;
 	z-index: 1;
 	margin: 1em;
 	box-shadow: 8px 8px 8px #888;
+	min-height: 600px
 }
 
 #locations {
-	width:40%;
+	width:30%;
 }
 
 #locations ul {
@@ -278,7 +279,7 @@ td img {
 }
 
 #locations section.hover {
-	background-color: rgba(143,60,28,0.1);
+	background-color: rgba(143,60,28,0.2);
 	box-shadow: 7px 7px 7px #777;
 	margin-right: 9%;
 }
