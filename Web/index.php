@@ -75,7 +75,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	<nav id="navbar">
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo"></li>
-			<li class="select"><a>Order</a></li>
+			<li class="select"><a>Menu</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="locations.php">Locations</a></li>
 			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>

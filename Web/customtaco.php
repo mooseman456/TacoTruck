@@ -93,7 +93,7 @@ while($row = $result->fetch_row()) {
 	   <nav id="navbar">
 		   <ul>
 			   <li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
-			   <li><a href="index.php">Order</a></li>
+			   <li><a href="index.php">Menu</a></li>
 			   <li><a href="about.php">About</a></li>
 			   <li><a href="locations.php">Locations</a></li>
 			   <li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
