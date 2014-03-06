@@ -74,7 +74,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 ?>
 
 <script>
-function passwordEquals() {
+function accountCreationVerification() {
     var pass1 = document.getElementById("pass1").value;
     var pass2 = document.getElementById("pass2").value;
     var ok = true;
@@ -84,7 +84,21 @@ function passwordEquals() {
         document.getElementById("pass2").style.borderColor = "#E34234";
         ok = false;
     }
-    
+
+    var phoneNumber = document.getElementById("phoneNum").value;
+    if (!/^\d+$/.test(phoneNumber)) {
+    	document.getElementById("phoneNum").style.borderColor = "#E34234";
+    	ok = false;
+    }
+
+    var ccNumber = document.getElementById("ccnum").value;
+    if (!/^\d+$/.test(ccNumber)) {
+    	document.getElementById("ccnum").style.borderColor = "#E34234";
+    	ok = false;
+    }
+
+
+
     return ok;
 }
 </script>
@@ -129,19 +143,19 @@ function passwordEquals() {
 
 		<div id="createAccountPane" class="shadowBox">
 			<h1>Create an Account</h1>
-			<form class="userForm" method="POST" onsubmit="return passwordEquals()">
+			<form class="userForm" method="POST" onsubmit="return accountCreationVerification()">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name" required><br>
 				<input class="userInput" type="text" name="lastname" placeholder="Last Name" required><br>
 				<input class="userInput" type="email" name="email" placeholder="Email" required><br>
 				<input class="userInput" type="password" id="pass1" name="password" placeholder="Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
 				<input class="userInput" type="password" id="pass2" name="password" placeholder="Confirm Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
-				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number" pattern=".{10,10}" title="Valid 10-digit Phone Number" required><br>
+				<input class="userInput" type="text" id="phoneNum" name="phonenumber" placeholder="Phone Number" pattern=".{10}" title="Valid 10-digit Phone Number" required><br>
 				<select class="userInput" name = "ccprovider">
 					<option value="Mastercard">Master Card</option>
 					<option value="American Express">American Express</option>
 					<option value="Visa">Visa</option>
 				</select><br>
-				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
+				<input class="userInput" type="text" id="ccnum" name="ccnumber" placeholder="Credit Card Number" pattern=".{13,16}" title="Valid Credit Card Number"><br>
 				<input class="userInput" type="submit" value="Register">
 			</form>
 		</div>
