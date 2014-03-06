@@ -166,6 +166,5 @@ include('include/header.php'); ?-->
 	</article>
 
 	<script src="js/main.js"></script>
-	<script src="js/menu.js"></script>
 </body>
 </html>
