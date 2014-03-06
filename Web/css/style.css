@@ -78,7 +78,7 @@ article.about {
 	margin: 5% 15%;
 	height: 100%;
 	border-radius: 6em;
-	padding: 2em 4em;
+	padding: 2em 3em;
 }
 
 article.about h1 {
@@ -199,7 +199,18 @@ nav .select:hover, nav .select {
 .orderPane {
 	width: 25%;
 	float: left;
-	margin: 2em 5%;
+	margin: 1em 5%;
+	min-height: 400px;
+}
+
+#orderList img {
+	float: right;
+}
+
+.orderPane input {
+	position: relative;
+	display: block;
+	bottom:0px;
 }
 
 .orderPane ul {
@@ -209,13 +220,20 @@ nav .select:hover, nav .select {
 	font-family: "gafata";
 }
 
-.orderPane ul li{
-   width:50%;
-   padding:0%;
-   margin:0%;
+.orderPane #orderList {
+	height: 280px;
 }
 
-img.cancelButton {S
+.orderPane #taxAndTotal {
+	float: left;
+	margin-top: 1em;
+}
+
+.orderPane ul li{
+   width:100%;
+}
+
+img.cancelButton {
 	border-radius:50%;
 }
 
@@ -230,22 +248,27 @@ img.cancelButton:hover {
 .menuPane {
 	float:left;
 	width:52%;
-	padding: 0 2em;
-	border-radius: 20px;
+	padding: 2em;
+	/* background-color: rgba(143,60,28,0.95); */
 }
 
 .menuPane h2 {
 	font-size: 1em;
 	border-bottom: 1px solid black;
+	padding-bottom: 4px;
 }
 
 .menuPane section {
 	width: 140px;
 	float:left;
 	margin: 2px;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(41, 17, 8, 0.7);
 	border-radius: 4px;
 	color: #ddd;
+}
+
+.menuPane section:hover {
+	background-color: rgba(41, 17, 8, 0.6)
 }
 
 .menuPane img{
@@ -375,7 +398,7 @@ input:not([type=submit]), select.userInput{
 input[type=submit]{
 	background-color: #C1C98D;
 	border-radius: 10px;
-	border-width: 0px;
+	border:none;
 }
 
 
