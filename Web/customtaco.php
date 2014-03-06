@@ -103,7 +103,7 @@ while($row = $result->fetch_row()) {
 	   <div id="navSpace"></div>
 
 	   <!-- Order Pane -->
-	   <div class="orderPane">
+	   <div class="orderPane shadowBoxLight">
 		   <h2 id="order">Order </h2>
 		   <!-- List of tacos in order -->
 		   <ul>
@@ -118,7 +118,7 @@ while($row = $result->fetch_row()) {
 	   </div>
 	   
 	   <!-- Current Taco Pane -->
-	   <div id="currentTacoPane">
+	   <div class="shadowBoxLight" id="currentTacoPane">
 	      <h2 id="currentTaco">Current Taco</h2>
 	      <p id="currentFill" class="currentList">
 	         Please select a filling
@@ -149,7 +149,7 @@ while($row = $result->fetch_row()) {
 	   </div>
 	   
 	   <!-- Ingredients Pane -->
-	   <div id="ingredientsPane">
+	   <div class="shadowBoxLight" id="ingredientsPane">
 		   <h2>Ingredients</h2>
 
 		   <div id="accordion">
