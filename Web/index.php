@@ -103,7 +103,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	<div id="navSpace"></div>
 
 	<!-- Order Pane -->
-	<div class="orderPane">
+	<div class="orderPane shadowBoxHeavy">
 		<h2 id="order">Order </h2>
 		<!-- List of tacos in order -->
 		<ul>
@@ -122,7 +122,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 
 
 	<!-- Table for menu -->
-	<div class="menuPane">
+	<div class="menuPane shadowBoxHeavy">
 		<h2>Menu</h2>
 		<table id="menuTable">
 			<tr>
