@@ -33,9 +33,6 @@
 		   <h2 id="order">Order </h2>
 		   <!-- List of tacos in order -->
 		   <ul>
-			   <li>Taco 1: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
-			   <li>Taco 3: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
-			   <li>Custom Taco 1: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
 		   </ul>
 		   <!-- Tax and total -->
 		   <ul>

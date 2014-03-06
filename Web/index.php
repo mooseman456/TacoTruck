@@ -157,11 +157,11 @@ include('include/header.php'); ?>
 			</section>
 			<section>
 				<h2>Custom Taco</h2>
-				<img src="img/plus_icon.png" alt="Plus arrow">
+				<img id="customTaco" src="img/plus_icon.png" alt="Plus arrow">
 			</section>
 			<section>
 				<h2>Previous Taco</h2>
-				<img src="img/previous_icon.png" alt="Previous Taco">
+				<img src="img/previous_icon.png" alt="Previous Taco" id="previousTaco">
 			</section>
 
 
