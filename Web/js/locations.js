@@ -40,11 +40,6 @@ window.addEventListener('load', function() {
 			            title: trucks[count++].name
 			        });
 			        markers[count-1] = marker;
-			        
-			        //Bounce on hover
-					$.each(markers, function(index, value) {
-						
-					});
 			    } else {
 			        alert("Geocode was not successful for the following reason: " + status);
 			    }
