@@ -16,10 +16,29 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 
 	foreach ($data['PreMadeTacos'] as $taco) {
 		$PreMadeTacos[$counter] = $taco;
+		   
 		$PreMadeTacos[$counter]['ingredients'] = $PreMadeTacos[$counter]['type'].", ".$PreMadeTacos[$counter]['tortilla'].", ".
 												 $PreMadeTacos[$counter]['rice'].", ".$PreMadeTacos[$counter]['cheese'].", ".
-												 $PreMadeTacos[$counter]['beans'].", ".$PreMadeTacos[$counter]['sauces'].", ".
-												 $PreMadeTacos[$counter]['vegetables'].", ".$PreMadeTacos[$counter]['extras'];
+												 $PreMadeTacos[$counter]['beans'].", ".$PreMadeTacos[$counter]['sauces'];
+		
+      // Checks to see if the vegetables contains an array. Either way, adds the veggies as they need to be.
+		if (is_array($taco['vegetables'])) {
+		   foreach ($taco['vegetables'] as $tempVegetables) {
+		      $PreMadeTacos[$counter]['ingredients'] .= ", ".$tempVegetables;
+		   }
+		}
+		else
+		   $PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['vegetables'];
+		
+		// Same with vegetables except with extras
+		if (is_array($taco['extras'])) {
+		   foreach ($taco['extras'] as $tempExtras) {
+		      $PreMadeTacos[$counter]['ingredients'] .= ", ".$tempExtras;
+		   }
+		}
+		else
+		   $PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['extras'];
+		
 		//Remove trailing space and comma
 		$PreMadeTacos[$counter]['ingredients'] = rtrim($PreMadeTacos[$counter]['ingredients'],', ');
 		$counter++;
@@ -109,14 +128,14 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 			<tr>
 				<td><?php echo $PreMadeTacos[0]['name']; ?></td>
 				<td><?php echo $PreMadeTacos[1]['name']; ?></td>
-				<td>Taco 3</td>
-				<td>Taco 4</td>
+				<td><?php echo $PreMadeTacos[2]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[3]['name']; ?></td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 1" title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
-				<td><img src="img/taco_icon.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></td>
-				<td><img src="img/taco_icon.png" alt="Taco 3"></td>
-				<td><img src="img/taco_icon.png" alt="Taco 4"></td>
+				<td><img src="img/Taco1.jpg" alt="Taco 1" title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco2.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco3.jpg" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco4.jpg" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
 			</tr>
 			<tr>
 				<td>Taco 5</td>
@@ -125,10 +144,10 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 				<td>Taco 8</td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/taco_icon.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
-				<td><img src="img/taco_icon.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>></td>
-				<td><img src="img/taco_icon.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>></td>
-				<td><img src="img/taco_icon.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco5.jpg" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>></td>
 			</tr>
 		</table>
 		<table>

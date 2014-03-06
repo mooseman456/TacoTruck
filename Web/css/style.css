@@ -208,6 +208,10 @@ td {
 	font-size: 2em;
 }
 
+td img {
+   width:100%;
+   height:40%;
+}
 #customTaco{
 	padding:0px 125px;
 }   

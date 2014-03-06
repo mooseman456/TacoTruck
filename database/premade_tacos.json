@@ -1,11 +1,22 @@
 {
 	"PreMadeTacos": [
-		{ "name": "Basic Taco", "description": "Classic beef, lettuce, and cheese.", 
-		  "type": "Steak", "tortilla": "Flour", "rice": "No Rice", "cheese": "Cheddar/Jack Mix", 
-		  "beans": "No Beans", "sauces": "No Sauces", "vegetables": "Lettuce", "extras": "No Extras" },
-
 		{ "name": "Fire Dragon", "description": "OUCH! That burns like hell!", 
 		  "type": "Carnitas", "tortilla": "Flour", "rice": "Spanish Rice", "cheese": "Cheddar/Jack Mix", 
-		  "beans": "No Beans", "sauces": "Death", "vegetables": "Lettuce", "extras": "Queso" }
+		  "beans": "No Beans", "sauces": "Death", "vegetables": "Lettuce", "extras": "Queso" },
+		  
+		{ "name": "Oh!", "description": "I AM your sandwich.", 
+		  "type": "Steak", "tortilla": "Cayenne", "rice": "Cilantro Rice", "cheese": "Queso Fresco", 
+		  "beans": "Black Beans", "sauces": "Ranch", "vegetables": ["Tomatoes", "Roasted Garlic"], 
+		  "extras": ["Queso", "Guacamole"] },
+		  
+		{ "name": "The Jimmy", "description": "A Mexican taco for a Mexican Man.", 
+		  "type": "Steak", "tortilla": "White", "rice": "Spanish Rice", "cheese": "Queso Fresco", 
+		  "beans": "Refried Beans", "sauces": "Habenero", "vegetables": ["Jalapenos", "White Onion", 
+		  "Pico de Gallo", "Pepper/Onions", "Poblano Salsa"], "extras": 
+		  ["Queso", "Guacamole", "Sour Cream", "Bacon", "Sliced Avocado"] },
+		  
+	   { "name": "The Leopard", "description": "It'll give you spots.", "type": "Steak", "tortilla": "Cayenne", "rice": "No Rice",
+	     "cheese": "Cheddar/Jack Mix", "beans": "Black Beans", "sauces": "Hot Tomatillo", "vegetables" : ["Roasted Garlic", 
+	     "Peppers/Onions", "Red Onion", "Jalapenos", "White Onion", "Cilantro", "Tortilla Strips"], "extras" : ["Queso", "Bacon"]}
 	]
 }
