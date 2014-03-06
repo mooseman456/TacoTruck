@@ -128,14 +128,6 @@ include('include/header.php'); ?>
 	<article class="menuPane shadowBoxHeavy">
 		<h1>Menu</h1>
 			<section>
-				<h2>Custom Taco</h2>
-				<img src="img/plus_icon.png" alt="Plus arrow">
-			</section>
-			<section>
-				<h2>Previous Taco</h2>
-				<img src="img/previous_icon.png" alt="Previous Taco">
-			</section>
-			<section>
 				<h2><?php echo $PreMadeTacos[0]['name']; ?></h2>
 				<img src="img/Taco1.png" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
 			</section>
@@ -166,6 +158,14 @@ include('include/header.php'); ?>
 			<section>
 				<h2><?php echo $PreMadeTacos[7]['name']; ?></h2>
 				<img src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>>
+			</section>
+			<section>
+				<h2>Custom Taco</h2>
+				<img src="img/plus_icon.png" alt="Plus arrow">
+			</section>
+			<section>
+				<h2>Previous Taco</h2>
+				<img src="img/previous_icon.png" alt="Previous Taco">
 			</section>
 
 
