@@ -74,7 +74,7 @@ echo "this";
 $pageTitle = 'Welcome to the Taco Truck!';
 include('include/header.php'); ?>
 
-<!--
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">

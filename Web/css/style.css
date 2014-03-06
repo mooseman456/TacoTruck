@@ -175,7 +175,6 @@ nav .select:hover, nav .select {
 	margin:2em 4%;
 	float: left;
 	padding: 1em;
-	border-radius: 2em;
 }
 
 .orderPane ul {
@@ -221,6 +220,7 @@ tr {
 
 td {
 	font-size: 2em;
+	width: 25%;
 }
 
 td img {
@@ -322,6 +322,7 @@ input:not([type=submit]), select.userInput{
 input[type=submit]{
 	border-radius: 10px;
 	background-color: #C1C98D;
+	font-family: "gafata";
 }
 
 
@@ -491,5 +492,4 @@ input[type=submit]{
 	float:left;
 	width:25%;
 	margin: 0% 4%;
-	border:solid;
 }
