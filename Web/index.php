@@ -106,7 +106,7 @@ include('include/header.php'); ?>
 	<div id="navSpace"></div>
 
 	<!-- Order Pane -->
-	<div class="orderPane shadowBoxHeavy">
+	<div class="orderPane shadowBoxLight">
 		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul>
@@ -120,7 +120,7 @@ include('include/header.php'); ?>
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder" value="Check Out"/>
+		<input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
 	</div>
 
 

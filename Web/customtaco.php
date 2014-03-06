@@ -114,7 +114,7 @@ while($row = $result->fetch_row()) {
 			   <li id="taxTotal">Tax: $0.00</li>
 			   <li id="grandTotal">Grand Total: $0.00</li>
 		   </ul>
-		   <input type="submit" id="submitOrder" value="Check Out"/>
+		   <input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
 	   </div>
 	   
 	   <!-- Current Taco Pane -->
@@ -144,8 +144,8 @@ while($row = $result->fetch_row()) {
 	      <p id="currentExtras" class="currentList">
 	         No Extras
 	      </p>
-	      <input type="submit" id="addTaco" value="Add Taco"/>
-	      <input type="submit" id="cancelTaco" value="Cancel Taco"/>
+	      <input class="userInput" type="submit" id="addTaco" value="Add Taco"/>
+	      <input class="userInput" type="submit" id="cancelTaco" value="Cancel Taco"/>
 	   </div>
 	   
 	   <!-- Ingredients Pane -->

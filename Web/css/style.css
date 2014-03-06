@@ -59,10 +59,15 @@ p {
 	margin-top: 2em;
 	border-radius: 2em;
 }
-
+/*
 .button {
-
+	padding: 1px; 
+	line-height: 32px;
+	font-size: 20px;
+	width: 100%;
+	text-indent: 8px;
 }
+*/
 
 
 /****************/
@@ -336,6 +341,10 @@ input {
 	text-indent: 8px;
 }
 
+.userInput:hover {
+	color: #888;
+}
+
 input:not([type=submit]), select.userInput{
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius:5px;
@@ -474,17 +483,6 @@ input[type=submit]{
    color: black;
 }
 
-#addTaco {
-   margin-left:7%;
-   width:85%;
-   height:3em;
-}
-
-#cancelTaco {
-   margin:2% 0% 0% 7%;
-   width:85%;
-   height:2em;
-}
 /***********************/
 /*  INGREDIENTS  PANE  */
 /***********************/
