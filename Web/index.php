@@ -107,7 +107,7 @@ include('include/header.php'); ?>
 
 	<!-- Order Pane -->
 	<div class="orderPane shadowBoxHeavy">
-		<h2 id="order">Order </h2>
+		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul>
 			<li>Taco 1: $0.00<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
@@ -126,7 +126,7 @@ include('include/header.php'); ?>
 
 	<!-- Table for menu -->
 	<div class="menuPane shadowBoxHeavy">
-		<h2>Menu</h2>
+		<h1>Menu</h1>
 		<table id="menuTable">
 			<tr>
 				<td><?php echo $PreMadeTacos[0]['name']; ?></td>
