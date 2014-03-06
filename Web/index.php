@@ -86,7 +86,8 @@ include('include/header.php'); ?>
 
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
 	$(function() {
 		$( document ).tooltip();
 	});
@@ -125,35 +126,35 @@ include('include/header.php'); ?>
 		<h1>Menu</h1>
 			<section>
 				<h2><?php echo $PreMadeTacos[0]['name']; ?></h2>
-				<img src="img/Taco1.png" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
+				<img id="taco1" src="img/Taco1.png" alt="<?php echo $PreMadeTacos[0]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[1]['name']; ?></h2>
-				<img class="resize" src="img/Taco2.png" alt=<?php echo $PreMadeTacos[1]['name']; ?> title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+				<img id="taco2" class="resize" src="img/Taco2.png" alt="<?php echo $PreMadeTacos[1]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[2]['name']; ?></h2>
-				<img src="img/Taco3.png" alt=<?php echo $PreMadeTacos[2]['name']; ?> title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></img>
+				<img id="taco3" src="img/Taco3.png" alt="<?php echo $PreMadeTacos[2]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></img>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[3]['name']; ?></h2>
-				<img src="img/Taco4.png" alt=<?php echo $PreMadeTacos[3]['name']; ?> title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+				<img id="taco4" src="img/Taco4.png" alt="<?php echo $PreMadeTacos[3]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[4]['name']; ?></h2>
-				<img src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>>
+				<img id="taco5" src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[5]['name']; ?></h2>
-				<img src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>>
+				<img id="taco6" src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[6]['name']; ?></h2>
-				<img src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>>
+				<img id="taco7" src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>>
 			</section>
 			<section>
 				<h2><?php echo $PreMadeTacos[7]['name']; ?></h2>
-				<img src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>>
+				<img id="taco8" src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>>
 			</section>
 			<section>
 				<h2>Custom Taco</h2>
