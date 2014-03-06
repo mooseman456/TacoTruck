@@ -174,10 +174,12 @@ article.about p{
 	width: 20%;
 	margin:0% 4%;
 	float: left;
-	padding-bottom: 1%;
-	background-color: rgba(255,255,255,0.4);
+	padding: 1em;
 	border-radius: 20px;
-	box-shadow: 5px 5px 5px #aaa;
+}
+
+.orderPane ul {
+	text-decoration: none;
 }
 
 img.cancelButton {
@@ -198,9 +200,7 @@ img.cancelButton:hover {
 	width:52%;
 	padding-right:2%;
 	padding-bottom: 1%;
-	background-color: rgba(255,255,255,0.4);
 	border-radius: 20px;
-	box-shadow: 5px 5px 5px #aaa;
 }
 
 #menuTable {
