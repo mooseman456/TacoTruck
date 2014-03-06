@@ -34,12 +34,22 @@ p {
 .shadowBoxLight {
 	background-color: rgba(250,250,250,0.3);
 	box-shadow: 5px 5px 5px #888;
+	border-radius: 2em;
+	padding: 1em;
+}
+
+.shadowBoxLight p {
+	font-size: 1.5em;
 }
 
 .shadowBoxHeavy {
 	background-color: rgba(250,250,250,0.3);
 	box-shadow: 10px 10px 8px #888;
 	margin-top: 2em;
+}
+
+.button {
+
 }
 
 
@@ -172,10 +182,8 @@ nav .select:hover, nav .select {
 
 .orderPane {
 	width: 25%;
-	margin:2em 4%;
 	float: left;
-	padding: 1em;
-	border-radius: 2em;
+	margin: 2em 5%;
 }
 
 .orderPane ul {
@@ -368,11 +376,6 @@ input[type=submit]{
 #currentTacoPane {
 	float:left;
 	width:25%;
-	margin: 0% 4%;
-	padding-bottom: 1%;
-	background-color: rgba(255,255,255,0.4);
-	border-radius: 20px;
-	box-shadow: 5px 5px 5px #aaa;
 }
 
 .currentList {
@@ -472,11 +475,6 @@ input[type=submit]{
 #ingredientsPane {
 	float:left;
 	width:25%;
-	margin: 0% 4%;
-    padding-bottom: 1%;
-	background-color: rgba(255,255,255,0.4);
-	border-radius: 20px;
-	box-shadow: 5px 5px 5px #aaa;
 }
 
 .selected {
@@ -490,6 +488,4 @@ input[type=submit]{
 .checkoutPane {
 	float:left;
 	width:25%;
-	margin: 0% 4%;
-	border:solid;
 }
