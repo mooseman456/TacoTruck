@@ -231,17 +231,20 @@ img.cancelButton:hover {
 
 .menuPane h2 {
 	font-size: 1em;
+	border-bottom: 1px solid black;
 }
 
 .menuPane section {
 	width: 140px;
 	float:left;
 	margin: 2px;
-	background-color: pink;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 4px;
+	color: #ddd;
 }
 
 .menuPane img{
-	width: 100px;
+	width: 140px;
 	height: auto;
 	ali
 }
