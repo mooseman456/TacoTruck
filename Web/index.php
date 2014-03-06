@@ -135,10 +135,10 @@ include('include/header.php'); ?>
 				<td><?php echo $PreMadeTacos[3]['name']; ?></td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/Taco1.jpg" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco1.png" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco2.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></td>
-				<td><img src="img/Taco3.jpg" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></td>
-				<td><img src="img/Taco4.jpg" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
+				<td><img src="img/Taco3.png" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco4.png" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
 			</tr>
 			<tr>
 				<td>Taco 5</td>
@@ -147,7 +147,7 @@ include('include/header.php'); ?>
 				<td>Taco 8</td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/Taco5.jpg" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>></td>
