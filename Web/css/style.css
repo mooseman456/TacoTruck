@@ -225,9 +225,25 @@ img.cancelButton:hover {
 .menuPane {
 	float:left;
 	width:52%;
-	padding-right:2%;
-	padding-bottom: 1%;
+	padding: 0 2em;
 	border-radius: 20px;
+}
+
+.menuPane h2 {
+	font-size: 1em;
+}
+
+.menuPane section {
+	width: 140px;
+	float:left;
+	margin: 2px;
+	background-color: pink;
+}
+
+.menuPane img{
+	width: 100px;
+	height: auto;
+	ali
 }
 
 #menuTable {

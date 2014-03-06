@@ -20,7 +20,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 												 $PreMadeTacos[$counter]['rice'].", ".$PreMadeTacos[$counter]['cheese'].", ".
 												 $PreMadeTacos[$counter]['beans'].", ".$PreMadeTacos[$counter]['sauces'];
 		
-      // Checks to see if the vegetables contains an array. Either way, adds the veggies as they need to be.
+      	// Checks to see if the vegetables contains an array. Either way, adds the veggies as they need to be.
 		if (is_array($taco['vegetables'])) {
 		   foreach ($taco['vegetables'] as $tempVegetables) {
 		      $PreMadeTacos[$counter]['ingredients'] .= ", ".$tempVegetables;
@@ -125,9 +125,29 @@ include('include/header.php'); ?>
 
 
 	<!-- Table for menu -->
-	<div class="menuPane shadowBoxHeavy">
+	<article class="menuPane shadowBoxHeavy">
 		<h1>Menu</h1>
-		<table id="menuTable">
+			<section>
+				<h2><?php echo $PreMadeTacos[0]['name']; ?></h2>
+				<img src="img/Taco1.png" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[1]['name']; ?></h2>
+				<img class="resize" src="img/Taco2.png" alt=<?php echo $PreMadeTacos[1]['name']; ?> title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[2]['name']; ?></h2>
+				<img src="img/Taco3.png" alt=<?php echo $PreMadeTacos[2]['name']; ?> title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[3]['name']; ?></h2>
+				<img src="img/Taco4.png" alt=<?php echo $PreMadeTacos[3]['name']; ?> title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+			</section>
+
+
+
+
+		<!--table id="menuTable">
 			<tr>
 				<td><?php echo $PreMadeTacos[0]['name']; ?></td>
 				<td><?php echo $PreMadeTacos[1]['name']; ?></td>
@@ -162,8 +182,8 @@ include('include/header.php'); ?>
 				<td>Custom Taco</td>
 				<td>Previous Taco</td>
 			</tr>
-		</table>
-	</div>
+		</table-->
+	</article>
 
 	<script src="js/main.js"></script>
 	<script src="js/menu.js"></script>
