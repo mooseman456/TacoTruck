@@ -317,12 +317,16 @@ td img {
 /* ACCOUNT PAGE CONTENT*/
 /***********************/
 
+input {
+	font-family: "gafata";
+}
+
 .userInput{
 	padding: 1px; 
 	line-height: 32px;
 	font-size: 20px;
 	width: 100%;
-	font-family: "gafata";
+	text-indent: 8px;
 }
 
 input:not([type=submit]), select.userInput{
@@ -333,7 +337,6 @@ input:not([type=submit]), select.userInput{
 
 input[type=submit]{
 	background-color: #C1C98D;
-	font-family: "gafata";
 	border-radius: 10px;
 	border-width: 0px;
 }
