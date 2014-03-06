@@ -97,6 +97,7 @@ function passwordEquals() {
 	<title>Account</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
    <script src="js/main.js"></script>
@@ -123,7 +124,7 @@ function passwordEquals() {
 			<form class="userForm" method="POST">
 				<input class="userInput" type="text" name="email" placeholder="Email" required><br>
 				<input class="userInput" type="password" name="password" placeholder="Password" required><br>
-				<input class="userInput" type="submit" value="Sign In">
+				<input class="userInput button" type="submit" value="Sign In">
 			</form>
 			<div>
 				<?php echo $loginStatus; ?>
@@ -145,7 +146,7 @@ function passwordEquals() {
 					<option value="Visa">Visa</option>
 				</select><br>
 				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
-				<input class="userInput" type="submit" value="Register">
+				<input class="userInput button" type="submit" value="Register">
 			</form>
 		</div>
 	</div>

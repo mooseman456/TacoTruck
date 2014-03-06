@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
 	// Hover over locations event listener
 	var locations = $(".location");
 	$.each(locations, function(index, value) {
-		$(value).addClass("shadowBox");
+		$(value).addClass("shadowBoxLight");
 		$(value).hover( function() {
 			$(value).addClass("hover");
 			markers[index].setAnimation(google.maps.Animation.BOUNCE);

@@ -29,7 +29,7 @@
 	   <div id="navSpace"></div>
 
 	   <!-- Order Pane -->
-	   <div class="orderPane">
+	   <div class="orderPane shadowBoxLight">
 		   <h2 id="order">Order </h2>
 		   <!-- List of tacos in order -->
 		   <ul>
@@ -45,7 +45,7 @@
 		   <input type="submit" id="editOrder" value="Edit Order"/>
 	   </div>
 
-	   <div class="checkoutPane">
+	   <div class="checkoutPane shadowBoxLight">
 		   <form class="userForm" method="POST">
 			   <input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
 			   <input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>

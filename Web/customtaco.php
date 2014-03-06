@@ -103,8 +103,8 @@ while($row = $result->fetch_row()) {
 	   <div id="navSpace"></div>
 
 	   <!-- Order Pane -->
-	   <div class="orderPane">
-		   <h2 id="order">Order </h2>
+	   <div class="orderPane shadowBoxLight">
+		   <h1 id="order">Order </h1>
 		   <!-- List of tacos in order -->
 		   <ul>
 		   </ul>
@@ -113,12 +113,12 @@ while($row = $result->fetch_row()) {
 			   <li id="taxTotal">Tax: $0.00</li>
 			   <li id="grandTotal">Grand Total: $0.00</li>
 		   </ul>
-		   <input type="submit" id="submitOrder" value="Check Out"/>
+		   <input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
 	   </div>
 	   
 	   <!-- Current Taco Pane -->
-	   <div id="currentTacoPane">
-	      <h2 id="currentTaco">Current Taco</h2>
+	   <div class="shadowBoxLight" id="currentTacoPane">
+	      <h1 id="currentTaco">Current Taco</h1>
 	      <p id="currentFill" class="currentList">
 	         Please select a filling
 	      </p>
@@ -143,13 +143,13 @@ while($row = $result->fetch_row()) {
 	      <p id="currentExtras" class="currentList">
 	         No Extras
 	      </p>
-	      <input type="submit" id="addTaco" value="Add Taco"/>
-	      <input type="submit" id="cancelTaco" value="Cancel Taco"/>
+	      <input class="userInput" type="submit" id="addTaco" value="Add Taco"/>
+	      <input class="userInput" type="submit" id="cancelTaco" value="Cancel Taco"/>
 	   </div>
 	   
 	   <!-- Ingredients Pane -->
-	   <div id="ingredientsPane">
-		   <h2>Ingredients</h2>
+	   <div class="shadowBoxLight" id="ingredientsPane">
+		   <h1>Ingredients</h1>
 
 		   <div id="accordion">
 			   <h3>Types</h3>

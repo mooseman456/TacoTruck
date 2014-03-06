@@ -1,6 +1,5 @@
 <?php
 
-
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){
@@ -21,7 +20,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 												 $PreMadeTacos[$counter]['rice'].", ".$PreMadeTacos[$counter]['cheese'].", ".
 												 $PreMadeTacos[$counter]['beans'].", ".$PreMadeTacos[$counter]['sauces'];
 		
-      // Checks to see if the vegetables contains an array. Either way, adds the veggies as they need to be.
+      	// Checks to see if the vegetables contains an array. Either way, adds the veggies as they need to be.
 		if (is_array($taco['vegetables'])) {
 		   foreach ($taco['vegetables'] as $tempVegetables) {
 		      $PreMadeTacos[$counter]['ingredients'] .= ", ".$tempVegetables;
@@ -70,8 +69,12 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 
 ?>
 
+<?php
+echo "this";
+$pageTitle = 'Welcome to the Taco Truck!';
+include('include/header.php'); ?>
 
-<!doctype html>
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -90,7 +93,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	</script>
 </head>
 <body>
-	<!-- Page navigation menu -->
+	<!>> Page navigation menu
 	<nav id="navbar">
 		<ul>
 			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo"></li>
@@ -103,8 +106,8 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	<div id="navSpace"></div>
 
 	<!-- Order Pane -->
-	<div class="orderPane">
-		<h2 id="order">Order </h2>
+	<div class="orderPane shadowBoxLight">
+		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul id="orderList">
 		</ul>
@@ -113,14 +116,58 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 			<li id="taxTotal">Tax: $0.00</li>
 			<li id="grandTotal">Grand Total: $0.00</li>
 		</ul>
-		<input type="submit" id="submitOrder" value="Check Out"/>
+		<input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
 	</div>
 
 
 	<!-- Table for menu -->
-	<div class="menuPane">
-		<h2>Menu</h2>
-		<table id="menuTable">
+	<article class="menuPane shadowBoxHeavy">
+		<h1>Menu</h1>
+			<section>
+				<h2><?php echo $PreMadeTacos[0]['name']; ?></h2>
+				<img src="img/Taco1.png" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[1]['name']; ?></h2>
+				<img class="resize" src="img/Taco2.png" alt=<?php echo $PreMadeTacos[1]['name']; ?> title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[2]['name']; ?></h2>
+				<img src="img/Taco3.png" alt=<?php echo $PreMadeTacos[2]['name']; ?> title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[3]['name']; ?></h2>
+				<img src="img/Taco4.png" alt=<?php echo $PreMadeTacos[3]['name']; ?> title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[4]['name']; ?></h2>
+				<img src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[5]['name']; ?></h2>
+				<img src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[6]['name']; ?></h2>
+				<img src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>>
+			</section>
+			<section>
+				<h2><?php echo $PreMadeTacos[7]['name']; ?></h2>
+				<img src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>>
+			</section>
+			<section>
+				<h2>Custom Taco</h2>
+				<img src="img/plus_icon.png" alt="Plus arrow">
+			</section>
+			<section>
+				<h2>Previous Taco</h2>
+				<img src="img/previous_icon.png" alt="Previous Taco">
+			</section>
+
+
+
+
+		<!--table id="menuTable">
 			<tr>
 				<td><?php echo $PreMadeTacos[0]['name']; ?></td>
 				<td><?php echo $PreMadeTacos[1]['name']; ?></td>
@@ -128,19 +175,19 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 				<td><?php echo $PreMadeTacos[3]['name']; ?></td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/Taco1.jpg" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco1.png" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco2.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></td>
-				<td><img src="img/Taco3.jpg" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></td>
-				<td><img src="img/Taco4.jpg" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
+				<td><img src="img/Taco3.png" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco4.png" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
 			</tr>
 			<tr>
-				<td>Taco 5</td>
-				<td>Taco 6</td>
-				<td>Taco 7</td>
-				<td>Taco 8</td>
+				<td><?php echo $PreMadeTacos[4]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[5]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[6]['name']; ?></td>
+				<td><?php echo $PreMadeTacos[7]['name']; ?></td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/Taco5.jpg" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>></td>
@@ -155,8 +202,8 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 				<td>Custom Taco</td>
 				<td>Previous Taco</td>
 			</tr>
-		</table>
-	</div>
+		</table-->
+	</article>
 
 	<script src="js/main.js"></script>
 	<script src="js/menu.js"></script>

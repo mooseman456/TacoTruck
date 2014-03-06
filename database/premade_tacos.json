@@ -17,6 +17,14 @@
 		  
 	   { "name": "The Leopard", "description": "It'll give you spots.", "type": "Steak", "tortilla": "Cayenne", "rice": "No Rice",
 	     "cheese": "Cheddar/Jack Mix", "beans": "Black Beans", "sauces": "Hot Tomatillo", "vegetables" : ["Roasted Garlic", 
-	     "Peppers/Onions", "Red Onion", "Jalapenos", "White Onion", "Cilantro", "Tortilla Strips"], "extras" : ["Queso", "Bacon"]}
+	     "Peppers/Onions", "Red Onion", "Jalapenos", "White Onion", "Cilantro", "Tortilla Strips"], "extras" : ["Queso", "Bacon"]},
+
+	   { "name": "Luke's Taco", "description": "", "type": ""},
+
+	   { "name": "AngelOh", "description": "", "type": ""},
+
+	   { "name": "Garden Taco", "description": "", "type": ""},
+
+	   { "name": "Slightly Sweet", "description": "", "type": ""}
 	]
 }
