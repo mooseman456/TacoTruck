@@ -132,7 +132,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 				<td><?php echo $PreMadeTacos[3]['name']; ?></td>
 			</tr>
 			<tr class="tacoRow">
-				<td><img src="img/Taco1.jpg" alt="Taco 1" title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
+				<td><img src="img/Taco1.jpg" alt=<?php echo $PreMadeTacos[0]['name']; ?> title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco2.png" alt="Taco 2" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco3.jpg" alt="Taco 3" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></td>
 				<td><img src="img/Taco4.jpg" alt="Taco 4" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[3]['ingredients']."\""; ?></td>
