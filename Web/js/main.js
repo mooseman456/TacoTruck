@@ -16,5 +16,12 @@ $(document).ready(function() {
       window.location = "index.php";
    });
    
-
+   $('#accountLink').click(function(e) {
+      e.preventDefault();
+      console.log("Hello!");
+      if($('#navbar ul li').hasClass('selected')) {
+         $('#navbar ul li').removeClass('selected');
+      }
+      $('#accountLink').addClass('selected');
+   });
 });

@@ -68,6 +68,10 @@ $(document).ready(function() {
       };
    };
    
+   $('.plusButton').click(function(e) {
+      var check = 
+   }
+   
    var removeTaco = function(name) {
       var check = name.slice(0, 5);
       for (var i=0; i<orderTacos.length; i++) {
