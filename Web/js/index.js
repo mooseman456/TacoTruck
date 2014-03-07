@@ -106,8 +106,8 @@ $(document).ready(function() {
    
    function taco(name) {
       this.quantity = 0;
-      this.id = name;
-      this.basePrice = $("#"+this.id).attr("price");
+      this.id = $('#'+name).attr("alt");
+      this.basePrice = $("#"+name).attr("price");
       this.calcPrice;
       this.returnString = function() {
          //helper helps concatinate the string
