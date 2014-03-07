@@ -104,7 +104,19 @@ include('include/header.php'); ?-->
 	<div class="orderPane shadowBoxLight">
 		<h1 id="order">Order </h1>
 		<ul id="orderList">
-			<?php echo $_SESSION['Order'][0]; ?>
+			<?php 
+
+			foreach($_SESSION['Order'] as $key => $val) {
+
+				echo "<li price=\"".$_SESSION['Order'][0]['calcPrice']."\">".$_SESSION['Order'][0]['name']." x".$_SESSION['Order'][0]['quantity']." : $"
+					.$_SESSION['Order'][0]['calcPrice']."<img id=\"".$_SESSION['Order'][0]['id']."Cancel\"class=\"cancelButton\" src=\"img/cancel.png\" alt=\"Cancel\" title=\"remove taco\">".
+		         	"<img id=\"".$_SESSION['Order'][0]['id']."Plus\"class=\"plusButton\" src=\"img/plus.png\" alt=\"Plus\" title=\"raise quantity\">".
+		         	"<img id=\"".$_SESSION['Order'][0]['id']."Plus\"class=\"minusButton\" src=\"img/minus.png\" alt=\"Minus\" title=\"lower quantity\">".
+		         	"</li>"; 
+
+		    }
+
+         	?>
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">
