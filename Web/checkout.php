@@ -39,7 +39,10 @@ if (isset($_SESSION['givenName'])) {
 	</nav>
 	<div id="navSpace"></div>
 
-	<?php include 'include/orderPane.php' ?>
+	<?php
+	$page="checkout";
+	include 'include/orderPane.php';
+	?>
 
 	<div class="checkoutPane shadowBoxLight">
 		<form class="userForm" method="POST">
