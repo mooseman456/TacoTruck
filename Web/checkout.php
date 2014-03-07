@@ -16,9 +16,9 @@
    </head>
    <body>
    	<!-- Page navigation menu -->
-   	<?php include 'navbar.php' ?>
+   	<?php include 'include/navbar.php' ?>
 
-	   <?php include 'orderPane.php' ?>
+	<?php include 'include/orderPane.php' ?>
 
 	   <div class="checkoutPane shadowBoxLight">
 		   <form class="userForm" method="POST">

@@ -12,7 +12,7 @@
 </head>
 <body>
    	<!-- Page navigation menu -->
-   	<?php include 'navbar.php' ?>
+   	<?php include 'include/navbar.php' ?>
    	
 	<article class="about shadowBoxHeavy">
 		<h1>A Heart-Warming Story</h1>
