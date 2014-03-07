@@ -15,7 +15,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$password = mysql_real_escape_string($_POST['password']);
 
 		$submittedEmail = $email;
-		$submittedPassword = $password;
+		$submittedPassword = password_hash(mysql_real_escape_string($passsword), PASSWORD_DEFAULT);
 
 		$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
 
