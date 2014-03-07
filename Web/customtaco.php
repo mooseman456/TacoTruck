@@ -75,6 +75,12 @@ while($row = $result->fetch_row()) {
 	   <script src="js/jquery.js"></script>
 	   <script src="js/customTaco.js"></script>
 	   <script src="js/main.js"></script>
+	   <?php include 'session.php'; ?>
+
+	   <?php
+   		session_start();
+		echo "User : ".$_SESSION['username'];
+		?>
 
 	   <script>
      $(function() {
