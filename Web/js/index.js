@@ -106,7 +106,8 @@ $(document).ready(function() {
    
    function taco(name) {
       this.quantity = 0;
-      this.id = $('#'+name).attr("alt");
+      this.title = $('#'+name).attr("alt");
+      this.id = name;
       this.basePrice = $("#"+name).attr("price");
       this.calcPrice;
       this.returnString = function() {
@@ -128,12 +129,16 @@ $(document).ready(function() {
          return this.id;
       };
       
+      this.returnName = function() {
+         return this.title;
+      };
+      
       this.returnBasePrice = function() {
-         return this.basePrice;
+         return parseFloat(this.basePrice).toFixed(2);
       };
       
       this.returnCalcPrice = function() {
-         return this.basePrice * this.quantity;
+         return parseFloat(this.basePrice * this.quantity).toFixed(2);
       };
    };
    
