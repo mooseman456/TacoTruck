@@ -120,7 +120,7 @@ $(document).ready(function() {
          return this.quantity;
       };
       
-      this.returnID = fuction() {
+      this.returnID = function() {
          return this.id;
       };
       
