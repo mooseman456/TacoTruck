@@ -4,7 +4,15 @@ session_start();
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
-	$_SESSION['Order'][] = $_POST['Taco'];
+	$data = array();
+
+	$data['name'] = $_POST['Name'];
+	$data['quantity'] = $_POST['Quantity'];
+	$data['basePrice'] = $_POST['basePrice'];
+	$data['calcPrice'] = $_POST['calcPrice'];
+	$data['id'] = $_POST['Name'];
+
+	$_SESSION['Order'][] = $data;
 
 } else {
 

@@ -30,10 +30,14 @@ function AddTacoToSession(Taco) {
        // Now get the value from user and pass it to
        // server script.
 
-       Taco=Taco.returnString();
+
+       Name=Taco.returnID(); //Name is ID
+       Quantity=Taco.returnQuantity();
+       calcPrice=Taco.returnCalcPrice();
+       basePrice=Taco.returnBasePrice();
        ajaxRequest.open("POST", "Ajax/addTaco.php", true);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-       ajaxRequest.send("Taco="+Taco);
+       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice);
 
    }
 
@@ -54,49 +58,49 @@ $(document).ready(function() {
    
    $("#taco1").click(function(e) {
       orderTacos[0].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[0]);
    });
    
    $("#taco2").click(function(e) {
       orderTacos[1].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[1]);
    });
    
    $("#taco3").click(function(e) {
       orderTacos[2].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[2]);
    });
    
    $("#taco4").click(function(e) {
       orderTacos[3].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[3]);
    });
    
    $("#taco5").click(function(e) {
       orderTacos[4].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[4]);
    });
    
    $("#taco6").click(function(e) {
       orderTacos[5].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[5]);
    });
    
    $("#taco7").click(function(e) {
       orderTacos[6].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[6]);
    });
    
    $("#taco8").click(function(e) {
       orderTacos[7].quantity += 1;
-      updateOrder();
+      // updateOrder();
       AddTacoToSession(orderTacos[7]);
    });
    
