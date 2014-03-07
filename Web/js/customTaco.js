@@ -1,16 +1,17 @@
 $(document).ready(function() {
-
+   
+   
    $('.fill').click(function(e) {
       $('.fill.selected').removeClass('selected');
       $(this).addClass('selected');
-      document.getElementById('currentFill').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      document.getElementById('currentFill').innerHTML = "<div ingredientId='" + $(this).attr("id") + "' class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
       calcTotal();
    });
    
    $('.tortilla').click(function(e) {
       $('.tortilla.selected').removeClass('selected');
       $(this).addClass('selected');
-      document.getElementById('currentTortilla').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      document.getElementById('currentTortilla').innerHTML = "<div ingredientId='" + $(this).attr("id") + "' class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
       calcTotal();
    });
    
@@ -20,7 +21,7 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentRice').innerHTML = $(this).html();
       else
-         document.getElementById('currentRice').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+         document.getElementById('currentRice').innerHTML = "<div ingredientId='" + $(this).attr("id") + "' class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
       calcTotal();
    });
    
@@ -30,7 +31,7 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentCheese').innerHTML = $(this).html();
       else
-         document.getElementById('currentCheese').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+         document.getElementById('currentCheese').innerHTML = "<div ingredientId='" + $(this).attr("id") + "' class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
       calcTotal();
    });
    
@@ -40,7 +41,7 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentBeans').innerHTML = $(this).html();
       else
-         document.getElementById('currentBeans').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+         document.getElementById('currentBeans').innerHTML = "<div ingredientId='" + $(this).attr("id") + "' class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
       calcTotal();
    });
    
@@ -50,7 +51,7 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentSauce').innerHTML = $(this).html();
       else
-         document.getElementById('currentSauce').innerHTML = "<div class='added'>" + $(this).html() + "</div>";
+         document.getElementById('currentSauce').innerHTML = "<div ingredientId='" + $(this).attr("id") + "' class='added'>" + $(this).html() + "</div>";
       calcTotal();
    });
       
@@ -121,12 +122,26 @@ $(document).ready(function() {
          if (added[i].hasAttribute("price"))
             tacoTotal += parseFloat((added[i].getAttribute("price")));
       }
-      $('#tacoTotal').addClass('added');
-      $('#tacoTotal').html("$" + tacoTotal.toFixed(2));
+      if (tacoTotal === 0.0) {
+         $('#tacoTotal').removeClass('added');
+         $('#tacoTotal').html('Subtotal');
+      }
+      else{
+         $('#tacoTotal').addClass('added');
+         $('#tacoTotal').html("$" + tacoTotal.toFixed(2));
+      }
       
    }
+   
    $('#addTaco').click(function(e) {
-      alert("Taco is added");
+      if(($('#currentFill').children().length <= 0))
+         alert("Please select a filling type");
+      
+      else if (($('#currentTortilla').children().length <= 0))
+         alert("Please select a tortilla");
+         
+      else
+         alert("Taco will eventually be added");
    });
    
    $('#cancelTaco').click(function(e) {

@@ -43,7 +43,7 @@ while($row = $result->fetch_row()) {
    if ($row[1] != 23)
   	   $tacoSauces = $tacoSauces . "<div id=\"$row[1]\" class=\"sauce menuItem\" price=\"$row[2]\">$row[0]</div>";
   	else
-  	   $noSauce = "<div id=\"$row[1]\" class=\"sauce menuItem\" price=\"$row[2]\">$row[0]</div>";
+  	   $noSauce = "<div id=\"$row[1]\" class=\"sauce menuItem clear\" price=\"$row[2]\">$row[0]</div>";
 }
 $tacoSauces = $tacoSauces . $noSauce;
 
