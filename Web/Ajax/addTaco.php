@@ -6,19 +6,55 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	$data = array();
 
-	$data['name'] = $_POST['Name'];
-	$data['quantity'] = $_POST['Quantity'];
-	$data['basePrice'] = $_POST['basePrice'];
-	$data['calcPrice'] = $_POST['calcPrice'];
 	$data['id'] = $_POST['id'];
+	
+	if (isAlreadyInOrder($data['id']) == false) {
 
-	$_SESSION['Order'][] = $data;
+		$data['name'] = $_POST['Name'];
+		$data['quantity'] = $_POST['Quantity'];
+		$data['basePrice'] = $_POST['basePrice'];
+		$data['calcPrice'] = $_POST['calcPrice'];
 
-} else {
+		$_SESSION['Order'][] = $data;
 
-	if ($_SESSION['Order']) {
-		var_dump($_SESSION);
+	} else {
+
+		$data['name'] = $_POST['Name'];
+		$data['quantity'] = $_POST['Quantity'];
+		$data['basePrice'] = $_POST['basePrice'];
+		$data['calcPrice'] = $_POST['calcPrice'];
+		
+		foreach($_SESSION['Order'] as $key => $val) {
+
+			if($_SESSION['Order'][$key]['id'] == $data['id']) {
+				
+				$_SESSION['Order'][$key]['quantity'] = $_SESSION['Order'][$key]['quantity'] + 1;
+				$_SESSION['Order'][$key]['basePrice'] = $_SESSION['Order'][$key]['basePrice'] + $data['basePrice'];
+				$_SESSION['Order'][$key]['calcPrice'] = $_SESSION['Order'][$key]['calcPrice'] + $data['calcPrice'];
+				break;
+
+			}
+
+		}
 	}
+} else {
+	var_dump($_SESSION);
+}
+
+
+
+function isAlreadyInOrder($id) {
+	
+	foreach($_SESSION['Order'] as $key => $val) {
+	
+		if($_SESSION['Order'][$key]['id'] == $id) {
+			return true;
+		}
+
+	}
+
+	return false;
+
 }
 
 ?>
