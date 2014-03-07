@@ -31,7 +31,7 @@ function AddTacoToSession(Taco) {
        // server script.
 
        Taco=Taco.returnString();
-       ajaxRequest.open("POST", "ajax/addTaco.php", true);
+       ajaxRequest.open("POST", "Ajax/addTaco.php", true);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
        ajaxRequest.send("Taco="+Taco);
 
@@ -53,9 +53,8 @@ $(document).ready(function() {
    orderTacos.push(new taco("taco8"));
    
    $("#taco1").click(function(e) {
-      alert("Taco1 clicked");
       orderTacos[0].quantity += 1;
-      //updateOrder();
+      updateOrder();
       AddTacoToSession(orderTacos[0]);
    });
    
@@ -106,18 +105,18 @@ $(document).ready(function() {
          helper += "<img id=\"" + this.id + "Cancel\"class=\"cancelButton\" src=\"img/cancel.png\" alt=\"Cancel\" title=\"remove taco\">";
          helper += "<img id=\"" + this.id + "Plus\"class=\"plusButton\" src=\"img/plus.png\" alt=\"Plus\" title=\"raise quantity\">";
          helper += "<img id=\"" + this.id + "Plus\"class=\"minusButton\" src=\"img/minus.png\" alt=\"Minus\" title=\"lower quantity\">";
-         helper += "</li>"
+         helper += "</li>";
          return  helper;
       };
    };
    
    var removeTaco = function(name) {
-      var check = name.slice(0, 5);
-      for (var i=0; i<orderTacos.length; i++) {
-         if(check === orderTacos[i].id)
-            orderTacos[i].quantity = 0;
-      }
-      updateOrder();
+      // var check = name.slice(0, 5);
+      // for (var i=0; i<orderTacos.length; i++) {
+      //    if(check === orderTacos[i].id)
+      //       orderTacos[i].quantity = 0;
+      // }
+      // updateOrder();
    };
    
    var updateOrder = function() {
