@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
 	// Hover over locations event listener
 	var locations = $(".location");
 	$.each(locations, function(index, value) {
-		$(value).addClass("shadowBox");
+		$(value).addClass("shadowBoxLight");
 		$(value).hover( function() {
 			$(value).addClass("hover");
 			markers[index].setAnimation(google.maps.Animation.BOUNCE);
@@ -40,11 +40,6 @@ window.addEventListener('load', function() {
 			            title: trucks[count++].name
 			        });
 			        markers[count-1] = marker;
-			        
-			        //Bounce on hover
-					$.each(markers, function(index, value) {
-						
-					});
 			    } else {
 			        alert("Geocode was not successful for the following reason: " + status);
 			    }
