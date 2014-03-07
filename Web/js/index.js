@@ -45,6 +45,48 @@ function AddTacoToSession(Taco) {
        console.log("Hello");
    };
 
+   function RemoveTacoFromSession(TacoID) {
+      var ajaxRequest;  // The variable that makes Ajax possible!
+         
+       try{
+         // Opera 8.0+, Firefox, Safari
+         ajaxRequest = new XMLHttpRequest();
+       }catch (e){
+         // Internet Explorer Browsers
+         try{
+            ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+         }catch (e) {
+            try{
+               ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            }catch (e){
+               // Something went wrong
+               alert("Your browser broke!");
+               return false;
+            }
+         }
+       }
+       // // Create a function that will receive data 
+       // // sent from the server and will update
+       // // div section in the same page.
+       // ajaxRequest.onreadystatechange = function(){
+       //   if(ajaxRequest.readyState == 4){
+       //      var ajaxDisplay = document.getElementById('memberAddedDiv');
+       //      ajaxDisplay.innerHTML = ajaxRequest.responseText;
+       //   }
+       // }
+       // Now get the value from user and pass it to
+       // server script.
+
+       var id = TacoID;
+       
+       ajaxRequest.open("POST", "Ajax/removeTaco.php", true);
+       ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+       ajaxRequest.send("id="+id);
+       $('#orderList').load("sessionOrderData.php", function() {
+         console.log("FUCK YOU");
+       });
+   };
+
 
 
 $(document).ready(function() {
@@ -62,19 +104,19 @@ $(document).ready(function() {
    
    $("#taco1").click(function(e) {
       orderTacos[0].quantity += 1;
-      //updateOrder();
+      updateOrder();
       AddTacoToSession(orderTacos[0]);
    });
    
    $("#taco2").click(function(e) {
       orderTacos[1].quantity += 1;
       AddTacoToSession(orderTacos[1]);
-      //updateOrder();
+      updateOrder();
    });
    
    $("#taco3").click(function(e) {
       orderTacos[2].quantity += 1;
-      // updateOrder();
+      updateOrder();
       AddTacoToSession(orderTacos[2]);
    });
    
@@ -153,31 +195,16 @@ $(document).ready(function() {
    $('.plusButton').click(function(e) {
       var check;
    });
-   
-   var removeTaco = function(name) {
-      // var check = name.slice(0, 5);
-      // for (var i=0; i<orderTacos.length; i++) {
-      //    if(check === orderTacos[i].id)
-      //       orderTacos[i].quantity = 0;
-      // }
-      // updateOrder();
-   };
+
+   $('.cancelButton').click(function(e) {
+         RemoveTacoFromSession(e.target.id);
+         console.log(e.target.id);
+   });
    
    var updateOrder = function() {
-      var append ="";
       var tax= 0.0825;
       var taxAmount=0.0;
-      // for (var i=0; i<orderTacos.length; i++) {
-      //    if(orderTacos[i].quantity !== 0)
-      //       append += orderTacos[i].returnString();
-      // }
-      //document.getElementById("orderList").innerHTML = append;
-
-      var container = document.getElementById("orderList");
-      var content = container.innerHTML;
-      container.innerHTML = content;
-      
-
+     
       var total =0; 
       for (var i=0; i< $('#orderList li').length; i++)
          total+= parseFloat($('#orderList li')[i].getAttribute("price"));
@@ -191,9 +218,6 @@ $(document).ready(function() {
       
       $("#grandTotal").attr("amount", grandTotal);
       document.getElementById("grandTotal").innerHTML = "Grand Total: $" + grandTotal;
-      $('.cancelButton').click(function(e) {
-         removeTaco(e.target.id);
-      });
    };
    
 });
