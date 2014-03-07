@@ -3,13 +3,15 @@ $(document).ready(function() {
    $('.fill').click(function(e) {
       $('.fill.selected').removeClass('selected');
       $(this).addClass('selected');
-      document.getElementById('currentFill').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+      document.getElementById('currentFill').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      calcTotal();
    });
    
    $('.tortilla').click(function(e) {
       $('.tortilla.selected').removeClass('selected');
       $(this).addClass('selected');
-      document.getElementById('currentTortilla').innerHTML = "<span class='added'>" + $(this).html() + " Tortilla</span>";
+      document.getElementById('currentTortilla').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      calcTotal();
    });
    
    $('.rice').click(function(e) {
@@ -18,7 +20,8 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentRice').innerHTML = $(this).html();
       else
-         document.getElementById('currentRice').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+         document.getElementById('currentRice').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      calcTotal();
    });
    
    $('.cheese').click(function(e) {
@@ -27,7 +30,8 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentCheese').innerHTML = $(this).html();
       else
-         document.getElementById('currentCheese').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+         document.getElementById('currentCheese').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      calcTotal();
    });
    
    $('.beans').click(function(e) {
@@ -36,7 +40,8 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentBeans').innerHTML = $(this).html();
       else
-         document.getElementById('currentBeans').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+         document.getElementById('currentBeans').innerHTML = "<div class='added' price='" + $(this).attr("price") + "'>" + $(this).html() + "</div>";
+      calcTotal();
    });
    
    $('.sauce').click(function(e) {
@@ -45,7 +50,8 @@ $(document).ready(function() {
       if ($(this).hasClass('clear'))
          document.getElementById('currentSauce').innerHTML = $(this).html();
       else
-         document.getElementById('currentSauce').innerHTML = "<span class='added'>" + $(this).html() + "</span>";
+         document.getElementById('currentSauce').innerHTML = "<div class='added'>" + $(this).html() + "</div>";
+      calcTotal();
    });
       
    $('.vegetables').click(function(e) {
@@ -72,10 +78,10 @@ $(document).ready(function() {
             returnString =  selectedElements[i].innerHTML + "</br>";
          
          else
-            returnString += "<span class='added'>" + selectedElements[i].innerHTML + "</span></br>";        
+            returnString += "<div class='added'>" + selectedElements[i].innerHTML + "</div></br>";        
       }   
       document.getElementById("currentVeg").innerHTML = returnString;
-      
+      calcTotal();
    });
    
    $('.extras').click(function(e) {
@@ -102,12 +108,23 @@ $(document).ready(function() {
             returnString =  selectedElements[i].innerHTML + "</br>";
          
          else
-            returnString += "<span class='added'>" + selectedElements[i].innerHTML + "</span></br>";        
+            returnString += "<div class='added' price='" + selectedElements[i].getAttribute("price") + "' >" + selectedElements[i].innerHTML + "</div></br>";        
       }   
       document.getElementById("currentExtras").innerHTML = returnString;
-      
+      calcTotal();
    });
    
+   function calcTotal() {
+      var tacoTotal = 0.0;
+      var added = $('.added');
+      for (var i=0; i<added.length; i++){
+         if (added[i].hasAttribute("price"))
+            tacoTotal += parseFloat((added[i].getAttribute("price")));
+      }
+      $('#tacoTotal').addClass('added');
+      $('#tacoTotal').html("$" + tacoTotal.toFixed(2));
+      
+   }
    $('#addTaco').click(function(e) {
       alert("Taco is added");
    });
