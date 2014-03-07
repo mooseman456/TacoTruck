@@ -16,6 +16,7 @@ if (($handle = fopen("Users.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
     	//Insert all the User data into the database
         $num = count($data);
+        $data[4] = hash('sha1', $data[4]);
         $query = "INSERT INTO Users (user_id, givenName, surname, email, password, phoneNumber, CC_Provider, CC_Number) 
         		  VALUES ('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]')";
         $result = $db->query($query)  or trigger_error($mysqli->error."[$query]"); //This line does the query
