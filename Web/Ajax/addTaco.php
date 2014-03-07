@@ -29,8 +29,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			if($_SESSION['Order'][$key]['id'] == $data['id']) {
 				
 				$_SESSION['Order'][$key]['quantity'] = $_SESSION['Order'][$key]['quantity'] + 1;
-				$_SESSION['Order'][$key]['basePrice'] = $_SESSION['Order'][$key]['basePrice'] + $data['basePrice'];
-				$_SESSION['Order'][$key]['calcPrice'] = $_SESSION['Order'][$key]['calcPrice'] + $data['calcPrice'];
+				$_SESSION['Order'][$key]['calcPrice'] = $data['calcPrice'];
 				break;
 
 			}
