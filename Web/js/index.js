@@ -62,14 +62,14 @@ $(document).ready(function() {
    
    $("#taco1").click(function(e) {
       orderTacos[0].quantity += 1;
-      updateOrder();
+      //updateOrder();
       AddTacoToSession(orderTacos[0]);
    });
    
    $("#taco2").click(function(e) {
       orderTacos[1].quantity += 1;
       AddTacoToSession(orderTacos[1]);
-      updateOrder();
+      //updateOrder();
    });
    
    $("#taco3").click(function(e) {

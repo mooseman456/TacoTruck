@@ -2,7 +2,7 @@
 <div class="orderPane shadowBoxLight">
 	<h1 id="order">Order </h1>
 	<ul id="orderList">
-		<!-- sessionOrderData.php -->
+		<?php include 'sessionOrderData.php' ?>
 	</ul>
 	<!-- Tax and total --> 
 	<ul id="taxAndTotal">
