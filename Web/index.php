@@ -93,15 +93,6 @@ include('include/header.php'); ?-->
 		$( document ).tooltip();
 	});
 	</script>
-
-	<?php 
-		if (isset($_SESSION['username'])){
-      		echo "User : ".$_SESSION['username'];
-   		} else {
-      		$_SESSION['username'] = 'John';
-   		}
-	?>
-
 </head>
 <body>
    	<!-- Page navigation menu -->

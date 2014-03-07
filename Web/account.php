@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){
@@ -14,14 +16,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$email = mysql_real_escape_string($_POST['email']);
 		$password = mysql_real_escape_string($_POST['password']);
 
-		$query = "SELECT Users.password FROM Users WHERE email='$email'";
+		$query = "SELECT * FROM Users WHERE email='$email'";
 
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-		$retrievedPassword = $result->fetch_assoc();
+		$row = $result->fetch_assoc();
 
-		if (password_verify($password, $retrievedPassword['password'])) {
-			session_start();
-
+		if (password_verify($password, $row['password'])) {
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['givenName'] = $row['givenName'];
 			$_SESSION['surname'] = $row['surname'];
@@ -30,7 +30,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['CC_Provider'] = $row['CC_Provider'];
 			$_SESSION['CC_Number'] = $row['CC_Number'];
 
-			header('Location: index.php');
+			echo $_SESSION['givenName'];
+
+			if (isset($_SESSION['givenName'])) {
+				echo "set";
+			} else {
+				echo "unset";
+			}
+
+
+			//header('Location: index.php');
 		} else {
 			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		}
