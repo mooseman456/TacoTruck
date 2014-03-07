@@ -93,15 +93,6 @@ include('include/header.php'); ?-->
 		$( document ).tooltip();
 	});
 	</script>
-
-	<?php 
-		if (isset($_SESSION['username'])){
-      		echo "User : ".$_SESSION['username'];
-   		} else {
-      		$_SESSION['username'] = 'John';
-   		}
-	?>
-
 </head>
 <body>
    	<!-- Page navigation menu -->
@@ -112,8 +103,6 @@ include('include/header.php'); ?-->
 		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul id="orderList">
-			<li>my Taco<img src="img/cancel.png"><img src="img/plus.png"><img src="img/minus.png"></li>
-			<li>another Taco<img src="img/cancel.png"><img src="img/plus.png"><img src="img/minus.png"></li>
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">

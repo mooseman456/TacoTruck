@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){
@@ -14,14 +16,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$email = mysql_real_escape_string($_POST['email']);
 		$password = mysql_real_escape_string($_POST['password']);
 
-		$query = "SELECT Users.password FROM Users WHERE email='$email'";
+		$query = "SELECT * FROM Users WHERE email='$email'";
 
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-		$retrievedPassword = $result->fetch_assoc();
+		$row = $result->fetch_assoc();
 
-		if (password_verify($password, $retrievedPassword['password'])) {
-			session_start();
-
+		if (password_verify($password, $row['password'])) {
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['givenName'] = $row['givenName'];
 			$_SESSION['surname'] = $row['surname'];
@@ -30,7 +30,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['CC_Provider'] = $row['CC_Provider'];
 			$_SESSION['CC_Number'] = $row['CC_Number'];
 
-			header('Location: index.php');
+			echo $_SESSION['givenName'];
+
+			if (isset($_SESSION['givenName'])) {
+				echo "set";
+			} else {
+				echo "unset";
+			}
+
+
+			//header('Location: index.php');
 		} else {
 			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		}
@@ -68,17 +77,33 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 ?>
 
 <script>
-function passwordEquals() {
-	var pass1 = document.getElementById("pass1").value;
-	var pass2 = document.getElementById("pass2").value;
-	var ok = true;
-	if (pass1 != pass2) {
+
+function accountCreationVerification() {
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    var ok = true;
+    if (pass1 != pass2) {
+
         //alert("Passwords Do not match");
         document.getElementById("pass1").style.borderColor = "#E34234";
         document.getElementById("pass2").style.borderColor = "#E34234";
         ok = false;
     }
-    
+
+    var phoneNumber = document.getElementById("phoneNum").value;
+    if (!/^\d+$/.test(phoneNumber)) {
+    	document.getElementById("phoneNum").style.borderColor = "#E34234";
+    	ok = false;
+    }
+
+    var ccNumber = document.getElementById("ccnum").value;
+    if (!/^\d+$/.test(ccNumber)) {
+    	document.getElementById("ccnum").style.borderColor = "#E34234";
+    	ok = false;
+    }
+
+
+
     return ok;
 }
 </script>
@@ -115,20 +140,20 @@ function passwordEquals() {
 
 		<div id="createAccountPane" class="shadowBox">
 			<h1>Create an Account</h1>
-			<form class="userForm" method="POST" onsubmit="return passwordEquals()">
+			<form class="userForm" method="POST" onsubmit="return accountCreationVerification()">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name" required><br>
 				<input class="userInput" type="text" name="lastname" placeholder="Last Name" required><br>
 				<input class="userInput" type="email" name="email" placeholder="Email" required><br>
 				<input class="userInput" type="password" id="pass1" name="password" placeholder="Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
 				<input class="userInput" type="password" id="pass2" name="password" placeholder="Confirm Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
-				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number" pattern=".{10,10}" title="Valid 10-digit Phone Number" required><br>
+				<input class="userInput" type="text" id="phoneNum" name="phonenumber" placeholder="Phone Number" pattern=".{10}" title="Valid 10-digit Phone Number" required><br>
 				<select class="userInput" name = "ccprovider">
 					<option value="Mastercard">Master Card</option>
 					<option value="American Express">American Express</option>
 					<option value="Visa">Visa</option>
 				</select><br>
-				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
-				<input class="userInput button" type="submit" value="Register">
+				<input class="userInput" type="text" id="ccnum" name="ccnumber" placeholder="Credit Card Number" pattern=".{13,16}" title="Valid Credit Card Number"><br>
+				<input class="userInput" type="submit" value="Register">
 			</form>
 		</div>
 	</div>
