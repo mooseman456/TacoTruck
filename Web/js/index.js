@@ -31,13 +31,14 @@ function AddTacoToSession(Taco) {
        // server script.
 
 
-       Name=Taco.returnID(); //Name is ID
+       Name=Taco.returnName();
+       id=Taco.returnID();
        Quantity=Taco.returnQuantity();
        calcPrice=Taco.returnCalcPrice();
        basePrice=Taco.returnBasePrice();
        ajaxRequest.open("POST", "Ajax/addTaco.php", true);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice);
+       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id);
 
    }
 
@@ -64,8 +65,8 @@ $(document).ready(function() {
    
    $("#taco2").click(function(e) {
       orderTacos[1].quantity += 1;
-      updateOrder();
       AddTacoToSession(orderTacos[1]);
+      updateOrder();
    });
    
    $("#taco3").click(function(e) {
@@ -169,7 +170,10 @@ $(document).ready(function() {
       // }
       //document.getElementById("orderList").innerHTML = append;
 
-      document.getElementById("orderList");
+      var container = document.getElementById("orderList");
+      var content = container.innerHTML;
+      container.innerHTML = content;
+
 
       var total =0; 
       for (var i=0; i< $('#orderList li').length; i++)
