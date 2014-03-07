@@ -15,5 +15,11 @@ $(document).ready(function() {
    $('#editOrder').click(function(e) {
       window.location = "index.php";
    });
+   
+   $('.cancelButton').click(function(e) {
+      alert("You clicked cancel");
+   });
+   
+   
 
 });
