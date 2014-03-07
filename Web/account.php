@@ -11,7 +11,7 @@ if($db->connect_errno > 0){
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
 	//Someone is Logging in
-	if ($_POST['user_id'] == NULL) {
+	if ($_POST['ccprovider'] == NULL) {
 		//cleanse the POST array
 		$email = mysql_real_escape_string($_POST['email']);
 		$password = mysql_real_escape_string($_POST['password']);
@@ -21,9 +21,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 		$row = $result->fetch_assoc();
 
-
 		if (password_verify($password, $row['password'])) {
-
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['givenName'] = $row['givenName'];
 			$_SESSION['surname'] = $row['surname'];
@@ -31,7 +29,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['phoneNumber'] = $row['phoneNumber'];
 			$_SESSION['CC_Provider'] = $row['CC_Provider'];
 			$_SESSION['CC_Number'] = $row['CC_Number'];
-
 
 			echo $_SESSION['givenName'];
 
@@ -42,8 +39,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			}
 
 
-			//header('Location: index.php');
-
+			header('Location: index.php');
 		} else {
 			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		}
@@ -60,6 +56,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		VALUES ('$givenName', '$surname', '$email', '$password', '$phoneNumber', '$CC_Provider', '$CC_Number')";
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 
+		session_start();
+
 		$_SESSION['user_id'] = $db->insert_id;
 		$_SESSION['givenName'] = $givenName;
 		$_SESSION['surname'] = $surname;
@@ -72,55 +70,27 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 
 } else {
-
-	if (isset($_SESSION['user_id'])) { //Someone is logging out
-
-		session_destroy();
-
-		header('Location: account.php');
-
-	}
-	
 	$loginStatus = "";
 }
 
 
-echo $loginStates;
 ?>
 
 <script>
-
-function accountCreationVerification() {
-    var pass1 = document.getElementById("pass1").value;
-    var pass2 = document.getElementById("pass2").value;
-    var ok = true;
-    if (pass1 != pass2) {
-
+function passwordEquals() {
+	var pass1 = document.getElementById("pass1").value;
+	var pass2 = document.getElementById("pass2").value;
+	var ok = true;
+	if (pass1 != pass2) {
         //alert("Passwords Do not match");
         document.getElementById("pass1").style.borderColor = "#E34234";
         document.getElementById("pass2").style.borderColor = "#E34234";
         ok = false;
     }
-
-    var phoneNumber = document.getElementById("phoneNum").value;
-    if (!/^\d+$/.test(phoneNumber)) {
-    	document.getElementById("phoneNum").style.borderColor = "#E34234";
-    	ok = false;
-    }
-
-    var ccNumber = document.getElementById("ccnum").value;
-    if (!/^\d+$/.test(ccNumber)) {
-    	document.getElementById("ccnum").style.borderColor = "#E34234";
-    	ok = false;
-    }
-
-
-
+    
     return ok;
 }
 </script>
-
-<?php  ?>
 
 
 <!doctype html>
@@ -154,20 +124,20 @@ function accountCreationVerification() {
 
 		<div id="createAccountPane" class="shadowBox">
 			<h1>Create an Account</h1>
-			<form class="userForm" method="POST" onsubmit="return accountCreationVerification()">
+			<form class="userForm" method="POST" onsubmit="return passwordEquals()">
 				<input class="userInput" type="text" name="firstname" placeholder="First Name" required><br>
 				<input class="userInput" type="text" name="lastname" placeholder="Last Name" required><br>
 				<input class="userInput" type="email" name="email" placeholder="Email" required><br>
 				<input class="userInput" type="password" id="pass1" name="password" placeholder="Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
 				<input class="userInput" type="password" id="pass2" name="password" placeholder="Confirm Password" pattern=".{8,}" title="Minimum 8 characters" required><br>
-				<input class="userInput" type="text" id="phoneNum" name="phonenumber" placeholder="Phone Number" pattern=".{10}" title="Valid 10-digit Phone Number" required><br>
+				<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number" pattern=".{10,10}" title="Valid 10-digit Phone Number" required><br>
 				<select class="userInput" name = "ccprovider">
 					<option value="Mastercard">Master Card</option>
 					<option value="American Express">American Express</option>
 					<option value="Visa">Visa</option>
 				</select><br>
-				<input class="userInput" type="text" id="ccnum" name="ccnumber" placeholder="Credit Card Number" pattern=".{13,16}" title="Valid Credit Card Number"><br>
-				<input class="userInput" type="submit" value="Register">
+				<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
+				<input class="userInput button" type="submit" value="Register">
 			</form>
 		</div>
 	</div>
