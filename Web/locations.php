@@ -7,9 +7,17 @@ $sections = "";
 
 foreach ($var as $location) {
 	$sections = $sections . "<section class=\"location\">
-					<h1>".$location['name']."</h1>
-					<p>".$location['address']."<br/>".$location['city'].", ".$location['state']." ".$location['zipcode']."</p>
-				  </section>";
+	<h1>".$location['name']."</h1>
+	<p>".$location['address']."<br/>".$location['city'].", ".$location['state']." ".$location['zipcode']."</p>
+	</section>";
+}
+
+if (isset($_SESSION['givenName'])) {
+	$accountText = $_SESSION['givenName'].", Sign Out";
+	echo "Signed in";
+} else {
+	$accountText = "Sign In/Create Account";
+	echo "Signed out";
 }
 
 ?>
@@ -25,14 +33,23 @@ foreach ($var as $location) {
 	<link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
 	
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;sensor=false"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/locations.js"></script>
- 
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;sensor=false"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/locations.js"></script>
+
 </head>
 <body>
-   	<!-- Page navigation menu -->
-   	<?php include 'include/navbar.php' ?>
+	<!-- Page navigation menu -->
+	<nav id="navbar">
+		<ul>
+			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
+			<li id="menuLink"><a href="index.php">Menu</a></li>
+			<li id="aboutLink" ><a href="about.php">About</a></li>
+			<li id="locationLink" class="select"><a>Locations</a></li>
+			<li id="accountLink"><a href="account.php"><?php echo $accountText; ?></a></li>
+		</ul>
+	</nav>
+	<div id="navSpace"></div>
 
 	<article id="locations">
 		<?php echo $sections; ?>

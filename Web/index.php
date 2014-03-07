@@ -45,6 +45,14 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 		$PreMadeTacos[$counter]['ingredients'] = rtrim($PreMadeTacos[$counter]['ingredients'],', ');
 		$counter++;
 	}
+
+if (isset($_SESSION['givenName'])) {
+	$accountText = $_SESSION['givenName'].", Sign Out";
+	echo "Signed in";
+} else {
+	$accountText = "Sign In/Create Account";
+	echo "Signed out";
+}
 }
 // //Get Premade Tacos
 // $query = "SELECT PreMadeTacos.tacoorder_id, PreMadeTacos.name, PreMadeTacos.description FROM PreMadeTacos";
@@ -97,8 +105,17 @@ include('include/header.php'); ?-->
 	</script>
 </head>
 <body>
-   	<!-- Page navigation menu -->
-   	<?php include 'include/navbar.php' ?>
+	<!-- Page navigation menu -->
+	<nav id="navbar">
+		<ul>
+			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
+			<li id="menuLink" class="select"><a>Menu</a></li>
+			<li id="aboutLink" ><a href="about.php">About</a></li>
+			<li id="locationLink" ><a href="locations.php">Locations</a></li>
+			<li id="accountLink"><a href="account.php"><?php echo $accountText; ?></a></li>
+		</ul>
+	</nav>
+	<div id="navSpace"></div>
 
 	<?php include 'include/orderPane.php' ?>
 
