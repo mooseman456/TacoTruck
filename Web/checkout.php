@@ -13,6 +13,7 @@ if (isset($_SESSION['givenName'])) {
 
 } else {
 	$accountText = "Sign In/Create Account";
+	$CC_Provider = "Credit Card Provider";
 	
 }
 
@@ -59,10 +60,10 @@ if (isset($_SESSION['givenName'])) {
 			<input class="userInput" type="email" name="email" value="<?php echo $email ?>" placeholder="Email"><br>
 			<input class="userInput" type="text" name="phonenumber" value="<?php echo $phoneNumber ?>" placeholder="Phone Number"><br>
 			<select class="userInput" name = "ccprovider">
+				<option selected="selected" id="defaultProvider"><?php echo $CC_Provider ?></option>
 				<option value="Mastercard">Master Card</option>
 				<option value="American Express">American Express</option>
 				<option value="Visa">Visa</option>
-				<option selected="selected"><?php echo $CC_Provider ?></option>
 			</select><br>
 			<input class="userInput" type="text" name="ccnumber" value="<?php echo $CC_Number ?>" placeholder="Credit Card Number"><br>
 			<input class="userInput" type="submit" value="Order">
