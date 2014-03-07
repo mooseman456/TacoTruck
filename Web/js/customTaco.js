@@ -76,10 +76,10 @@ $(document).ready(function() {
       for (var i=0; i<selectedElements.length; i++) {
          
          if($('.vegetables.clear').hasClass('selected'))
-            returnString =  selectedElements[i].innerHTML + "</br>";
+            returnString =  selectedElements[i].innerHTML;
          
          else
-            returnString += "<div class='added'>" + selectedElements[i].innerHTML + "</div></br>";        
+            returnString += "<div ingredientId='" + $(this).attr("id") + "'class='added'>" + selectedElements[i].innerHTML + "</div>";        
       }   
       document.getElementById("currentVeg").innerHTML = returnString;
       calcTotal();
@@ -106,10 +106,10 @@ $(document).ready(function() {
       for (var i=0; i<selectedElements.length; i++) {
          
          if($('.extras.clear').hasClass('selected'))
-            returnString =  selectedElements[i].innerHTML + "</br>";
+            returnString =  selectedElements[i].innerHTML;
          
          else
-            returnString += "<div class='added' price='" + selectedElements[i].getAttribute("price") + "' >" + selectedElements[i].innerHTML + "</div></br>";        
+            returnString += "<div ingredientId='" + $(this).attr("id") + "'class='added' price='" + selectedElements[i].getAttribute("price") + "' >" + selectedElements[i].innerHTML + "</div>";        
       }   
       document.getElementById("currentExtras").innerHTML = returnString;
       calcTotal();
@@ -133,6 +133,53 @@ $(document).ready(function() {
       
    }
    
+   function tacoObject() {
+      this.tacoID;
+      this.fillingID = $('#currentFill').children('.added').attr("ingredientid");
+      console.log("Fill: " + this.fillingID);
+      
+      this.tortillaID = $('#currentTortilla').children('.added').attr("ingredientid");
+      console.log("Tortilla: " + this.tortillaID);
+      this.riceID = "";
+      this.cheeseID = "";
+      this.beansID = "";
+      this.sauceID = "";
+      this.vegID = new Array();
+      this.extrasID = new Array();
+      
+      if($('#currentRice div').length > 0)
+         this.riceID = $('#currentRice div').attr("ingredientid");
+      console.log("Rice: " + this.riceID);
+      
+      if($('#currentCheese div').length > 0)
+         this.cheeseID = $('#currentCheese div').attr("ingredientid");
+      console.log("Cheese: " + this.cheeseID);
+      
+      if($('#currentBeans div').length > 0)
+         this.beansID = $('#currentBeans div').attr("ingredientid");
+      console.log("Beans: " + this.beansID);
+      
+      if($('#currentSauce div').length > 0)
+         this.sauceID = $('#currentSauce div').attr("ingredientid");
+      console.log("Sauce: " + this.sauceID);
+         
+      /*if($('#currentVeg div').length > 0) {
+         $("#currentVeg div").each(function(value) {
+             this.vegID.push($(value).attr("ingredientid"));
+         });*/
+         for (var j=0; j < $('#currentVeg div').length; j++) {
+            //this.vegID.push($('#currentVeg').children('.added')[i].getAttribute("ingredientid"));
+            var index = j;
+            stopVegClosure(this.vegID, index);
+         }  
+   };
+   
+   function stopVegClosure(vegAr, i) {
+      
+      vegAr.push($('#currentVeg div')[i].getAttribute("ingredientid"));
+      console.log(vegAr[i]);
+   };
+   
    $('#addTaco').click(function(e) {
       if(($('#currentFill').children().length <= 0))
          alert("Please select a filling type");
@@ -140,8 +187,11 @@ $(document).ready(function() {
       else if (($('#currentTortilla').children().length <= 0))
          alert("Please select a tortilla");
          
-      else
-         alert("Taco will eventually be added");
+      else {
+         var t = new tacoObject();
+         
+         //$.ajax({url:'session.php', type:'POST', data:{'t':'t'}, success:function() {}});
+      }
    });
    
    $('#cancelTaco').click(function(e) {
