@@ -31,8 +31,17 @@ foreach ($var as $location) {
  
 </head>
 <body>
-   	<!-- Page navigation menu -->
-   	<?php include 'navbar.php' ?>
+	<!-- Page navigation menu -->
+	<nav id="navbar">
+		<ul>
+			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
+			<li><a href="index.php">Order</a></li>
+			<li><a href="about.php">About</a></li>
+			<li class="select"><a>Locations</a></li>
+			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
+		</ul>
+	</nav>
+	<div id="navSpace"></div>
 
 	<article id="locations">
 		<?php echo $sections; ?>
