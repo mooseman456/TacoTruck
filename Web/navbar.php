@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 if (isset($_SESSION['givenName'])) {
 	$accountText = $_SESSION['givenName'].", Sign Out";
 	echo "Signed in";
