@@ -18,19 +18,7 @@
    	<!-- Page navigation menu -->
    	<?php include 'navbar.php' ?>
 
-	   <!-- Order Pane -->
-	   <div class="orderPane shadowBoxLight">
-		   <h2 id="order">Order </h2>
-		   <!-- List of tacos in order -->
-		   <ul>
-		   </ul>
-		   <!-- Tax and total -->
-		   <ul>
-			   <li id="taxTotal">Tax: $0.00</li>
-			   <li id="grandTotal">Grand Total: $0.00</li>
-		   </ul>
-		   <input type="submit" id="editOrder" value="Edit Order"/>
-	   </div>
+	   <?php include 'orderPane.php' ?>
 
 	   <div class="checkoutPane shadowBoxLight">
 		   <form class="userForm" method="POST">

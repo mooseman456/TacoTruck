@@ -95,22 +95,11 @@ while($row = $result->fetch_row()) {
    		<!-- Page navigation menu -->
    		<?php include 'navbar.php' ?>
 
-	   <!-- Order Pane -->
-	   <div class="orderPane shadowBoxLight">
-		   <h1 id="order">Order </h1>
-		   <!-- List of tacos in order -->
-		   <ul id="orderList">
-		   </ul>
-		   <!-- Tax and total -->
-		   <ul id="taxAndTotal">
-			   <li id="taxTotal">Tax: $0.00</li>
-			   <li id="grandTotal">Grand Total: $0.00</li>
-		   </ul>
-		   <input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
-	   </div>
+		<!-- Order Pane -->
+	  	<?php include 'orderPane.php' ?>
 	   
-	   <!-- Current Taco Pane -->
-	   <div class="shadowBoxLight" id="currentTacoPane">
+	  	<!-- Current Taco Pane -->
+	  	<div class="shadowBoxLight" id="currentTacoPane">
 	      <h1 id="currentTaco">Current Taco</h1>
 	      <p id="currentFill" class="currentList">
 	         Please select a filling
