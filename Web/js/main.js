@@ -15,5 +15,6 @@ $(document).ready(function() {
    $('#editOrder').click(function(e) {
       window.location = "index.php";
    });
+   
 
 });
