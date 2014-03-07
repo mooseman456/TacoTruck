@@ -17,8 +17,6 @@ $(document).ready(function() {
    });
    
    $('#accountLink').click(function(e) {
-      e.preventDefault();
-      console.log("Hello!");
       if($('#navbar ul li').hasClass('selected')) {
          $('#navbar ul li').removeClass('selected');
       }

@@ -31,7 +31,7 @@ function AddTacoToSession(Taco) {
        // server script.
 
        Taco=Taco.returnString();
-       ajaxRequest.open("POST", "ajax/addTaco.php", true);
+       ajaxRequest.open("POST", "Ajax/addTaco.php", true);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
        ajaxRequest.send("Taco="+Taco);
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
    $("#taco1").click(function(e) {
       alert("Taco1 clicked");
       orderTacos[0].quantity += 1;
-      //updateOrder();
+      updateOrder();
       AddTacoToSession(orderTacos[0]);
    });
    
@@ -112,8 +112,8 @@ $(document).ready(function() {
    };
    
    $('.plusButton').click(function(e) {
-      var check = ();
-   }
+      var check;
+   });
    
    var removeTaco = function(name) {
       var check = name.slice(0, 5);
