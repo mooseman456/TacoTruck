@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){

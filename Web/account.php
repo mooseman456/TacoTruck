@@ -11,7 +11,7 @@ if($db->connect_errno > 0){
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
 	//Someone is Logging in
-	if ($_POST['ccprovider'] == NULL) {
+	if ($_POST['user_id'] == NULL) {
 		//cleanse the POST array
 		$email = mysql_real_escape_string($_POST['email']);
 		$password = mysql_real_escape_string($_POST['password']);
@@ -21,7 +21,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 		$row = $result->fetch_assoc();
 
+
 		if (password_verify($password, $row['password'])) {
+
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['givenName'] = $row['givenName'];
 			$_SESSION['surname'] = $row['surname'];
@@ -29,6 +31,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['phoneNumber'] = $row['phoneNumber'];
 			$_SESSION['CC_Provider'] = $row['CC_Provider'];
 			$_SESSION['CC_Number'] = $row['CC_Number'];
+
 
 			echo $_SESSION['givenName'];
 
@@ -40,6 +43,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 
 			//header('Location: index.php');
+
 		} else {
 			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		}
@@ -56,8 +60,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		VALUES ('$givenName', '$surname', '$email', '$password', '$phoneNumber', '$CC_Provider', '$CC_Number')";
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 
-		session_start();
-
 		$_SESSION['user_id'] = $db->insert_id;
 		$_SESSION['givenName'] = $givenName;
 		$_SESSION['surname'] = $surname;
@@ -70,11 +72,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 
 } else {
+
+	if (isset($_SESSION['user_id'])) { //Someone is logging out
+
+		session_destroy();
+
+		header('Location: account.php');
+
+	}
+	
 	$loginStatus = "";
 }
 
+
 echo $loginStates;
-?>
+
 
 <script>
 
@@ -107,6 +119,8 @@ function accountCreationVerification() {
     return ok;
 }
 </script>
+
+<?php  ?>
 
 
 <!doctype html>
