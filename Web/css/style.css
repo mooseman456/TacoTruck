@@ -208,12 +208,6 @@ nav .select:hover, nav .select {
 	clear:right;
 }
 
-.orderPane input {
-	position: relative;
-	display: block;
-	bottom:0px;
-}
-
 .orderPane ul {
 	list-style: none;
 	margin: 0;
@@ -441,9 +435,14 @@ input[type=submit]{
 /*		CUSTOM TACO PAGE          */
 /********************************/
 
+.price {
+   float:right;
+   clear:right;
+}
 /***********************/
 /*  CURRENT TACO PANE  */
 /***********************/
+
 #currentTacoPane {
 	float:left;
 	width:25%;
@@ -525,6 +524,15 @@ input[type=submit]{
 }
 
 #currentExtras .added {
+   color: black;
+}
+
+#tacoTotal {
+   border-left: 3px solid black;
+   color: gray;
+}
+
+#tacoTotal.added {
    color: black;
 }
 
