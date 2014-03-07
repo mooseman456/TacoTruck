@@ -124,11 +124,11 @@ $(document).ready(function() {
          return this.id;
       };
       
-      this.returnBasePrice() {
+      this.returnBasePrice = function() {
          return this.basePrice;
       };
       
-      this.returnCalcPrice() {
+      this.returnCalcPrice = function() {
          return this.basePrice * this.quantity;
       };
    };
