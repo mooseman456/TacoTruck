@@ -103,8 +103,8 @@ include('include/header.php'); ?-->
 	<!-- Order Pane -->
 	<div class="orderPane shadowBoxLight">
 		<h1 id="order">Order </h1>
-		<!-- List of tacos in order -->
 		<ul id="orderList">
+			<?php echo $_SESSION['Order'][0]; ?>
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">

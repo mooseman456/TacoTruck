@@ -14,14 +14,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	if ($_POST['ccprovider'] == NULL) {
 		//cleanse the POST array
 		$email = mysql_real_escape_string($_POST['email']);
-		$password = mysql_real_escape_string($_POST['password']);
+		$password = hash('sha1', mysql_real_escape_string($_POST['password']));
 
 		$query = "SELECT * FROM Users WHERE email='$email'";
 
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
 		$row = $result->fetch_assoc();
 
-		if (password_verify($password, $row['password'])) {
+		if ($password == $row['password']) {
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['givenName'] = $row['givenName'];
 			$_SESSION['surname'] = $row['surname'];
@@ -30,16 +30,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['CC_Provider'] = $row['CC_Provider'];
 			$_SESSION['CC_Number'] = $row['CC_Number'];
 
-			echo $_SESSION['givenName'];
-
-			if (isset($_SESSION['givenName'])) {
-				echo "set";
-			} else {
-				echo "unset";
-			}
-
-
 			header('Location: index.php');
+
 		} else {
 			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		}
@@ -47,7 +39,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$givenName = mysql_real_escape_string($_POST['firstname']);
 		$surname = mysql_real_escape_string($_POST['lastname']);
 		$email = mysql_real_escape_string($_POST['email']);
-		$password = password_hash(mysql_real_escape_string($_POST['password']), PASSWORD_BCRYPT);
+		$password = hash('sha1',mysql_real_escape_string($_POST['password']));
 		$phoneNumber = mysql_real_escape_string($_POST['phonenumber']);
 		$CC_Provider = mysql_real_escape_string($_POST['ccprovider']);
 		$CC_Number = mysql_real_escape_string($_POST['ccnumber']);
