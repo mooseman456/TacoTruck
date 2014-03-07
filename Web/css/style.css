@@ -205,7 +205,13 @@ nav .select:hover, nav .select {
 
 #orderList img {
 	float: right;
-	clear:right;
+	height:.8em;
+	margin: .1em;
+	width:auto;
+}
+
+.orderList li img:first-child {
+	display: none;
 }
 
 .orderPane ul {
@@ -227,6 +233,7 @@ nav .select:hover, nav .select {
 .orderPane ul li{
    width:100%;
    padding: .1em 0em;
+   clear:left;
 }
 
 img.cancelButton {
@@ -270,7 +277,6 @@ img.cancelButton:hover {
 .menuPane img{
 	width: 140px;
 	height: auto;
-	ali
 }
 
 #menuTable {
