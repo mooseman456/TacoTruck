@@ -115,7 +115,27 @@ $(document).ready(function() {
          helper += "</li>";
          return  helper;
       };
+      
+      this.returnQuantity = function() {
+         return this.quantity;
+      };
+      
+      this.returnID = fuction() {
+         return this.id;
+      };
+      
+      this.returnBasePrice() {
+         return this.basePrice;
+      };
+      
+      this.returnCalcPrice() {
+         return this.basePrice * this.quantity;
+      };
    };
+   
+   function returnOrder() {
+      return orderTacos;
+   }
    
    $('.plusButton').click(function(e) {
       var check;
