@@ -14,9 +14,9 @@ if (isset($_SESSION['givenName'])) {
 <nav id="navbar">
 	<ul>
 		<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
-		<li><a href="index.php">Menu</a></li>
-		<li><a href="about.php">About</a></li>
-		<li><a href="locations.php">Locations</a></li>
+		<li id="menuLink"><a href="index.php">Menu</a></li>
+		<li id="aboutLink" ><a href="about.php">About</a></li>
+		<li id="locationLink" ><a href="locations.php">Locations</a></li>
 		<li id="accountLink"><a href="account.php"><?php echo $accountText; ?></a></li>
 	</ul>
 </nav>

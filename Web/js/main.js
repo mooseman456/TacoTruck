@@ -16,5 +16,10 @@ $(document).ready(function() {
       window.location = "index.php";
    });
    
-
+   $('#accountLink').click(function(e) {
+      if($('#navbar ul li').hasClass('selected')) {
+         $('#navbar ul li').removeClass('selected');
+      }
+      $('#accountLink').addClass('selected');
+   });
 });
