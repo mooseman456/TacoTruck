@@ -14,19 +14,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$email = mysql_real_escape_string($_POST['email']);
 		$password = mysql_real_escape_string($_POST['password']);
 
-		$submittedEmail = $email;
-		$submittedPassword = password_hash(mysql_real_escape_string($passsword), PASSWORD_DEFAULT);
-
-		$query = "SELECT * FROM Users WHERE password='$submittedPassword' AND email='$submittedEmail'";
-
-		// die($query);
+		$query = "SELECT Users.password FROM Users WHERE email='$email'";
 
 		$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-		$row = $result->fetch_assoc();
+		$retrievedPassword = $result->fetch_assoc();
 
-		if(empty($row)) {
-			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
-		} else {
+		if (password_verify($password, $retrievedPassword['password'])) {
 			session_start();
 
 			$_SESSION['user_id'] = $row['user_id'];
@@ -38,12 +31,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['CC_Number'] = $row['CC_Number'];
 
 			header('Location: index.php');
+		} else {
+			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
 		}
 	} else { //Someone is creating a new account
 		$givenName = mysql_real_escape_string($_POST['firstname']);
 		$surname = mysql_real_escape_string($_POST['lastname']);
 		$email = mysql_real_escape_string($_POST['email']);
-		$password = password_hash(mysql_real_escape_string($_POST['password']), PASSWORD_DEFAULT);
+		$password = password_hash(mysql_real_escape_string($_POST['password']), PASSWORD_BCRYPT);
 		$phoneNumber = mysql_real_escape_string($_POST['phonenumber']);
 		$CC_Provider = mysql_real_escape_string($_POST['ccprovider']);
 		$CC_Number = mysql_real_escape_string($_POST['ccnumber']);
@@ -63,7 +58,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$_SESSION['CC_Number'] = $CC_Number;
 
 		header('Location: index.php');
-
 	}
 
 } else {

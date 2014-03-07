@@ -15,28 +15,28 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 
 	foreach ($data['PreMadeTacos'] as $taco) {
 		$PreMadeTacos[$counter] = $taco;
-		   
+
 		$PreMadeTacos[$counter]['ingredients'] = $PreMadeTacos[$counter]['type'].", ".$PreMadeTacos[$counter]['tortilla'].", ".
-												 $PreMadeTacos[$counter]['rice'].", ".$PreMadeTacos[$counter]['cheese'].", ".
-												 $PreMadeTacos[$counter]['beans'].", ".$PreMadeTacos[$counter]['sauces'];
+		$PreMadeTacos[$counter]['rice'].", ".$PreMadeTacos[$counter]['cheese'].", ".
+		$PreMadeTacos[$counter]['beans'].", ".$PreMadeTacos[$counter]['sauces'];
 		
       	// Checks to see if the vegetables contains an array. Either way, adds the veggies as they need to be.
 		if (is_array($taco['vegetables'])) {
-		   foreach ($taco['vegetables'] as $tempVegetables) {
-		      $PreMadeTacos[$counter]['ingredients'] .= ", ".$tempVegetables;
-		   }
+			foreach ($taco['vegetables'] as $tempVegetables) {
+				$PreMadeTacos[$counter]['ingredients'] .= ", ".$tempVegetables;
+			}
 		}
 		else
-		   $PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['vegetables'];
+			$PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['vegetables'];
 		
 		// Same with vegetables except with extras
 		if (is_array($taco['extras'])) {
-		   foreach ($taco['extras'] as $tempExtras) {
-		      $PreMadeTacos[$counter]['ingredients'] .= ", ".$tempExtras;
-		   }
+			foreach ($taco['extras'] as $tempExtras) {
+				$PreMadeTacos[$counter]['ingredients'] .= ", ".$tempExtras;
+			}
 		}
 		else
-		   $PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['extras'];
+			$PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['extras'];
 		
 		//Remove trailing space and comma
 		$PreMadeTacos[$counter]['price'] = $taco['price'];
@@ -88,10 +88,20 @@ include('include/header.php'); ?-->
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script src="js/index.js"></script>
 	<script type="text/javascript">
+
 	$(function() {
 		$( document ).tooltip();
 	});
 	</script>
+
+	<?php 
+		if (isset($_SESSION['username'])){
+      		echo "User : ".$_SESSION['username'];
+   		} else {
+      		$_SESSION['username'] = 'John';
+   		}
+	?>
+
 </head>
 <body>
 	<!-- Page navigation menu  -->
@@ -111,6 +121,8 @@ include('include/header.php'); ?-->
 		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul id="orderList">
+			<li>my Taco<img src="img/cancel.png"><img src="img/plus.png"><img src="img/minus.png"></li>
+			<li>another Taco<img src="img/cancel.png"><img src="img/plus.png"><img src="img/minus.png"></li>
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">
