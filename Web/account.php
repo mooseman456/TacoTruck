@@ -61,9 +61,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		header('Location: index.php');
 	}
 
-} else if (isset($_SESSION['CC_Provider'])) { //Someone is signing out
+} else if (isset($_SESSION['givenName'])) { //Someone is signing out
 
 	$loginStatus = "Logged Out";
+	unset($_SESSION['givenName']);
 
 	session_destroy();
 
