@@ -61,36 +61,43 @@ $(document).ready(function() {
    $("#taco2").click(function(e) {
       orderTacos[1].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[1]);
    });
    
    $("#taco3").click(function(e) {
       orderTacos[2].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[2]);
    });
    
    $("#taco4").click(function(e) {
       orderTacos[3].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[3]);
    });
    
    $("#taco5").click(function(e) {
       orderTacos[4].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[4]);
    });
    
    $("#taco6").click(function(e) {
       orderTacos[5].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[5]);
    });
    
    $("#taco7").click(function(e) {
       orderTacos[6].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[6]);
    });
    
    $("#taco8").click(function(e) {
       orderTacos[7].quantity += 1;
       updateOrder();
+      AddTacoToSession(orderTacos[7]);
    });
    
    function taco(name) {
