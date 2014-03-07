@@ -54,30 +54,6 @@ if (isset($_SESSION['givenName'])) {
 	echo "Signed out";
 }
 }
-// //Get Premade Tacos
-// $query = "SELECT PreMadeTacos.tacoorder_id, PreMadeTacos.name, PreMadeTacos.description FROM PreMadeTacos";
-// $result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-// $i = 0;
-// while($data = $result->fetch_assoc()) {
-// 	$PreMadeTacos[$i] = $data;
-// 	$i += 1;
-// }
-
-// foreach($PreMadeTacos as $key => $val) {
-// 	//Get Fillings
-// 	$query = "SELECT TacoFixings.name, TacoFixings.price FROM TacoDetails JOIN TacoFixings 
-// 			  ON TacoDetails.tacofixing_id=TacoFixings.tacofixing_id JOIN TacoOrders 
-// 			  ON TacoDetails.tacoorder_id=TacoOrders.tacoorder_id 
-// 			  WHERE TacoOrders.tacoorder_id='".$PreMadeTacos[$key]['tacoorder_id']."'";
-// 	$result = $db->query($query)  or trigger_error($mysqli->error."[$query]");
-// 	$PreMadeTacos[$key]['ingredients'] = "\nIngredients: ";
-// 	while($data = $result->fetch_assoc()) {
-// 		$PreMadeTacos[$key]['ingredients'] = $PreMadeTacos[$key]['ingredients'] .  $data['name'] . ", ";
-// 	}
-// 	//Remove trailing space and comma
-// 	$PreMadeTacos[$key]['ingredients'] = rtrim($PreMadeTacos[$key]['ingredients'],', ');
-// }
-
 ?>
 
 <!--?php
