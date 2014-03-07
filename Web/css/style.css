@@ -571,5 +571,5 @@ input[type=submit]{
 .checkoutPane {
 	float:left;
 	width:25%;
-	margin: 0% 4%;
+	margin: 1em 4%;
 }
