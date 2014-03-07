@@ -69,7 +69,7 @@ $(document).ready(function() {
    };
    
    $('.plusButton').click(function(e) {
-      var check = 
+      var check = ();
    }
    
    var removeTaco = function(name) {
