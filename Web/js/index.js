@@ -56,7 +56,12 @@ $(document).ready(function() {
       this.id = name;
       this.basePrice;
       this.returnString = function() {
-         return "<li>" + document.getElementById(this.id).alt + " x" + this.quantity + "<img id=\"" + this.id + "Cancel\"class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\"></li>";
+         var helper = "<li>" + document.getElementById(this.id).alt + " x" + this.quantity;
+         helper += "<img id=\"" + this.id + "Cancel\"class=\"cancelButton\" src=\"img/cancel.png\" alt=\"Cancel\" title=\"Cancel\">";
+         helper += "<img id=\"" + this.id + "Plus\"class=\"plusButton\" src=\"img/plus.png\" alt=\"Plus\" title=\"Plus\">";
+         helper += "<img id=\"" + this.id + "Plus\"class=\"minusButton\" src=\"img/minus.png\" alt=\"Minus\" title=\"Minus\">";
+         helper += "</li>"
+         return  helper;
       };
    };
    
