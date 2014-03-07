@@ -99,10 +99,10 @@ while($row = $result->fetch_row()) {
 	   <div class="orderPane shadowBoxLight">
 		   <h1 id="order">Order </h1>
 		   <!-- List of tacos in order -->
-		   <ul>
+		   <ul id="orderList">
 		   </ul>
 		   <!-- Tax and total -->
-		   <ul>
+		   <ul id="taxAndTotal">
 			   <li id="taxTotal">Tax: $0.00</li>
 			   <li id="grandTotal">Grand Total: $0.00</li>
 		   </ul>
