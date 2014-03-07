@@ -108,8 +108,8 @@ include('include/header.php'); ?-->
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">
-			<li id="taxTotal">Tax: $0.00</li>
-			<li id="grandTotal">Grand Total: $0.00</li>
+			<li amount="" id="taxTotal">Tax at 8.25%: $0.00</li>
+			<li amount="" id="grandTotal">Grand Total: $0.00</li>
 		</ul>
 		<input class="userInput" type="submit" id="submitOrder" value="Check Out"/>
 	</div>
