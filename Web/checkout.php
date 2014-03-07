@@ -1,11 +1,19 @@
 <?php
 
+session_start();
+
 if (isset($_SESSION['givenName'])) {
 	$accountText = $_SESSION['givenName'].", Sign Out";
-	echo "Signed in";
+	$givenName = $_SESSION['givenName'];
+	$surname = $_SESSION['surname'];
+	$email = $_SESSION['email'];
+	$phoneNumber = $_SESSION['phoneNumber'];
+	$CC_Provider = $_SESSION['CC_Provider'];
+	$CC_Number = $_SESSION['CC_Number'];
+
 } else {
 	$accountText = "Sign In/Create Account";
-	echo "Signed out";
+	
 }
 
 ?>
@@ -46,16 +54,17 @@ if (isset($_SESSION['givenName'])) {
 
 	<div class="checkoutPane shadowBoxLight">
 		<form class="userForm" method="POST">
-			<input class="userInput" type="text" name="firstname" placeholder="First Name"><br>
-			<input class="userInput" type="text" name="lastname" placeholder="Last Name"><br>
-			<input class="userInput" type="email" name="email" placeholder="Email"><br>
-			<input class="userInput" type="text" name="phonenumber" placeholder="Phone Number"><br>
+			<input class="userInput" type="text" name="firstname" value="<?php echo $givenName ?>" placeholder="First Name"><br>
+			<input class="userInput" type="text" name="lastname" value="<?php echo $surname ?>" placeholder="Last Name"><br>
+			<input class="userInput" type="email" name="email" value="<?php echo $email ?>" placeholder="Email"><br>
+			<input class="userInput" type="text" name="phonenumber" value="<?php echo $phoneNumber ?>" placeholder="Phone Number"><br>
 			<select class="userInput" name = "ccprovider">
 				<option value="Mastercard">Master Card</option>
 				<option value="American Express">American Express</option>
 				<option value="Visa">Visa</option>
+				<option selected="selected"><?php echo $CC_Provider ?></option>
 			</select><br>
-			<input class="userInput" type="text" name="ccnumber" placeholder="Credit Card Number"><br>
+			<input class="userInput" type="text" name="ccnumber" value="<?php echo $CC_Number ?>" placeholder="Credit Card Number"><br>
 			<input class="userInput" type="submit" value="Order">
 		</form>
 	</div>
