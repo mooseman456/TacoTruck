@@ -93,10 +93,10 @@ while($row = $result->fetch_row()) {
    
    <body>
    		<!-- Page navigation menu -->
-   		<?php include 'navbar.php' ?>
+   		<?php include 'include/navbar.php' ?>
 
 		<!-- Order Pane -->
-	  	<?php include 'orderPane.php' ?>
+	  	<?php include 'include/orderPane.php' ?>
 	   
 	  	<!-- Current Taco Pane -->
 	  	<div class="shadowBoxLight" id="currentTacoPane">

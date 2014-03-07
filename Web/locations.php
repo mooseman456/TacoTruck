@@ -32,7 +32,7 @@ foreach ($var as $location) {
 </head>
 <body>
    	<!-- Page navigation menu -->
-   	<?php include 'navbar.php' ?>
+   	<?php include 'include/navbar.php' ?>
 
 	<article id="locations">
 		<?php echo $sections; ?>

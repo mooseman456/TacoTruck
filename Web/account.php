@@ -105,7 +105,7 @@ function passwordEquals() {
 </head>
 <body>
    	<!-- Page navigation menu -->
-   	<?php include 'navbar.php' ?>
+   	<?php include 'include/navbar.php' ?>
 
 	<div class="accountForm">
 		<div id="signInPane" class="shadowBox">

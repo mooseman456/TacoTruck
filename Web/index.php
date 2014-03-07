@@ -98,9 +98,9 @@ include('include/header.php'); ?-->
 </head>
 <body>
    	<!-- Page navigation menu -->
-   	<?php include 'navbar.php' ?>
+   	<?php include 'include/navbar.php' ?>
 
-	<?php include 'orderPane.php' ?>
+	<?php include 'include/orderPane.php' ?>
 
 	<!-- Table for menu -->
 	<article class="menuPane">
