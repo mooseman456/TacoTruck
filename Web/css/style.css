@@ -208,12 +208,6 @@ nav .select:hover, nav .select {
 	clear:right;
 }
 
-.orderPane input {
-	position: relative;
-	display: block;
-	bottom:0px;
-}
-
 .orderPane ul {
 	list-style: none;
 	margin: 0;
