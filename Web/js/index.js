@@ -39,8 +39,11 @@ function AddTacoToSession(Taco) {
        ajaxRequest.open("POST", "Ajax/addTaco.php", true);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
        ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id);
-
-   }
+       $('#orderList').load("sessionOrderData.php", function() {
+         console.log("FUCK YOU");
+       });
+       console.log("Hello");
+   };
 
 
 
@@ -173,7 +176,7 @@ $(document).ready(function() {
       var container = document.getElementById("orderList");
       var content = container.innerHTML;
       container.innerHTML = content;
-
+      
 
       var total =0; 
       for (var i=0; i< $('#orderList li').length; i++)
