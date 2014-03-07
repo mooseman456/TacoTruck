@@ -97,10 +97,12 @@ $(document).ready(function() {
    function taco(name) {
       this.quantity = 0;
       this.id = name;
-      this.basePrice;
+      this.basePrice = $("#"+this.id).attr("price");
+      this.calcPrice;
       this.returnString = function() {
          //helper helps concatinate the string
-         var helper = "<li>" + document.getElementById(this.id).alt + " x" + this.quantity;
+         this.calcPrice = this.basePrice * this.quantity;
+         var helper = "<li price=\"" + this.calcPrice + "\">" + document.getElementById(this.id).alt + " x" + this.quantity + " : $" + this.calcPrice.toFixed(2);
          helper += "<img id=\"" + this.id + "Cancel\"class=\"cancelButton\" src=\"img/cancel.png\" alt=\"Cancel\" title=\"remove taco\">";
          helper += "<img id=\"" + this.id + "Plus\"class=\"plusButton\" src=\"img/plus.png\" alt=\"Plus\" title=\"raise quantity\">";
          helper += "<img id=\"" + this.id + "Plus\"class=\"minusButton\" src=\"img/minus.png\" alt=\"Minus\" title=\"lower quantity\">";
@@ -120,12 +122,26 @@ $(document).ready(function() {
    
    var updateOrder = function() {
       var append ="";
+      var tax= 0.0825;
+      var taxAmount=0.0;
       for (var i=0; i<orderTacos.length; i++) {
          if(orderTacos[i].quantity !== 0)
             append += orderTacos[i].returnString();
       }
       document.getElementById("orderList").innerHTML = append;
+      var total =0; 
+      for (var i=0; i< $('#orderList li').length; i++)
+         total+= parseFloat($('#orderList li')[i].getAttribute("price"));
       
+      taxAmount = parseFloat(parseFloat(total) * parseFloat(tax)).toFixed(2)
+      
+      grandTotal = parseFloat(parseFloat(total) + parseFloat(taxAmount)).toFixed(2);
+      
+      $('#taxTotal').attr("amount", taxAmount);
+      document.getElementById("taxTotal").innerHTML = "Tax at 8.25%: $" + taxAmount;
+      
+      $("#grandTotal").attr("amount", grandTotal);
+      document.getElementById("grandTotal").innerHTML = "Grand Total: $" + grandTotal;
       $('.cancelButton').click(function(e) {
          removeTaco(e.target.id);
       });
