@@ -58,13 +58,13 @@ $(document).ready(function() {
    
    $("#taco1").click(function(e) {
       orderTacos[0].quantity += 1;
-      // updateOrder();
+      updateOrder();
       AddTacoToSession(orderTacos[0]);
    });
    
    $("#taco2").click(function(e) {
       orderTacos[1].quantity += 1;
-      // updateOrder();
+      updateOrder();
       AddTacoToSession(orderTacos[1]);
    });
    
@@ -158,11 +158,14 @@ $(document).ready(function() {
       var append ="";
       var tax= 0.0825;
       var taxAmount=0.0;
-      for (var i=0; i<orderTacos.length; i++) {
-         if(orderTacos[i].quantity !== 0)
-            append += orderTacos[i].returnString();
-      }
-      document.getElementById("orderList").innerHTML = append;
+      // for (var i=0; i<orderTacos.length; i++) {
+      //    if(orderTacos[i].quantity !== 0)
+      //       append += orderTacos[i].returnString();
+      // }
+      //document.getElementById("orderList").innerHTML = append;
+
+      document.getElementById("orderList");
+
       var total =0; 
       for (var i=0; i< $('#orderList li').length; i++)
          total+= parseFloat($('#orderList li')[i].getAttribute("price"));
