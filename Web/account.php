@@ -73,7 +73,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$loginStatus = "";
 }
 
-
+echo $loginStates;
 ?>
 
 <script>
