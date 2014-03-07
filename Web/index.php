@@ -39,6 +39,7 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 		   $PreMadeTacos[$counter]['ingredients'] .= ", ".$PreMadeTacos[$counter]['extras'];
 		
 		//Remove trailing space and comma
+		$PreMadeTacos[$counter]['price'] = $taco['price'];
 		$PreMadeTacos[$counter]['ingredients'] = rtrim($PreMadeTacos[$counter]['ingredients'],', ');
 		$counter++;
 	}
@@ -110,9 +111,6 @@ include('include/header.php'); ?-->
 		<h1 id="order">Order </h1>
 		<!-- List of tacos in order -->
 		<ul id="orderList">
-			<li>Poop<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
-			<li>And<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
-			<li>More<img class="cancelButton" src="img/cancel_icon.png" alt="Cancel" title="Cancel"></li>
 		</ul>
 		<!-- Tax and total --> 
 		<ul id="taxAndTotal">
@@ -128,43 +126,43 @@ include('include/header.php'); ?-->
 		<!--h1>Menu</h1-->
 		<section>
 			<h2><?php echo $PreMadeTacos[0]['name']; ?></h2>
-			<img id="taco1" src="img/Taco1.png" alt="<?php echo $PreMadeTacos[0]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
+			<img price="<?php echo $PreMadeTacos[0]['price']; ?>" id="taco1" src="img/Taco1.png" alt="<?php echo $PreMadeTacos[0]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[0]['description']." Ingredients: ".$PreMadeTacos[0]['ingredients']."\""; ?>></img>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[1]['name']; ?></h2>
-			<img id="taco2" class="resize" src="img/Taco2.png" alt="<?php echo $PreMadeTacos[1]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+			<img price="<?php echo $PreMadeTacos[1]['price']; ?>" id="taco2" class="resize" src="img/Taco2.png" alt="<?php echo $PreMadeTacos[1]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[1]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[2]['name']; ?></h2>
-			<img id="taco3" src="img/Taco3.png" alt="<?php echo $PreMadeTacos[2]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></img>
+			<img price="<?php echo $PreMadeTacos[2]['price']; ?>" id="taco3" src="img/Taco3.png" alt="<?php echo $PreMadeTacos[2]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[2]['description']." Ingredients: ".$PreMadeTacos[2]['ingredients']."\""; ?>></img>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[3]['name']; ?></h2>
-			<img id="taco4" src="img/Taco4.png" alt="<?php echo $PreMadeTacos[3]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
+			<img price="<?php echo $PreMadeTacos[3]['price']; ?>" id="taco4" src="img/Taco4.png" alt="<?php echo $PreMadeTacos[3]['name']; ?>" title=<?php echo "\"".$PreMadeTacos[3]['description']." Ingredients: ".$PreMadeTacos[1]['ingredients']."\""; ?>></img>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[4]['name']; ?></h2>
-			<img id="taco5" src="img/Taco5.png" alt="Taco 5" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>>
+			<img price="<?php echo $PreMadeTacos[4]['price']; ?>" id="taco5" src="img/Taco5.png" alt="<?php echo $PreMadeTacos[4]['name']; ?>" class="taco" title=<?php echo "\"".$PreMadeTacos[4]['description'].$PreMadeTacos[4]['ingredients']."\""; ?>>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[5]['name']; ?></h2>
-			<img id="taco6" src="img/Taco6.png" alt="Taco 6" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>>
+			<img price="<?php echo $PreMadeTacos[5]['price']; ?>" id="taco6" src="img/Taco6.png" alt="<?php echo $PreMadeTacos[5]['name']; ?>" class="taco" title=<?php echo "\"".$PreMadeTacos[5]['description'].$PreMadeTacos[5]['ingredients']."\""; ?>>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[6]['name']; ?></h2>
-			<img id="taco7" src="img/Taco7.png" alt="Taco 7" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>>
+			<img price="<?php echo $PreMadeTacos[6]['price']; ?>" id="taco7" src="img/Taco7.png" alt="<?php echo $PreMadeTacos[6]['name']; ?>" class="taco" title=<?php echo "\"".$PreMadeTacos[6]['description'].$PreMadeTacos[6]['ingredients']."\""; ?>>
 		</section>
 		<section>
 			<h2><?php echo $PreMadeTacos[7]['name']; ?></h2>
-			<img id="taco8" src="img/Taco8.png" alt="Taco 8" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>>
+			<img price="<?php echo $PreMadeTacos[7]['price']; ?>" id="taco8" src="img/Taco8.png" alt="<?php echo $PreMadeTacos[7]['name']; ?>" class="taco" title=<?php echo "\"".$PreMadeTacos[7]['description'].$PreMadeTacos[7]['ingredients']."\""; ?>>
 		</section>
 		<section id="customTaco">
 			<h2>Custom Taco</h2>
-			<img id="customTaco" src="img/plus_icon.png" alt="Plus arrow">
+			<img id="customTaco" src="img/plus_icon.png" alt="Custom Taco">
 		</section>
 		<section>
 			<h2>Previous Taco</h2>
-			<img src="img/previous_icon.png" alt="Previous Taco" id="previousTaco">
+			<img id="previousTaco" src="img/previous_icon.png" alt="Previous Taco">
 		</section>
 	</article>
 

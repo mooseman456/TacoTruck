@@ -54,15 +54,14 @@ $(document).ready(function() {
    function taco(name) {
       this.quantity = 0;
       this.id = name;
+      this.basePrice;
       this.returnString = function() {
-         console.log(this.id);
          return "<li>" + document.getElementById(this.id).alt + " x" + this.quantity + "<img id=\"" + this.id + "Cancel\"class=\"cancelButton\" src=\"img/cancel_icon.png\" alt=\"Cancel\" title=\"Cancel\"></li>";
       };
    };
    
    var removeTaco = function(name) {
       var check = name.slice(0, 5);
-      console.log(check);
       for (var i=0; i<orderTacos.length; i++) {
          if(check === orderTacos[i].id)
             orderTacos[i].quantity = 0;

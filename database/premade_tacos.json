@@ -2,29 +2,44 @@
 	"PreMadeTacos": [
 		{ "name": "Fire Dragon", "description": "OUCH! That burns like hell!", 
 		  "type": "Carnitas", "tortilla": "Flour", "rice": "Spanish Rice", "cheese": "Cheddar/Jack Mix", 
-		  "beans": "No Beans", "sauces": "Death", "vegetables": "Lettuce", "extras": "Queso" },
+		  "beans": "No Beans", "sauces": "Death", "vegetables": "Lettuce", "extras": "Queso", "price": 2.1 },
 		  
 		{ "name": "Oh!", "description": "I AM your sandwich.", 
 		  "type": "Steak", "tortilla": "Cayenne", "rice": "Cilantro Rice", "cheese": "Queso Fresco", 
 		  "beans": "Black Beans", "sauces": "Ranch", "vegetables": ["Tomatoes", "Roasted Garlic"], 
-		  "extras": ["Queso", "Guacamole"] },
+		  "extras": ["Queso", "Guacamole"], "price": 3.45},
 		  
 		{ "name": "The Jimmy", "description": "A Mexican taco for a Mexican Man.", 
-		  "type": "Steak", "tortilla": "White", "rice": "Spanish Rice", "cheese": "Queso Fresco", 
+		  "type": "Steak", "tortilla": "Flour", "rice": "Spanish Rice", "cheese": "Queso Fresco", 
 		  "beans": "Refried Beans", "sauces": "Habenero", "vegetables": ["Jalapenos", "White Onion", 
 		  "Pico de Gallo", "Pepper/Onions", "Poblano Salsa"], "extras": 
-		  ["Queso", "Guacamole", "Sour Cream", "Bacon", "Sliced Avocado"] },
+		  ["Queso", "Guacamole", "Sour Cream", "Bacon", "Sliced Avocado"], "price": 5.60},
 		  
-	   { "name": "The Leopard", "description": "It'll give you spots.", "type": "Steak", "tortilla": "Cayenne", "rice": "No Rice",
-	     "cheese": "Cheddar/Jack Mix", "beans": "Black Beans", "sauces": "Hot Tomatillo", "vegetables" : ["Roasted Garlic", 
-	     "Peppers/Onions", "Red Onion", "Jalapenos", "White Onion", "Cilantro", "Tortilla Strips"], "extras" : ["Queso", "Bacon"]},
+	   { "name": "The Leopard", "description": "It'll give you spots.", "type": "Steak", "tortilla": 
+	     "Cayenne", "rice": "No Rice", "cheese": "Cheddar/Jack Mix", "beans": "Black Beans", 
+	     "sauces": "Hot Tomatillo", "vegetables" : ["Roasted Garlic", "Peppers/Onions", "Red Onion", 
+	     "Jalapenos", "White Onion", "Cilantro", "Tortilla Strips"], "extras" : ["Queso", "Bacon"],
+	     "price": 2.80},
 
-	   { "name": "Luke's Taco", "description": "", "type": ""},
+	   { "name": "Luke's Taco", "description": "A taco designed by someone not named Luke", 
+	     "type": "Chicken", "tortilla": "Wheat", "rice": "Spanish Rice", "cheese": "Monterrey Jack",
+	     "beans": "Black Beans", "sauces": "Hot Tomatillo", "vegetables": ["Poblano Salsa", 
+	     "Roasted Garlic"], "extras" : "No Extras", "price": 1.70},
 
-	   { "name": "AngelOh", "description": "", "type": ""},
+	   { "name": "AngelOh", "description": "It's like an angel gave you a taco","type": "Steak", 
+	     "tortilla": "Cayenne", "rice": "Cilantro Rice", "cheese": "Monterrey Jack",
+	     "beans": "Refried", "sauces": "Ranch", "vegetables": ["Red Onion", "Pico de Gallo", 
+	     "Roasted Garlic"], "extras" : ["Bacon", "Sour Cream", "Guacamole", "Queso"], "price": 4.80},
 
-	   { "name": "Garden Taco", "description": "", "type": ""},
+	   { "name": "Garden Taco", "description": "Pretty basic taco.", "type": "Veggie", 
+	     "tortilla": "Wheat", "rice": "No Rice", "cheese": "Chedder/Jack Mix",
+	     "beans": "No Beans", "sauces": "Ranch", "vegetables": ["Red Onion", "Pico de Gallo", 
+	     "Roasted Garlic", "Tomatoes", "Jalapenos", "Cilantro", "Lettuce"], "extras" : "No Extras", 
+	     "price": 4.80},
 
-	   { "name": "Slightly Sweet", "description": "", "type": ""}
+	   { "name": "Slightly Sweet", "description": "May contain chivalry", "type": "Steak", 
+	     "tortilla": "Flour", "rice": "No Rice", "cheese": "Queso Fresco",
+	     "beans": "Black Beans", "sauces": "Salsa", "vegetables": "Lettuce", "extras" : "No Extras", 
+	     "price": 1.85}
 	]
 }
