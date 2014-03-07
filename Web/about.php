@@ -11,17 +11,9 @@
    <script src="js/main.js"></script>
 </head>
 <body>
-	<!-- Page navigation menu -->
-	<nav id="navbar">
-		<ul>
-			
-			<li><img id="logoImg" src="img/taco_truck_logo.png" alt="Logo" title="Logo"></li>
-			<li><a href="index.php">Menu</a></li>
-			<li class="select"><a>About</a></li>
-			<li><a href="locations.php">Locations</a></li>
-			<li id="accountLink"><a href="account.php">Sign In/Create Account</a></li>
-		</ul>
-	</nav>
+   	<!-- Page navigation menu -->
+   	<?php include 'navbar.php' ?>
+   	
 	<article class="about shadowBoxHeavy">
 		<h1>A Heart-Warming Story</h1>
 		<img src="img/aboutImg.jpg" alt="Delectable Taco">
