@@ -61,6 +61,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		header('Location: index.php');
 	}
 
+} else if (isset($_SESSION['CC_Provider'])) { //Someone is signing out
+
+	$loginStatus = "Logged Out";
+
+	session_destroy();
+
 } else {
 	$loginStatus = "";
 }
