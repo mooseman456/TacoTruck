@@ -35,12 +35,14 @@ $(document).ready(function() {
 
        Name="Custom Taco";
        id="customTaco";
-       Quantity=Taco.returnQuantity();
-       calcPrice=Taco.returnCalcPrice();
-       basePrice=Taco.returnBasePrice();
-       ajaxRequest.open("POST", "Ajax/addTaco.php", true);
+       Quantity=1;
+       calcPrice=Taco.price;
+       basePrice=Taco.price;
+       console.log(calcPrice);
+       console.log(basePrice);
+       ajaxRequest.open("POST", "Ajax/addTaco.php", false);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id);
+       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id+"&tacoObject="+JSON.stringify(Taco));
        $('#orderList').load("sessionOrderData.php", function() {
          console.log("FUCK YOU");
        });
@@ -175,6 +177,7 @@ $(document).ready(function() {
          $('#tacoTotal').addClass('added');
          $('#tacoTotal').html("$" + tacoTotal.toFixed(2));
       }
+      return tacoTotal.toFixed(2);
       
    }
    
@@ -191,6 +194,7 @@ $(document).ready(function() {
       this.sauceID = "";
       this.vegID = new Array();
       this.extrasID = new Array();
+      this.price = "";
       
       if($('#currentRice div').length > 0)
          this.riceID = $('#currentRice div').attr("ingredientid");
@@ -219,9 +223,9 @@ $(document).ready(function() {
       $('#currentVeg div').each(function(index){
          console.log(index + ": " + $(this).attr("ingredientid"));
       })
-
-
-      console.log(this.vegID.length);
+      
+      this.price = calcTotal();
+      console.log(this.price);
    };
    
    $('#addTaco').click(function(e) {
@@ -235,6 +239,7 @@ $(document).ready(function() {
          var t = new tacoObject();
          AddCustomTacoToSession(t);
          //$.ajax({url:'session.php', type:'POST', data:{'t':'t'}, success:function() {}});
+	 //window.location = "index.php";
       }
    });
    

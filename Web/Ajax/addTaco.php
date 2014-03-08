@@ -2,19 +2,27 @@
 
 session_start();
 
+if (!isset($_SESSION['tacoID'])) {
+	$_SESSION['tacoID']=0;
+}
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
 	$data = array();
-
-	$data['id'] = $_POST['id'];
 	
+	if ($_POST['id'] == "customTaco") {
+		$data['id'] = $_POST['id'] . (string)$_SESSION['tacoID'];
+		$_SESSION['tacoID'] += 1;
+	}
+	else
+		$data['id'] = $_POST['id'];	
+
 	if (isAlreadyInOrder($data['id']) == false) {
 
 		$data['name'] = $_POST['Name'];
 		$data['quantity'] = $_POST['Quantity'];
 		$data['basePrice'] = $_POST['basePrice'];
 		$data['calcPrice'] = $_POST['calcPrice'];
-
+		$data['tacoObject'] = $_POST['tacoObject'];
 		$_SESSION['Order'][] = $data;
 
 	} else {

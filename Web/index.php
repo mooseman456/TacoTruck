@@ -2,6 +2,10 @@
 
 session_start();
 
+if (!isset($_SESSION['tacoID'])) {
+	$_SESSION['tacoID']=0;
+}
+
 require_once '../database/login.php';
 $db = new mysqli($db_hostname, $db_username, $db_password, $db_database);
 if($db->connect_errno > 0){

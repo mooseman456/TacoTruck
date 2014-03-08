@@ -29,7 +29,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$_SESSION['phoneNumber'] = $row['phoneNumber'];
 			$_SESSION['CC_Provider'] = $row['CC_Provider'];
 			$_SESSION['CC_Number'] = $row['CC_Number'];
-
 			header('Location: index.php');
 
 		} else {
