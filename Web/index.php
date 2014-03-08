@@ -48,18 +48,11 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 
 if (isset($_SESSION['givenName'])) {
 	$accountText = $_SESSION['givenName'].", Sign Out";
-	echo "Signed in";
 } else {
 	$accountText = "Sign In/Create Account";
-	echo "Signed out";
 }
 }
 ?>
-
-<!--?php
-$pageTitle = 'Welcome to the Taco Truck!';
-include('include/header.php'); ?-->
-
 
 <html lang="en">
 <head>

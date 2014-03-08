@@ -63,10 +63,8 @@ while($row = $result->fetch_row()) {
 
 if (isset($_SESSION['givenName'])) {
 	$accountText = $_SESSION['givenName'].", Sign Out";
-	echo "Signed in";
 } else {
 	$accountText = "Sign In/Create Account";
-	echo "Signed out";
 }
 
 ?>
