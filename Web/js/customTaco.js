@@ -224,21 +224,15 @@ $(document).ready(function() {
       }
       console.log("Sauce: " + this.sauceID);
 
-      //index = $('#currentVeg div').length;
-      /*for(var i=0; i < index; i++)
-      {
-         console.log(index);
-        (function(i){
-          this.vegID[i] = ($('#currentVeg div')[i].getAttribute("ingredientid"));
-       })(i);
-      }*/
-      $('#currentVeg div').each(function(index){
-         this.ingredientsList.push($(this).attr("ingredientid"));
-      })
-
-      $('#currentExtras div').each(function(index){
-         this.ingredientsList.push($(this).attr("ingredientid"));
-      })
+      indexV = $('#currentVeg div').length;
+      for(var i=0; i < indexV; i++) {
+            this.ingredientsList.push($('#currentVeg div')[i].getAttribute("ingredientid"));
+       }
+      
+      indexE = $('#currentExtras div').length;
+      for(var i=0; i < indexE; i++) {
+         this.ingredientsList.push($('#currentExtras div')[i].getAttribute("ingredientid"));
+      } 
       
       this.price = calcTotal();
       console.log(this.price);
