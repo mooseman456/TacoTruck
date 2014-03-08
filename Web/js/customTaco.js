@@ -195,7 +195,7 @@ $(document).ready(function() {
       this.vegID = new Array();
       this.extrasID = new Array();
       this.price = "";
-      this.ingredientsList = new Array();      
+      this.ingredientsList = new Array();
       
       this.ingredientsList.push(this.fillingID);
       this.ingredientsList.push(this.tortillaID);
