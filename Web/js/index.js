@@ -211,10 +211,10 @@ $(document).ready(function() {
          this.beansID = $('#currentBeans div').attr("ingredientid");
       
       if($('#currentSauce div').length > 0)
-         this.sauceID = $('#currentSauce div').attr("ingredientid");\
+         this.sauceID = $('#currentSauce div').attr("ingredientid");
 
       $('#currentVeg div').each(function(index){
-      })
+      });
       
       this.price = calcTotal();
    };
