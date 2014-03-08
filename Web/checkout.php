@@ -14,7 +14,6 @@ if (isset($_SESSION['givenName'])) {
 } else {
 	$accountText = "Sign In/Create Account";
 	$CC_Provider = "Credit Card Provider";
-	
 }
 
 
@@ -24,29 +23,41 @@ if($db->connect_errno > 0){
 	die('Unable to connect to database [' . $db->connect_error . ']');
 }
 
+
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
 
-	$quantity = '1';
-	$user_id = '16';
-	$price = '1';
-	$timePlaced = '1';
+	$user_id = $_SESSION['user_id'];
+	date_default_timezone_get();
+	$timePlaced = date('Y/m/d h:i:s', time());
+	
+	$query = "INSERT INTO Orders (Orders.user_id, Orders.price, Orders.timePlaced) VALUES ('$user_id', '$price', '$timePlaced')"; 
+	$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
 
-	mysqli_query($db,"INSERT INTO Orders (user_id, price, timePlaced)
-	VALUES ('$user_id', '$price', '$timePlaced')" or trigger_error($mysqli->error."[$query]"));
-	echo "HELLO";
 	$retrievedOrder_id = $db->insert_id;
+	
+	foreach($_SESSION['Order'] as $key => $val) {
 
-	mysqli_query($db,"INSERT INTO TacoOrders (order_id, quantity)
-	VALUES ('$retrievedOrder_id', '$quantity')") or trigger_error($mysqli->error."[$query]");
-	echo "PART 2";
-	$retrievedTacoOrder_id = $db->insert_id;
-	//mysqli_query($db,"SELECT TacoOrders.tacoorder_id FROM TacoOrders WHERE TacoOrders.order_id='$retrievedOrder_id' AND TacoOrders.quantity = '$quantity'") or trigger_error($mysqli->error."[$query]");
+		$tacoingredients = $_SESSION['Order'][$key]['ingredients']; 
+		$quantity = $_SESSION['Order'][$key]['quantity']
 
-	mysqli_query($db,"INSERT INTO TacoDetails (tacoorder_id, tacofixing_id)
-	VALUES ('$retrievedTacoOrder_id', '1')") or trigger_error($mysqli->error."[$query]");
-	echo "BYE";
+
+		$totalprice = $totalprice + $_SESSION['Order'][$key]['calcPrice'];
+
+		$query = "INSERT INTO TacoOrders (order_id, quantity) VALUES ('$retrievedOrder_id', '$quantity')";
+		$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+
+		$retrievedTacoOrder_id = $db->insert_id;
+
+		foreach ($_SESSION['Order'][$key]['ingredients'] as $key2 => $val) {
+			
+			$query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) VALUES ('$retrievedTacoOrder_id', '".$_SESSION['Order'][$key]['ingredients'][$key2].")";
+			
+			$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+		}
+
+	}
 	// WHERE SHOULD THIS GO????????????
-	header('Location: index.php');
+	// header('Location: index.php');
 }
 ?>
 

@@ -161,7 +161,7 @@ nav .select:hover, nav .select {
 #accountLink {
 	position: fixed;
 	right: 50px;
-	font-size: 20px;
+	font-size: 1em;
 }
 
 #accountLink a {
@@ -400,6 +400,11 @@ input[type=submit]{
 	background-color: #C1C98D;
 	border-radius: 10px;
 	border:none;
+}
+
+#loginStatus {
+	font-size: 1.5em;
+	text-align: center;
 }
 
 

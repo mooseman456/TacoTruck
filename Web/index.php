@@ -50,11 +50,11 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 		$counter++;
 	}
 
-if (isset($_SESSION['givenName'])) {
-	$accountText = $_SESSION['givenName'].", Sign Out";
-} else {
-	$accountText = "Sign In/Create Account";
-}
+	if (isset($_SESSION['givenName'])) {
+		$accountText = $_SESSION['givenName'].", Sign Out";
+	} else {
+		$accountText = "Sign In/Create Account";
+	}
 }
 ?>
 
