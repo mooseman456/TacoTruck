@@ -75,10 +75,9 @@ p {
 /****************/
 article.about {
 	display:block;
-	margin: 2em 15%;
-	height: 100%;
+	margin: 1em 15%;
 	border-radius: 6em;
-	padding: 2em 3em;
+	padding: 2em 3em 3em 3em;
 }
 
 article.about h1 {
@@ -143,6 +142,7 @@ nav li a {
 nav li:hover {
 	background-color: #C8C8C8 
 }
+
 nav li:first-child:hover{
 	background: #8F3C1C;
 }
@@ -184,6 +184,8 @@ nav .select:hover, nav .select {
 
 #navSpace {
 	height: 40px;
+	margin: 0;
+	padding: 0;
 }
 
 
@@ -199,8 +201,9 @@ nav .select:hover, nav .select {
 .orderPane {
 	width: 25%;
 	float: left;
-	margin: 1em 5%;
+	margin: 1em 3% 1em 5%;
 	min-height: 400px;
+	min-width: 250px;
 }
 
 #orderList img {
@@ -447,8 +450,9 @@ input[type=submit]{
 
 #currentTacoPane {
 	float:left;
-	width:25%;
-	margin: 2em auto;
+	width: 25%;
+	margin: 1em auto;
+	min-width: 250px;
 }
 
 .currentList {
@@ -539,15 +543,7 @@ input[type=submit]{
 }
 
 #addTaco {
-   margin-left:7%;
-   width:85%;
-   height:3em;
-}
-
-#cancelTaco {
-   margin:2% 0% 0% 7%;
-   width:85%;
-   height:2em;
+   height: 2.6em;
 }
 
 
@@ -557,7 +553,9 @@ input[type=submit]{
 
 #ingredientsPane {
 	float:left;
+	min-width: 250px;
 	width:25%;
+	margin: 1em 5% 1em 3%;
 }
 
 .selected {

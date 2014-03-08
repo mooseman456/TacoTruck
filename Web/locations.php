@@ -14,10 +14,8 @@ foreach ($var as $location) {
 
 if (isset($_SESSION['givenName'])) {
 	$accountText = $_SESSION['givenName'].", Sign Out";
-	echo "Signed in";
 } else {
 	$accountText = "Sign In/Create Account";
-	echo "Signed out";
 }
 
 ?>
