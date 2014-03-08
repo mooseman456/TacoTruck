@@ -47,6 +47,11 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 		//Remove trailing space and comma
 		$PreMadeTacos[$counter]['price'] = $taco['price'];
 		$PreMadeTacos[$counter]['ingredients'] = rtrim($PreMadeTacos[$counter]['ingredients'],', ');
+
+		$_SESSION['PremadeTacos'][$counter]['name'] = $PreMadeTacos[$counter]['name'];
+		$_SESSION['PremadeTacos'][$counter]['ingredients'] = explode(", ", $PreMadeTacos[$counter]['ingredients']);
+
+
 		$counter++;
 	}
 
@@ -71,6 +76,8 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script src="js/index.js"></script>
 	<script type="text/javascript">
+
+
 
 	$(function() {
 		$( document ).tooltip();
