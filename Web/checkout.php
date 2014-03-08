@@ -25,22 +25,22 @@ if($db->connect_errno > 0){
 }
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
-
 	$quantity = '1';
-	$user_id = '16';
+	$user_id = $_SESSION['user_id'];
 	$price = '1';
-	$timePlaced = '1';
+
+	date_default_timezone_get();
+	$timePlaced = date('m/d/Y h:i:s a', time());
 
 	mysqli_query($db,"INSERT INTO Orders (user_id, price, timePlaced)
 	VALUES ('$user_id', '$price', '$timePlaced')" or trigger_error($mysqli->error."[$query]");
 
-	//$retrievedOrder_id = $db->insert_id;
+	$retrievedOrder_id = mysqli_query($db,"SELECT Orders.order_id FROM Orders WHERE Orders.user_id='$user_id' AND Orders.timePlaced = '$timePlaced'") or trigger_error($mysqli->error."[$query]");
 
 	mysqli_query($db,"INSERT INTO TacoOrders (order_id, quantity)
-	VALUES ('$$retrievedOrder_id', '$quantity')") or trigger_error($mysqli->error."[$query]");
+	VALUES ('$retrievedOrder_id', '$quantity')") or trigger_error($mysqli->error."[$query]");
 
-	//$retrievedTacoOrder_id = $db->insert_id;
-	//mysqli_query($db,"SELECT TacoOrders.tacoorder_id FROM TacoOrders WHERE TacoOrders.order_id='$retrievedOrder_id' AND TacoOrders.quantity = '$quantity'") or trigger_error($mysqli->error."[$query]");
+	$retrievedTacoOrder_id = mysqli_query($db,"SELECT TacoOrders.tacoorder_id FROM TacoOrders WHERE TacoOrders.order_id='$retrievedOrder_id' AND TacoOrders.quantity = '$quantity'") or trigger_error($mysqli->error."[$query]");
 
 	mysqli_query($db,"INSERT INTO TacoDetails (tacoorder_id, tacofixing_id)
 	VALUES ('$retrievedTacoOrder_id', '1')") or trigger_error($mysqli->error."[$query]");
