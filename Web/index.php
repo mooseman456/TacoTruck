@@ -138,10 +138,6 @@ if (($handle = fopen("../database/premade_tacos.json", "r")) !== FALSE) {
 			<h2>Custom Taco</h2>
 			<img id="customTaco" src="img/plus_icon.png" alt="Custom Taco">
 		</section>
-		<section>
-			<h2>Previous Taco</h2>
-			<img id="previousTaco" src="img/previous_icon.png" alt="Previous Taco">
-		</section>
 	</article>
 
 	<script src="js/main.js"></script>
