@@ -14,7 +14,6 @@ if (isset($_SESSION['givenName'])) {
 } else {
 	$accountText = "Sign In/Create Account";
 	$CC_Provider = "Credit Card Provider";
-	
 }
 
 
@@ -25,15 +24,29 @@ if($db->connect_errno > 0){
 }
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
-	$quantity = '1';
+	$quantity = $_SESSION['Order'][$key];
 	$user_id = $_SESSION['user_id'];
 	$price = '1';
 
 	date_default_timezone_get();
 	$timePlaced = date('m/d/Y h:i:s', time());
+	echo $user_id;
+	mysqli_query($db,"INSERT INTO Orders (Orders.user_id, Orders.price, Orders.timePlaced)
+	VALUES ('$user_id', '$price', '$timePlaced')" or trigger_error($mysqli->error."[$query]"));
+
+	$retrievedOrder_id = mysqli_query($db,"SELECT Orders.order_id FROM Orders WHERE Orders.user_id='$user_id' AND Orders.timePlaced = '$timePlaced'") or trigger_error($mysqli->error."[$query]");
+
+	mysqli_query($db,"INSERT INTO TacoOrders (order_id, quantity)
+	VALUES ('$retrievedOrder_id', '$quantity')") or trigger_error($mysqli->error."[$query]");
+
+	$retrievedTacoOrder_id = mysqli_query($db,"SELECT TacoOrders.tacoorder_id FROM TacoOrders WHERE TacoOrders.order_id='$retrievedOrder_id' AND TacoOrders.quantity = '$quantity'") or trigger_error($mysqli->error."[$query]");
 
 
+	mysqli_query($db,"INSERT INTO TacoDetails (tacoorder_id, tacofixing_id)
+	VALUES ('$retrievedTacoOrder_id', '1')") or trigger_error($mysqli->error."[$query]");
 
+	// WHERE SHOULD THIS GO????????????
+	header('Location: index.php');
 }
 
 ?>
