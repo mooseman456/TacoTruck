@@ -32,7 +32,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			header('Location: index.php');
 
 		} else {
-			$loginStatus = "<p style=\"text-align:center;\">Login Failed</p>";
+			$loginStatus = "Username or password is incorrect";
 		}
 	} else { //Someone is creating a new account
 		$givenName = mysql_real_escape_string($_POST['firstname']);
@@ -132,9 +132,9 @@ function passwordEquals() {
 				<input class="userInput" type="password" name="password" placeholder="Password" required><br>
 				<input class="userInput button" type="submit" value="Sign In">
 			</form>
-			<div>
+			<p id="loginStatus">
 				<?php echo $loginStatus; ?>
-			</div>
+			</p>
 		</div>
 
 		<div id="createAccountPane" class="shadowBox">

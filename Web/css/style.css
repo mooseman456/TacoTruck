@@ -402,6 +402,11 @@ input[type=submit]{
 	border:none;
 }
 
+#loginStatus {
+	font-size: 1.5em;
+	text-align: center;
+}
+
 
 /***********************/
 /*     SIGN IN PANE    */
