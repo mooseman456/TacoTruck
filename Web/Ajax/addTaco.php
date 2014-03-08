@@ -16,16 +16,17 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	else
 		$data['id'] = $_POST['id'];	
 
-	if (isAlreadyInOrder($data['id']) == false) {
+	if (isAlreadyInOrder($data['id']) == false) { 	//New taco added
 
 		$data['name'] = $_POST['Name'];
 		$data['quantity'] = $_POST['Quantity'];
 		$data['basePrice'] = $_POST['basePrice'];
 		$data['calcPrice'] = $_POST['calcPrice'];
-		$data['tacoObject'] = $_POST['tacoObject'];
+		$data['ingredients'] = $_POST['ingredients'];
+		$data['ingredients'] = explode(",", $data['ingredients']);
 		$_SESSION['Order'][] = $data;
 
-	} else {
+	} else { 										//One of same taco added
 
 		$data['name'] = $_POST['Name'];
 		$data['quantity'] = $_POST['Quantity'];
@@ -47,7 +48,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 } else {
 	var_dump($_SESSION);
 }
-
 
 
 function isAlreadyInOrder($id) {
