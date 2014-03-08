@@ -161,7 +161,7 @@ nav .select:hover, nav .select {
 #accountLink {
 	position: fixed;
 	right: 50px;
-	font-size: 20px;
+	font-size: 1em;
 }
 
 #accountLink a {
