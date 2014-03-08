@@ -40,6 +40,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$tacoingredients = $_SESSION['Order'][$key]['ingredients']; 
 		$quantity = $_SESSION['Order'][$key]['quantity']
 
+
 		$totalprice = $totalprice + $_SESSION['Order'][$key]['calcPrice'];
 
 		$query = "INSERT INTO TacoOrders (order_id, quantity) VALUES ('$retrievedOrder_id', '$quantity')";
@@ -55,11 +56,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		}
 
 	}
-	
+
 	// WHERE SHOULD THIS GO????????????
 	// header('Location: index.php');
 }
-
 ?>
 
 <!doctype html>

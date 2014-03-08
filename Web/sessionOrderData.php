@@ -17,6 +17,6 @@ if (isset($_SESSION['Order'])) {
     echo $toEcho;
 }
 else {
-   echo "YOU DONE FUCKED UP NOW";
+   echo "Add an item to your order";
 }
 ?>

@@ -12,8 +12,11 @@ $(document).ready(function() {
       window.location = "customtaco.php";
    });
 
-   $('#editOrder').click(function(e) {
-      window.location = "index.php";
+   $('#submitOrder').click(function(e) {
+	if($('#submitOrder').attr("value") == "Edit Order")      
+	   window.location = "index.php";
+	else
+	   window.location = "checkout.php";
    });
    
    $('#accountLink').click(function(e) {

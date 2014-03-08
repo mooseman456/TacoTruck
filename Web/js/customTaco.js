@@ -42,7 +42,7 @@ $(document).ready(function() {
        console.log(basePrice);
        ajaxRequest.open("POST", "Ajax/addTaco.php", false);
        ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id+"&tacoObject="+JSON.stringify(Taco));
+       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id+"&ingredients="+Taco.ingredientsList);
        $('#orderList').load("sessionOrderData.php", function() {
          console.log("FUCK YOU");
        });
@@ -195,21 +195,33 @@ $(document).ready(function() {
       this.vegID = new Array();
       this.extrasID = new Array();
       this.price = "";
+      this.ingredientsList = new Array();      
       
-      if($('#currentRice div').length > 0)
+      this.ingredientsList.push(this.fillingID);
+      this.ingredientsList.push(this.tortillaID);
+      if($('#currentRice div').length > 0) {
          this.riceID = $('#currentRice div').attr("ingredientid");
+	      this.ingredientsList.push(this.riceID);
+      }
       console.log("Rice: " + this.riceID);
       
-      if($('#currentCheese div').length > 0)
+      if($('#currentCheese div').length > 0) {
          this.cheeseID = $('#currentCheese div').attr("ingredientid");
+         this.ingredientsList.push(this.cheeseID);
+      }
+      
       console.log("Cheese: " + this.cheeseID);
       
-      if($('#currentBeans div').length > 0)
+      if($('#currentBeans div').length > 0) {
          this.beansID = $('#currentBeans div').attr("ingredientid");
+         this.ingredientsList.push(this.beansID);
+      }
       console.log("Beans: " + this.beansID);
       
-      if($('#currentSauce div').length > 0)
+      if($('#currentSauce div').length > 0) {
          this.sauceID = $('#currentSauce div').attr("ingredientid");
+         this.ingredientsList.push(this.sauceID);
+      }
       console.log("Sauce: " + this.sauceID);
 
       //index = $('#currentVeg div').length;
@@ -221,7 +233,11 @@ $(document).ready(function() {
        })(i);
       }*/
       $('#currentVeg div').each(function(index){
-         console.log(index + ": " + $(this).attr("ingredientid"));
+         this.ingredientsList.push($(this).attr("ingredientid"));
+      })
+
+      $('#currentExtras div').each(function(index){
+         this.ingredientsList.push($(this).attr("ingredientid"));
       })
       
       this.price = calcTotal();
