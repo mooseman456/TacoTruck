@@ -1,5 +1,51 @@
 $(document).ready(function() {
-   
+
+   function AddCustomTacoToSession(Taco) {
+      var ajaxRequest;  // The variable that makes Ajax possible!
+         
+       try{
+         // Opera 8.0+, Firefox, Safari
+         ajaxRequest = new XMLHttpRequest();
+       }catch (e){
+         // Internet Explorer Browsers
+         try{
+            ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+         }catch (e) {
+            try{
+               ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            }catch (e){
+               // Something went wrong
+               alert("Your browser broke!");
+               return false;
+            }
+         }
+       }
+       // // Create a function that will receive data 
+       // // sent from the server and will update
+       // // div section in the same page.
+       // ajaxRequest.onreadystatechange = function(){
+       //   if(ajaxRequest.readyState == 4){
+       //      var ajaxDisplay = document.getElementById('memberAddedDiv');
+       //      ajaxDisplay.innerHTML = ajaxRequest.responseText;
+       //   }
+       // }
+       // Now get the value from user and pass it to
+       // server script.
+
+
+       Name="Custom Taco";
+       id="customTaco";
+       Quantity=Taco.returnQuantity();
+       calcPrice=Taco.returnCalcPrice();
+       basePrice=Taco.returnBasePrice();
+       ajaxRequest.open("POST", "Ajax/addTaco.php", true);
+       ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+       ajaxRequest.send("Name="+Name+"&Quantity="+Quantity+"&calcPrice="+calcPrice+"&basePrice="+basePrice+"&id="+id);
+       $('#orderList').load("sessionOrderData.php", function() {
+         console.log("FUCK YOU");
+       });
+       console.log("Hello");
+   };
    
    $('.fill').click(function(e) {
       $('.fill.selected').removeClass('selected');
@@ -79,7 +125,7 @@ $(document).ready(function() {
             returnString =  selectedElements[i].innerHTML;
          
          else
-            returnString += "<div ingredientId='" + $(this).attr("id") + "'class='added'>" + selectedElements[i].innerHTML + "</div>";        
+            returnString += "<div ingredientId='" + selectedElements[i].getAttribute('id') + "'class='added'>" + selectedElements[i].innerHTML + "</div>";        
       }   
       document.getElementById("currentVeg").innerHTML = returnString;
       calcTotal();
@@ -107,9 +153,8 @@ $(document).ready(function() {
          
          if($('.extras.clear').hasClass('selected'))
             returnString =  selectedElements[i].innerHTML;
-         
          else
-            returnString += "<div ingredientId='" + $(this).attr("id") + "'class='added' price='" + selectedElements[i].getAttribute("price") + "' >" + selectedElements[i].innerHTML + "</div>";        
+            returnString += "<div ingredientId='" + selectedElements[i].getAttribute('id') + "'class='added' price='" + selectedElements[i].getAttribute("price") + "' >" + selectedElements[i].innerHTML + "</div>";        
       }   
       document.getElementById("currentExtras").innerHTML = returnString;
       calcTotal();
@@ -162,22 +207,21 @@ $(document).ready(function() {
       if($('#currentSauce div').length > 0)
          this.sauceID = $('#currentSauce div').attr("ingredientid");
       console.log("Sauce: " + this.sauceID);
-         
-      /*if($('#currentVeg div').length > 0) {
-         $("#currentVeg div").each(function(value) {
-             this.vegID.push($(value).attr("ingredientid"));
-         });*/
-         for (var j=0; j < $('#currentVeg div').length; j++) {
-            //this.vegID.push($('#currentVeg').children('.added')[i].getAttribute("ingredientid"));
-            var index = j;
-            stopVegClosure(this.vegID, index);
-         }  
-   };
-   
-   function stopVegClosure(vegAr, i) {
-      
-      vegAr.push($('#currentVeg div')[i].getAttribute("ingredientid"));
-      console.log(vegAr[i]);
+
+      //index = $('#currentVeg div').length;
+      /*for(var i=0; i < index; i++)
+      {
+         console.log(index);
+        (function(i){
+          this.vegID[i] = ($('#currentVeg div')[i].getAttribute("ingredientid"));
+       })(i);
+      }*/
+      $('#currentVeg div').each(function(index){
+         console.log(index + ": " + $(this).attr("ingredientid"));
+      })
+
+
+      console.log(this.vegID.length);
    };
    
    $('#addTaco').click(function(e) {
@@ -189,7 +233,7 @@ $(document).ready(function() {
          
       else {
          var t = new tacoObject();
-         
+         AddCustomTacoToSession(t);
          //$.ajax({url:'session.php', type:'POST', data:{'t':'t'}, success:function() {}});
       }
    });
