@@ -23,24 +23,43 @@ if($db->connect_errno > 0){
 	die('Unable to connect to database [' . $db->connect_error . ']');
 }
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
-	$quantity = $_SESSION['Order'][$key];
-	$user_id = $_SESSION['user_id'];
-	$price = '1';
 
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) { 
+
+	$user_id = $_SESSION['user_id'];
 	date_default_timezone_get();
 	$timePlaced = date('Y/m/d h:i:s', time());
-	echo $user_id;
+	
 	$query = "INSERT INTO Orders (Orders.user_id, Orders.price, Orders.timePlaced) VALUES ('$user_id', '$price', '$timePlaced')"; 
 	$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
 
 	$retrievedOrder_id = $db->insert_id;
-	$query = "INSERT INTO TacoOrders (order_id, quantity) VALUES ('$retrievedOrder_id', '$quantity')";
-	$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+	
+	foreach($_SESSION['Order'] as $key => $val) {
 
-	$retrievedTacoOrder_id = $db->insert_id;
-	$query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) VALUES ('$retrievedTacoOrder_id', '1')";
-	$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+		$tacoingredients = $_SESSION['Order'][$key]['ingredients']; 
+		$quantity = $_SESSION['Order'][$key]['quantity']
+
+		$totalprice = $totalprice + $_SESSION['Order'][$key]['calcPrice'];
+
+		$query = "INSERT INTO TacoOrders (order_id, quantity) VALUES ('$retrievedOrder_id', '$quantity')";
+		$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+
+		$retrievedTacoOrder_id = $db->insert_id;
+
+		foreach ($_SESSION['Order'][$key]['ingredients'] as $key2 => $val) {
+			
+			$query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) VALUES ('$retrievedTacoOrder_id', '".$_SESSION['Order'][$key]['ingredients'][$key2].")";
+			
+			$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+		}
+
+	}
+
+	
+	
+	
+	
 
 	
 	// WHERE SHOULD THIS GO????????????
