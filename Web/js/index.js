@@ -191,10 +191,8 @@ $(document).ready(function() {
    function tacoObject() {
       this.tacoID;
       this.fillingID = $('#currentFill').children('.added').attr("ingredientid");
-      console.log("Fill: " + this.fillingID);
       
       this.tortillaID = $('#currentTortilla').children('.added').attr("ingredientid");
-      console.log("Tortilla: " + this.tortillaID);
       this.riceID = "";
       this.cheeseID = "";
       this.beansID = "";
@@ -205,34 +203,20 @@ $(document).ready(function() {
       
       if($('#currentRice div').length > 0)
          this.riceID = $('#currentRice div').attr("ingredientid");
-      console.log("Rice: " + this.riceID);
       
       if($('#currentCheese div').length > 0)
          this.cheeseID = $('#currentCheese div').attr("ingredientid");
-      console.log("Cheese: " + this.cheeseID);
       
       if($('#currentBeans div').length > 0)
          this.beansID = $('#currentBeans div').attr("ingredientid");
-      console.log("Beans: " + this.beansID);
       
       if($('#currentSauce div').length > 0)
-         this.sauceID = $('#currentSauce div').attr("ingredientid");
-      console.log("Sauce: " + this.sauceID);
+         this.sauceID = $('#currentSauce div').attr("ingredientid");\
 
-      //index = $('#currentVeg div').length;
-      /*for(var i=0; i < index; i++)
-      {
-         console.log(index);
-        (function(i){
-          this.vegID[i] = ($('#currentVeg div')[i].getAttribute("ingredientid"));
-       })(i);
-      }*/
       $('#currentVeg div').each(function(index){
-         console.log(index + ": " + $(this).attr("ingredientid"));
       })
       
       this.price = calcTotal();
-      console.log(this.price);
    };
 
    function returnOrder() {
@@ -245,7 +229,6 @@ $(document).ready(function() {
 
    $('.cancelButton').click(function(e) {
          RemoveTacoFromSession(e.target.id);
-         console.log(e.target.id);
    });
    
    var updateOrder = function() {

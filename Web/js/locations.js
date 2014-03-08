@@ -29,7 +29,6 @@ window.addEventListener('load', function() {
 		var trucks = JSON.parse(request.responseText); //Holds the information about the truck pins
 		var count = 0;
 		for(var i = 0; i<trucks.length; i++) {
-			console.log("count: " + i);
 			geocoder.geocode( { 'address': trucks[i].address + ", " + trucks[i].city + ", " + trucks[i].state + " " + trucks[i].zipcode}, function(results, status) {
 			    if (status == google.maps.GeocoderStatus.OK) {
 			        var marker = new google.maps.Marker({

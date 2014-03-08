@@ -61,8 +61,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	}
 
-	// WHERE SHOULD THIS GO????????????
-	// header('Location: index.php');
 }
 ?>
 
