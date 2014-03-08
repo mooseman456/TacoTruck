@@ -2,6 +2,8 @@
 
 session_start();
 
+echo "<br/><br/><br/><br/>";
+
 if (isset($_SESSION['givenName'])) {
 	$accountText = $_SESSION['givenName'].", Sign Out";
 	$givenName = $_SESSION['givenName'];
@@ -38,8 +40,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	foreach($_SESSION['Order'] as $key => $val) {
 
 		$tacoingredients = $_SESSION['Order'][$key]['ingredients']; 
-		$quantity = $_SESSION['Order'][$key]['quantity']
-
+		$quantity = $_SESSION['Order'][$key]['quantity'];
 
 		$totalprice = $totalprice + $_SESSION['Order'][$key]['calcPrice'];
 
@@ -48,11 +49,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		$retrievedTacoOrder_id = $db->insert_id;
 
-		foreach ($_SESSION['Order'][$key]['ingredients'] as $key2 => $val) {
-			
-			$query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) VALUES ('$retrievedTacoOrder_id', '".$_SESSION['Order'][$key]['ingredients'][$key2].")";
-			
-			$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+		if (is_array($_SESSION['Order'][$key]['ingredients'])) {
+
+			foreach ($_SESSION['Order'][$key]['ingredients'] as $key2 => $val2) {
+				
+				$query = "INSERT INTO TacoDetails (tacoorder_id, tacofixing_id) VALUES ('$retrievedTacoOrder_id', '$val2')";
+				
+				$result = $db->query($query) or trigger_error($mysqli->error."[$query]");
+			}
 		}
 
 	}

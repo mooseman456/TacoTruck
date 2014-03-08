@@ -22,7 +22,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		$data['quantity'] = $_POST['Quantity'];
 		$data['basePrice'] = $_POST['basePrice'];
 		$data['calcPrice'] = $_POST['calcPrice'];
-		$data['tacoObject'] = $_POST['tacoObject'];
+		$data['ingredients'] = $_POST['ingredients'];
 		$_SESSION['Order'][] = $data;
 
 	} else {
@@ -47,7 +47,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 } else {
 	var_dump($_SESSION);
 }
-
 
 
 function isAlreadyInOrder($id) {
