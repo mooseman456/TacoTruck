@@ -32,23 +32,22 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$timePlaced = '1';
 
 	mysqli_query($db,"INSERT INTO Orders (user_id, price, timePlaced)
-	VALUES ('$user_id', '$price', '$timePlaced')" or trigger_error($mysqli->error."[$query]");
-
-	//$retrievedOrder_id = $db->insert_id;
+	VALUES ('$user_id', '$price', '$timePlaced')" or trigger_error($mysqli->error."[$query]"));
+	echo "HELLO";
+	$retrievedOrder_id = $db->insert_id;
 
 	mysqli_query($db,"INSERT INTO TacoOrders (order_id, quantity)
-	VALUES ('$$retrievedOrder_id', '$quantity')") or trigger_error($mysqli->error."[$query]");
-
-	//$retrievedTacoOrder_id = $db->insert_id;
+	VALUES ('$retrievedOrder_id', '$quantity')") or trigger_error($mysqli->error."[$query]");
+	echo "PART 2";
+	$retrievedTacoOrder_id = $db->insert_id;
 	//mysqli_query($db,"SELECT TacoOrders.tacoorder_id FROM TacoOrders WHERE TacoOrders.order_id='$retrievedOrder_id' AND TacoOrders.quantity = '$quantity'") or trigger_error($mysqli->error."[$query]");
 
 	mysqli_query($db,"INSERT INTO TacoDetails (tacoorder_id, tacofixing_id)
 	VALUES ('$retrievedTacoOrder_id', '1')") or trigger_error($mysqli->error."[$query]");
-
+	echo "BYE";
 	// WHERE SHOULD THIS GO????????????
 	header('Location: index.php');
 }
-
 ?>
 
 <!doctype html>
