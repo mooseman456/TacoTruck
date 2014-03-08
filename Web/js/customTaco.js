@@ -20,17 +20,6 @@ $(document).ready(function() {
             }
          }
        }
-       // // Create a function that will receive data 
-       // // sent from the server and will update
-       // // div section in the same page.
-       // ajaxRequest.onreadystatechange = function(){
-       //   if(ajaxRequest.readyState == 4){
-       //      var ajaxDisplay = document.getElementById('memberAddedDiv');
-       //      ajaxDisplay.innerHTML = ajaxRequest.responseText;
-       //   }
-       // }
-       // Now get the value from user and pass it to
-       // server script.
 
 
        Name="Custom Taco";
@@ -184,10 +173,8 @@ $(document).ready(function() {
    function tacoObject() {
       this.tacoID;
       this.fillingID = $('#currentFill').children('.added').attr("ingredientid");
-      console.log("Fill: " + this.fillingID);
       
       this.tortillaID = $('#currentTortilla').children('.added').attr("ingredientid");
-      console.log("Tortilla: " + this.tortillaID);
       this.riceID = "";
       this.cheeseID = "";
       this.beansID = "";
@@ -203,26 +190,22 @@ $(document).ready(function() {
          this.riceID = $('#currentRice div').attr("ingredientid");
 	      this.ingredientsList.push(this.riceID);
       }
-      console.log("Rice: " + this.riceID);
       
       if($('#currentCheese div').length > 0) {
          this.cheeseID = $('#currentCheese div').attr("ingredientid");
          this.ingredientsList.push(this.cheeseID);
       }
       
-      console.log("Cheese: " + this.cheeseID);
       
       if($('#currentBeans div').length > 0) {
          this.beansID = $('#currentBeans div').attr("ingredientid");
          this.ingredientsList.push(this.beansID);
       }
-      console.log("Beans: " + this.beansID);
       
       if($('#currentSauce div').length > 0) {
          this.sauceID = $('#currentSauce div').attr("ingredientid");
          this.ingredientsList.push(this.sauceID);
       }
-      console.log("Sauce: " + this.sauceID);
 
       indexV = $('#currentVeg div').length;
       for(var i=0; i < indexV; i++) {
@@ -235,7 +218,6 @@ $(document).ready(function() {
       } 
       
       this.price = calcTotal();
-      console.log(this.price);
    };
    
    $('#addTaco').click(function(e) {
@@ -248,8 +230,6 @@ $(document).ready(function() {
       else {
          var t = new tacoObject();
          AddCustomTacoToSession(t);
-         //$.ajax({url:'session.php', type:'POST', data:{'t':'t'}, success:function() {}});
-	 //window.location = "index.php";
       }
    });
    
